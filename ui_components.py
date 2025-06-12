@@ -1,4 +1,5 @@
 from PyQt5 import QtWidgets, QtCore, QtGui
+from time_progress_widget import TimeProgressWidget
 
 class InputWidget(QtWidgets.QWidget):
     """Widget containing score input controls."""
@@ -112,13 +113,18 @@ class MainWindow(QtWidgets.QMainWindow):
     def _setup_ui(self):
         central = QtWidgets.QWidget()
         self.setCentralWidget(central)
-        main_layout = QtWidgets.QHBoxLayout(central)
 
+        root_layout = QtWidgets.QVBoxLayout(central)
+        self.time_widget = TimeProgressWidget()
+        root_layout.addWidget(self.time_widget)
+
+        content_layout = QtWidgets.QHBoxLayout()
         self.input_widget = InputWidget(self.songs)
         self.table_widget = RankingTable()
 
-        main_layout.addWidget(self.input_widget, 1)
-        main_layout.addWidget(self.table_widget, 2)
+        content_layout.addWidget(self.input_widget, 1)
+        content_layout.addWidget(self.table_widget, 2)
+        root_layout.addLayout(content_layout)
 
         self.input_widget.submit_clicked.connect(self.add_record)
         self.input_widget.clear_clicked.connect(self.clear_records)
