@@ -1,6 +1,7 @@
 body {
     font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
     color: #343a40;
+    background-image: linear-gradient(to bottom, #f8f9fa, #e9ecef);
 }
 .progress-wrapper {
     max-width: 600px;
@@ -64,4 +65,18 @@ body {
     0% { opacity: 1; }
     50% { opacity: 0.6; }
     100% { opacity: 1; }
+}
+
+.ranking-table {
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.ranking-table thead th {
+    background: linear-gradient(to right, #6fb1fc, #4364f7);
+    color: #fff;
+}
+.ranking-table tbody tr.selected {
+    background-color: #ffe8e8;
 }
