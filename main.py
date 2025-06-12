@@ -2,6 +2,7 @@
 
 import sys
 from PyQt5 import QtWidgets
+import qdarktheme
 
 from ranking_manager import RankingManager
 from ui_components import MainWindow
@@ -20,6 +21,7 @@ SONGS = [
 
 def main():
     app = QtWidgets.QApplication(sys.argv)
+    qdarktheme.setup_theme()
     manager = RankingManager()
     window = MainWindow(manager, SONGS)
     window.show()
