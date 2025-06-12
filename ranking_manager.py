@@ -79,5 +79,11 @@ class RankingManager:
                     rec.time,
                 ])
 
+    def delete_record(self, index: int) -> None:
+        """Delete record at given index and save."""
+        if 0 <= index < len(self.records):
+            del self.records[index]
+            self.save_records()
+
     def get_records(self) -> List[ScoreRecord]:
         return self.records
