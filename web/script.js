@@ -44,12 +44,16 @@ function updateState() {
     const { phase, warning } = getCurrentPhase(now);
     const remaining = getTimeRemaining(now);
 
+    progressFill.classList.remove('pulse');
     if (phase === 'challenge') {
-        progressFill.style.backgroundColor = '#3498db';
+        progressFill.style.backgroundColor = '#0d6efd';
         infoLabel.textContent = '🎯 正在打榜中！快来挑战排行榜！';
     } else {
-        progressFill.style.backgroundColor = warning ? '#f1c40f' : '#95a5a6';
+        progressFill.style.backgroundColor = warning ? '#ffc107' : '#6c757d';
         infoLabel.textContent = warning ? '⚠️ 打榜即将开始' : '自由练习时间';
+        if (warning) {
+            progressFill.classList.add('pulse');
+        }
     }
 
     const seconds = Math.max(Math.floor(remaining / 1000), 0);
