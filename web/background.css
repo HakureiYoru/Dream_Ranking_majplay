@@ -1,0 +1,24 @@
+/* 设置全屏背景图像 */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: url('bg.png') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -2;
+    opacity: 1;
+}
+
+/* 毛玻璃面板容器（可用于 .container 或全局 wrapper） */
+.glass-panel {
+    backdrop-filter: blur(20px) saturate(120%);
+    -webkit-backdrop-filter: blur(20px) saturate(100%);
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
