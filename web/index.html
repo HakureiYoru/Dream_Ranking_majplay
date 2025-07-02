@@ -1,81 +1,83 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8">
   <title>Majplay Challenge</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="background.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/background.css">
 </head>
-<body class="bg-light py-5">
-  <div class="container glass-panel text-center">
-    <h1 class="display-6 fw-bold mb-4 text-primary">Majplay Challenge</h1>
-    <div class="progress-wrapper mx-auto">
-      <div class="progress-background shadow-sm">
-        <div id="progress-fill"></div>
-        <div class="labels">
-          <span class="practice">Free</span>
-          <span class="challenge">Challenge Time</span>
-        </div>
-      </div>
-    </div>
-    <div id="info" class="mt-3 fw-bold text-dark"></div>
-    <div id="countdown" class="text-muted small"></div>
-  </div>
 
-  <div class="container glass-panel my-5">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-      <h2 class="h5 text-secondary">Ranking</h2>
-      <button class="btn btn-outline-primary btn-sm" type="button" data-bs-toggle="collapse" data-bs-target="#inputCollapse" aria-expanded="false" aria-controls="inputCollapse">
-        填写新成绩
-      </button>
-    </div>
-
-    <div class="collapse" id="inputCollapse">
-      <form id="record-form" class="row gy-2 gx-3 align-items-end">
-        <div class="col-md">
-          <label class="form-label" for="player">玩家ID</label>
-          <input id="player" class="form-control" required />
-        </div>
-        <div class="col-md">
-          <label class="form-label" for="score">分数</label>
-          <input id="score" type="number" min="0" max="101" step="0.01" class="form-control" required />
-        </div>
-        <div class="col-md">
-          <label class="form-label" for="song">曲目</label>
-          <select id="song" class="form-select"></select>
-        </div>
-        <div class="col-md">
-          <label class="form-label" for="difficulty">难度</label>
-          <select id="difficulty" class="form-select"></select>
-        </div>
-        <div class="col-md-auto">
-          <button type="submit" class="btn btn-primary w-100">提交</button>
-        </div>
-      </form>
-      <div class="mt-3 d-flex gap-2">
-        <button id="clear" class="btn btn-warning btn-sm">清空记录</button>
-        <button id="delete" class="btn btn-danger btn-sm">删除选择</button>
-        <button id="export" class="btn btn-success btn-sm">导出 CSV</button>
+<body class="fantasy-bg">
+  <div class="main-content">
+    <div class="fantasy-header">
+      <h1 class="fantasy-title">Dream Ranking</h1>
+      <div class="fantasy-timer">
+        <span class="timer-label">距离该周期结算还有</span>
+        <span id="fantasy-countdown" class="timer-value">00:00:00</span>
       </div>
     </div>
 
-    <table id="ranking-table" class="table table-striped table-hover mt-4 ranking-table">
-      <thead>
-        <tr>
-          <th>排名</th>
-          <th>玩家ID</th>
-          <th>分数</th>
-          <th>曲目</th>
-          <th>难度</th>
-          <th>时间</th>
-        </tr>
-      </thead>
-      <tbody></tbody>
-    </table>
-  </div>
+    <div class="fantasy-top1-row">
+      <div class="fantasy-top1-card" id="top1-0"></div>
+      <div class="fantasy-top1-card" id="top1-1"></div>
+      <div class="fantasy-top1-card" id="top1-2"></div>
+    </div>
 
+    <!-- 悬浮按钮 -->
+    <button id="floating-form-btn" class="fantasy-floating-btn">＋</button>
+
+    <!-- 填写成绩弹窗 -->
+    <div id="fantasy-modal-mask" class="fantasy-modal-mask" style="display:none;"></div>
+    <div id="fantasy-modal" class="fantasy-modal" style="display:none;">
+      <div class="fantasy-modal-content">
+        <button id="fantasy-modal-close" class="fantasy-modal-close">×</button>
+        <h2 class="fantasy-modal-title">填写新成绩</h2>
+        <form id="record-form" class="fantasy-form">
+          <input id="player" class="fantasy-input" placeholder="玩家ID" required />
+          <input id="score" type="number" min="0" max="101" step="0.01" class="fantasy-input" placeholder="分数"
+            required />
+          <div class="apfc-checkbox-group">
+            <div class="apfc-label-title">分数属性：</div>
+            <label class="apfc-label"><input type="checkbox" id="ap-checkbox" /> AP</label>
+            <label class="apfc-label"><input type="checkbox" id="fc-checkbox" /> FC</label>
+          </div>
+          <select id="song" class="fantasy-select"></select>
+          <div class="fantasy-diff-group">
+            <select id="difficulty" class="fantasy-select">
+              <option value="Master">Master</option>
+              <option value="Expert">Expert</option>
+            </select>
+          </div>
+          <button type="submit" class="fantasy-btn-submit">提交</button>
+        </form>
+        <div class="fantasy-form-actions">
+          <button id="clear" class="fantasy-btn-warning">清空记录</button>
+          <button id="export" class="fantasy-btn-success">导出 CSV</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="fantasy-ranking-panel">
+      <table id="ranking-table" class="fantasy-table">
+        <thead>
+          <tr>
+            <th>排名</th>
+            <th>玩家ID</th>
+            <th>分数</th>
+            <th>曲目</th>
+            <th>难度</th>
+            <th>时间</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+    <!-- 历史结算表会由JS自动插入 -->
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
+
 </html>
