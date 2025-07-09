@@ -15,6 +15,7 @@ let form, playerInput, scoreInput, songSelect, diffSelect;
 let clearBtn, exportBtn, tableBody;
 let floatingBtn, modal, modalMask, modalClose;
 let apCheckbox, fcCheckbox;
+let songFilter;
 
 function initializeElements() {
     form = document.getElementById('record-form');
@@ -33,11 +34,13 @@ function initializeElements() {
     
     apCheckbox = document.getElementById('ap-checkbox');
     fcCheckbox = document.getElementById('fc-checkbox');
+    songFilter = document.getElementById('song-filter');
     
     // 绑定事件
     if (floatingBtn) floatingBtn.addEventListener('click', openModal);
     if (modalClose) modalClose.addEventListener('click', closeModal);
     if (modalMask) modalMask.addEventListener('click', closeModal);
+    if (songFilter) songFilter.addEventListener('change', handleSongFilter);
 }
 
 function getCurrentHourCycle(now = new Date()) {
@@ -144,7 +147,8 @@ function addRecord(playerId, score, song, diff, ap, fc) {
     let replaced = false;
     for (let i = 0; i < records.length; i++) {
         const r = records[i];
-        if (r.playerId === playerId && r.song === song) {
+        // 修改判断逻辑：同一玩家的同一首歌的同一难度才会覆盖
+        if (r.playerId === playerId && r.song === song && r.diff === diff) {
             if (score > r.score) {
                 records[i] = { playerId, score, song, diff, ap, fc, time: now };
             }
@@ -160,7 +164,7 @@ function addRecord(playerId, score, song, diff, ap, fc) {
     backupAllRecords();
     // 更新显示
     renderCycleInfo();
-    renderTable(loadRecords());
+    renderTable(getFilteredRecords());
     renderTop1s();
     renderTotalTop1();
     return records;
@@ -173,16 +177,28 @@ function clearRecords() {
     console.log('记录已清空');
 }
 
-function deleteRecord(index) {
+function deleteRecord(targetRecord) {
     const records = loadRecords();
     console.log('删除前的记录数量:', records.length);
-    console.log('删除索引:', index);
-    if (index >= 0 && index < records.length) {
-        const deleted = records.splice(index, 1);
+    console.log('要删除的记录:', targetRecord);
+    
+    // 通过记录的所有属性匹配来找到要删除的记录
+    const indexToDelete = records.findIndex(r => 
+        r.playerId === targetRecord.playerId && 
+        r.song === targetRecord.song && 
+        r.diff === targetRecord.diff &&
+        r.score === targetRecord.score &&
+        r.time === targetRecord.time
+    );
+    
+    if (indexToDelete !== -1) {
+        const deleted = records.splice(indexToDelete, 1);
         console.log('已删除的记录:', deleted);
         saveRecords(records);
         backupAllRecords();
         console.log('删除后的记录数量:', records.length);
+    } else {
+        console.log('未找到要删除的记录');
     }
     return records;
 }
@@ -213,12 +229,12 @@ function renderTable(records) {
                 deleteIcon.className = 'delete-icon';
                 deleteIcon.onclick = (e) => {
                     e.stopPropagation();
-                    console.log('删除按钮被点击，索引:', idx);
+                    console.log('删除按钮被点击，记录:', r);
                     if (confirm('确定要删除这条记录吗？')) {
                         console.log('用户确认删除');
-                        const updatedRecords = deleteRecord(idx);
+                        const updatedRecords = deleteRecord(r);
                         console.log('删除后的记录:', updatedRecords);
-                        renderTable(updatedRecords);
+                        renderTable(getFilteredRecords());
                         renderTop1s();
                         renderTotalTop1();
                     }
@@ -229,6 +245,14 @@ function renderTable(records) {
                 td.appendChild(scoreContainer);
             } else {
                 td.textContent = v;
+                // 为难度列添加特殊样式
+                if (colIdx === 4) { // 难度列
+                    if (v === 'Master') {
+                        td.classList.add('diff-master');
+                    } else if (v === 'Expert') {
+                        td.classList.add('diff-expert');
+                    }
+                }
             }
             
             tr.appendChild(td);
@@ -258,7 +282,7 @@ function addClearAllButton() {
                 clearRecords();
                 const emptyRecords = loadRecords(); // 重新加载确保为空
                 console.log('清空后的记录:', emptyRecords);
-                renderTable(emptyRecords);
+                renderTable(getFilteredRecords());
                 renderTop1s();
                 renderTotalTop1();
             }
@@ -293,23 +317,26 @@ function getTop1s() {
         const songRecords = records.filter(r => r.song === song);
         if (songRecords.length === 0) return null;
         
-        // 优先显示Master难度的最高分
-        const masterRecords = songRecords.filter(r => r.diff === 'Master');
-        if (masterRecords.length > 0) {
-            masterRecords.sort((a, b) => b.score - a.score);
-            return masterRecords[0];
-        }
+        // 按调整后的分数排序（Expert * 0.965）
+        const adjustedRecords = songRecords.map(r => ({
+            ...r,
+            adjustedScore: r.diff === 'Expert' ? r.score * 0.965 : r.score
+        }));
         
-        // 如果没有Master难度，显示Expert难度的最高分
-        const expertRecords = songRecords.filter(r => r.diff === 'Expert');
-        if (expertRecords.length > 0) {
-            expertRecords.sort((a, b) => b.score - a.score);
-            return expertRecords[0];
-        }
+        // 按调整后的分数排序，选择最高的
+        adjustedRecords.sort((a, b) => b.adjustedScore - a.adjustedScore);
         
-        // 其他难度的最高分
-        songRecords.sort((a, b) => b.score - a.score);
-        return songRecords[0];
+        // 返回原始记录（不含adjustedScore字段）
+        const topRecord = adjustedRecords[0];
+        return {
+            playerId: topRecord.playerId,
+            score: topRecord.score,
+            song: topRecord.song,
+            diff: topRecord.diff,
+            ap: topRecord.ap,
+            fc: topRecord.fc,
+            time: topRecord.time
+        };
     });
     return tops;
 }
@@ -343,6 +370,14 @@ function renderTop1s() {
                     <div class='top1-diff'>${r.diff}</div>
                     <div class='top1-time'>${r.time}</div>
                 </div>`;
+            
+            // 为难度元素添加样式类
+            const diffElement = el.querySelector('.top1-diff');
+            if (diffElement && r.diff === 'Master') {
+                diffElement.classList.add('diff-master');
+            } else if (diffElement && r.diff === 'Expert') {
+                diffElement.classList.add('diff-expert');
+            }
         }
     });
 }
@@ -356,6 +391,34 @@ function setupSongSelect() {
         opt.textContent = s;
         songSelect.appendChild(opt);
     });
+}
+
+function setupSongFilter() {
+    if (!songFilter) return;
+    // 保留默认的"显示所有歌曲"选项，添加具体歌曲选项
+    const currentValue = songFilter.value;
+    songFilter.innerHTML = '<option value="all">显示所有歌曲</option>';
+    SONGS.forEach(s => {
+        const opt = document.createElement('option');
+        opt.value = s;
+        opt.textContent = s;
+        songFilter.appendChild(opt);
+    });
+    // 恢复之前的选择
+    if (currentValue) songFilter.value = currentValue;
+}
+
+function getFilteredRecords() {
+    const records = loadRecords();
+    if (!songFilter || songFilter.value === 'all') {
+        return records;
+    }
+    return records.filter(r => r.song === songFilter.value);
+}
+
+function handleSongFilter() {
+    const filteredRecords = getFilteredRecords();
+    renderTable(filteredRecords);
 }
 
 function openModal() {
@@ -389,7 +452,7 @@ function openModal() {
             const ap = apCheckbox.checked;
             const fc = fcCheckbox.checked;
             const records = addRecord(player, score, song, diff, ap, fc);
-            renderTable(records);
+            renderTable(getFilteredRecords());
             renderTop1s();
             renderTotalTop1();
             form.reset();
@@ -406,7 +469,7 @@ function openModal() {
                 clearRecords();
                 const emptyRecords = loadRecords(); // 重新加载确保为空
                 console.log('清空后的记录（模态框）:', emptyRecords);
-                renderTable(emptyRecords);
+                renderTable(getFilteredRecords());
                 renderTop1s();
                 renderTotalTop1();
             }
@@ -454,7 +517,9 @@ function getTotalRanking(records) {
         if (!map[r.playerId]) {
             map[r.playerId] = { score: 0, apCount: 0, fcCount: 0, details: [] };
         }
-        map[r.playerId].score += r.score;
+        // Expert难度分数按96.5%计算
+        const adjustedScore = r.diff === 'Expert' ? r.score * 0.965 : r.score;
+        map[r.playerId].score += adjustedScore;
         if (r.ap) map[r.playerId].apCount++;
         if (r.fc) map[r.playerId].fcCount++;
         map[r.playerId].details.push(r);
@@ -476,7 +541,10 @@ function renderTotalTop1() {
     const records = loadRecords();
     const totalRank = getTotalRanking(records);
     if (totalRank.length === 0) {
-        container.innerHTML = `<div class="total-top1-empty">本周期暂无总分记录</div>`;
+        container.innerHTML = `
+            <div class="total-top1-empty">本周期暂无总分记录</div>
+            <div class="score-calculation-note-total">总分计算：<span class="diff-expert-note-total">Expert</span> 难度分数 × 0.965</div>
+        `;
         return;
     }
     const top = totalRank[0];
@@ -491,6 +559,7 @@ function renderTotalTop1() {
         <span class="total-top1-score">${top.score.toFixed(2)}</span>
         ${badge}
       </div>
+      <div class="score-calculation-note-total">总分计算：<span class="diff-expert-note-total">Expert</span> 难度分数 × 0.965</div>
     `;
 }
 
@@ -592,7 +661,8 @@ function renderFinalHistory() {
 
 window.addEventListener('DOMContentLoaded', () => {
     initializeElements();
-    renderTable(loadRecords());
+    setupSongFilter();
+    renderTable(getFilteredRecords());
     renderTop1s();
     renderTotalTop1();
     updateFantasyCountdown();

@@ -12,7 +12,7 @@
 <body class="fantasy-bg">
   <div class="main-content">
     <div class="fantasy-header">
-      <h1 class="fantasy-title">Dream Ranking</h1>
+      <h1 class="fantasy-title">Majplay Challenge</h1>
       <div class="fantasy-timer">
         <span class="timer-label">距离该周期结算还有</span>
         <span id="fantasy-countdown" class="timer-value">00:00:00</span>
@@ -60,6 +60,12 @@
     </div>
 
     <div class="fantasy-ranking-panel">
+      <div class="song-filter-container">
+        <label for="song-filter" class="filter-label">曲目筛选：</label>
+        <select id="song-filter" class="fantasy-select song-filter">
+          <option value="all">显示所有歌曲</option>
+        </select>
+      </div>
       <table id="ranking-table" class="fantasy-table">
         <thead>
           <tr>
