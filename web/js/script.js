@@ -2,11 +2,13 @@ const cycleMinutes = 60;
 const practiceMinutes = 90;
 const cycleHours = 1; // 添加缺失的变量
 
-const SONGS = [
-    'Ποσειδών (Poseidon)',
-    '月下繚乱',
-    'Transcend My Love',
+const CHALLENGE_SONGS = [
+    { title: 'Sempre Vivacissimo', artist: 'Polymath9', cover: 'cover1.png' },
+    { title: 'AYO WTF', artist: 'Normal1zer as "Art Of Kickz"', cover: 'cover2.png' },
 ];
+
+const SONGS = CHALLENGE_SONGS.map(s => s.title);
+const SONG_SET = new Set(SONGS);
 
 const DIFFICULTIES = ['Expert', 'Master'];
 
@@ -15,7 +17,7 @@ let form, playerInput, scoreInput, songSelect, diffSelect;
 let clearBtn, exportBtn, tableBody;
 let floatingBtn, modal, modalMask, modalClose;
 let apCheckbox, fcCheckbox;
-let songFilter;
+let songFilter, diffFilter;
 
 function initializeElements() {
     form = document.getElementById('record-form');
@@ -35,12 +37,14 @@ function initializeElements() {
     apCheckbox = document.getElementById('ap-checkbox');
     fcCheckbox = document.getElementById('fc-checkbox');
     songFilter = document.getElementById('song-filter');
+    diffFilter = document.getElementById('diff-filter');
     
     // 绑定事件
     if (floatingBtn) floatingBtn.addEventListener('click', openModal);
     if (modalClose) modalClose.addEventListener('click', closeModal);
     if (modalMask) modalMask.addEventListener('click', closeModal);
-    if (songFilter) songFilter.addEventListener('change', handleSongFilter);
+    if (songFilter) songFilter.addEventListener('change', handleFilter);
+    if (diffFilter) diffFilter.addEventListener('change', handleFilter);
 }
 
 function getCurrentHourCycle(now = new Date()) {
@@ -119,7 +123,19 @@ function getCurrentCycleKey(date = new Date()) {
 
 function loadRecords() {
     const data = localStorage.getItem('records');
-    return data ? JSON.parse(data) : [];
+    const records = data ? JSON.parse(data) : [];
+    return records.filter(r => SONG_SET.has(r.song));
+}
+
+function sanitizeRecords() {
+    const data = localStorage.getItem('records');
+    if (!data) return;
+    const records = JSON.parse(data);
+    const filtered = records.filter(r => SONG_SET.has(r.song));
+    if (filtered.length !== records.length) {
+        saveRecords(filtered);
+        backupAllRecords();
+    }
 }
 
 function saveRecords(records) {
@@ -142,6 +158,10 @@ function backupAllRecords() {
 }
 
 function addRecord(playerId, score, song, diff, ap, fc) {
+    if (!SONG_SET.has(song)) {
+        alert('无效的曲目');
+        return loadRecords();
+    }
     const now = new Date().toISOString().replace('T', ' ').slice(0, 19);
     const records = loadRecords();
     let replaced = false;
@@ -317,10 +337,10 @@ function getTop1s() {
         const songRecords = records.filter(r => r.song === song);
         if (songRecords.length === 0) return null;
         
-        // 按调整后的分数排序（Expert * 0.965）
+        // 按调整后的分数排序（Expert * 0.98）
         const adjustedRecords = songRecords.map(r => ({
             ...r,
-            adjustedScore: r.diff === 'Expert' ? r.score * 0.965 : r.score
+            adjustedScore: r.diff === 'Expert' ? r.score * 0.98 : r.score
         }));
         
         // 按调整后的分数排序，选择最高的
@@ -343,28 +363,28 @@ function getTop1s() {
 
 function renderTop1s() {
     const tops = getTop1s();
-    const coverImages = ['cover1.png', 'cover2.png', 'cover3.png'];
     
     tops.forEach((r, idx) => {
+        const song = CHALLENGE_SONGS[idx];
         const el = document.getElementById(`top1-${idx}`);
         if (!el) return;
         
         const coverHtml = `<div class='top1-cover'>
-            <img src="assets/${coverImages[idx]}" alt="${SONGS[idx]} Cover" class="cover-image" />
+            <img src="assets/${song.cover}" alt="${song.title} Cover" class="cover-image" />
         </div>`;
         
         if (!r) {
-            // 没有记录时只显示封面和歌曲名
             el.innerHTML = `${coverHtml}
                 <div class="top1-content">
-                    <div class='top1-title'>${SONGS[idx]}</div>
+                    <div class='top1-title'>${song.title}</div>
+                    <div class='top1-artist'>${song.artist}</div>
                     <div class='top1-empty'>暂无记录</div>
                 </div>`;
         } else {
-            // 有记录时显示完整信息
             el.innerHTML = `${coverHtml}
                 <div class="top1-content">
-                    <div class='top1-title'>${SONGS[idx]}</div>
+                    <div class='top1-title'>${song.title}</div>
+                    <div class='top1-artist'>${song.artist}</div>
                     <div class='top1-score'>${r.score.toFixed(2)}</div>
                     <div class='top1-player'>${r.playerId}</div>
                     <div class='top1-diff'>${r.diff}</div>
@@ -410,15 +430,18 @@ function setupSongFilter() {
 
 function getFilteredRecords() {
     const records = loadRecords();
-    if (!songFilter || songFilter.value === 'all') {
-        return records;
-    }
-    return records.filter(r => r.song === songFilter.value);
+    const songValue = songFilter ? songFilter.value : 'all';
+    const diffValue = diffFilter ? diffFilter.value : 'all';
+    
+    return records.filter(r => {
+        const songMatch = songValue === 'all' || r.song === songValue;
+        const diffMatch = diffValue === 'all' || r.diff === diffValue;
+        return songMatch && diffMatch;
+    });
 }
 
-function handleSongFilter() {
-    const filteredRecords = getFilteredRecords();
-    renderTable(filteredRecords);
+function handleFilter() {
+    renderTable(getFilteredRecords());
 }
 
 function openModal() {
@@ -511,20 +534,48 @@ function renderCycleInfo() {
 }
 
 function getTotalRanking(records) {
-    // {playerId: {score, apCount, fcCount, details:[]}}
+    // {playerId: {songBest: {song: {adjustedScore, raw}}, apCount, fcCount, details:[]}}
     const map = {};
-    records.forEach(r => {
+    records.filter(r => SONG_SET.has(r.song)).forEach(r => {
         if (!map[r.playerId]) {
-            map[r.playerId] = { score: 0, apCount: 0, fcCount: 0, details: [] };
+            map[r.playerId] = { songBest: {}, apCount: 0, fcCount: 0, details: [] };
         }
         // Expert难度分数按96.5%计算
-        const adjustedScore = r.diff === 'Expert' ? r.score * 0.965 : r.score;
-        map[r.playerId].score += adjustedScore;
+        const adjustedScore = r.diff === 'Expert' ? r.score * 0.98 : r.score;
+        // 统计AP/FC
         if (r.ap) map[r.playerId].apCount++;
         if (r.fc) map[r.playerId].fcCount++;
         map[r.playerId].details.push(r);
+        
+        // 只保留每首歌最高权重分（Master和Expert只能取一个）
+        const song = r.song;
+        if (!map[r.playerId].songBest[song] || adjustedScore > map[r.playerId].songBest[song].adjustedScore) {
+            map[r.playerId].songBest[song] = { adjustedScore, raw: r };
+        }
     });
-    const arr = Object.entries(map).map(([playerId, v]) => ({ playerId, ...v }));
+    
+    // 只取每人当前挑战曲的最高分相加
+    const arr = Object.entries(map).map(([playerId, v]) => {
+        const bestArr = SONGS
+            .map(song => v.songBest[song])
+            .filter(Boolean)
+            .sort((a, b) => b.adjustedScore - a.adjustedScore);
+        const score = bestArr.reduce((sum, item) => sum + item.adjustedScore, 0);
+        return { 
+            playerId, 
+            score, 
+            apCount: v.apCount, 
+            fcCount: v.fcCount, 
+            details: v.details,
+            // 添加用于调试的最高分歌曲信息
+            bestSongs: bestArr.map(item => ({
+                song: item.raw.song,
+                diff: item.raw.diff,
+                rawScore: item.raw.score,
+                adjustedScore: item.adjustedScore
+            }))
+        };
+    });
     arr.sort((a, b) => b.score - a.score);
     return arr;
 }
@@ -543,15 +594,15 @@ function renderTotalTop1() {
     if (totalRank.length === 0) {
         container.innerHTML = `
             <div class="total-top1-empty">本周期暂无总分记录</div>
-            <div class="score-calculation-note-total">总分计算：<span class="diff-expert-note-total">Expert</span> 难度分数 × 0.965</div>
+            <div class="score-calculation-note-total">总分计算：<span class="diff-expert-note-total">Expert</span> 难度分数 × 0.98</div>
         `;
         return;
     }
     const top = totalRank[0];
     // AP/FC徽章
     let badge = '';
-    if (top.apCount === 3) badge = '<span class="total-ap-badge">APx3</span>';
-    else if (top.fcCount === 3) badge = '<span class="total-fc-badge">FCx3</span>';
+    if (top.apCount === SONGS.length) badge = `<span class="total-ap-badge">APx${SONGS.length}</span>`;
+    else if (top.fcCount === SONGS.length) badge = `<span class="total-fc-badge">FCx${SONGS.length}</span>`;
     container.innerHTML = `
       <div class="total-top1-title">本周期总分TOP1</div>
       <div class="total-top1-info">
@@ -559,7 +610,7 @@ function renderTotalTop1() {
         <span class="total-top1-score">${top.score.toFixed(2)}</span>
         ${badge}
       </div>
-      <div class="score-calculation-note-total">总分计算：<span class="diff-expert-note-total">Expert</span> 难度分数 × 0.965</div>
+      <div class="score-calculation-note-total">总分计算：<span class="diff-expert-note-total">Expert</span> 难度分数 × 0.98</div>
     `;
 }
 
@@ -660,6 +711,7 @@ function renderFinalHistory() {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
+    sanitizeRecords();
     initializeElements();
     setupSongFilter();
     renderTable(getFilteredRecords());

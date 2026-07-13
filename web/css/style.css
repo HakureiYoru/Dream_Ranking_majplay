@@ -207,8 +207,16 @@ body.fantasy-bg::after {
     font-size: 1.2rem;
     font-weight: bold;
     color: #88D9FF;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.2rem;
     letter-spacing: 0.08em;
+}
+
+.top1-artist {
+    font-size: 0.85rem;
+    color: #BFAFFF;
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.03em;
+    opacity: 0.9;
 }
 
 .top1-score {
@@ -1149,18 +1157,26 @@ body.fantasy-bg::after {
     }
 }
 
-/* 歌曲过滤器样式 */
-.song-filter-container {
+/* 过滤器样式 */
+.filter-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: 2rem;
     margin-bottom: 1.5rem;
     padding: 1rem 2rem;
     background: rgba(48, 46, 82, 0.6);
     border-radius: 1.5rem;
     backdrop-filter: blur(10px);
     border: 1.5px solid #88D9FF33;
+}
+
+.song-filter-container,
+.diff-filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
 }
 
 .filter-label {
@@ -1170,7 +1186,8 @@ body.fantasy-bg::after {
     letter-spacing: 0.05em;
 }
 
-.song-filter {
+.song-filter,
+.diff-filter {
     min-width: 200px;
     font-size: 1rem;
 }

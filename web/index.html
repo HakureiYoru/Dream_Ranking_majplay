@@ -22,7 +22,6 @@
     <div class="fantasy-top1-row">
       <div class="fantasy-top1-card" id="top1-0"></div>
       <div class="fantasy-top1-card" id="top1-1"></div>
-      <div class="fantasy-top1-card" id="top1-2"></div>
     </div>
 
     <!-- 悬浮按钮 -->
@@ -59,12 +58,22 @@
       </div>
     </div>
 
-    <div class="fantasy-ranking-panel">
-      <div class="song-filter-container">
-        <label for="song-filter" class="filter-label">曲目筛选：</label>
-        <select id="song-filter" class="fantasy-select song-filter">
-          <option value="all">显示所有歌曲</option>
-        </select>
+          <div class="fantasy-ranking-panel">
+      <div class="filter-container">
+        <div class="song-filter-container">
+          <label for="song-filter" class="filter-label">曲目筛选：</label>
+          <select id="song-filter" class="fantasy-select song-filter">
+            <option value="all">显示所有歌曲</option>
+          </select>
+        </div>
+        <div class="diff-filter-container">
+          <label for="diff-filter" class="filter-label">难度筛选：</label>
+          <select id="diff-filter" class="fantasy-select diff-filter">
+            <option value="all">显示所有难度</option>
+            <option value="Master">Master</option>
+            <option value="Expert">Expert</option>
+          </select>
+        </div>
       </div>
       <table id="ranking-table" class="fantasy-table">
         <thead>
