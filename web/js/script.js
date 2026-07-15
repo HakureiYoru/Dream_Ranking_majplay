@@ -14,10 +14,9 @@ const DIFFICULTIES = ['Expert', 'Master'];
 
 // DOM元素获取（页面加载后再获取）
 let form, playerInput, scoreInput, songSelect, diffSelect;
-let clearBtn, exportBtn, tableBody;
+let clearBtn, exportBtn;
 let floatingBtn, modal, modalMask, modalClose;
 let apCheckbox, fcCheckbox;
-let songFilter, diffFilter;
 
 function initializeElements() {
     form = document.getElementById('record-form');
@@ -27,7 +26,6 @@ function initializeElements() {
     diffSelect = document.getElementById('difficulty');
     clearBtn = document.getElementById('clear');
     exportBtn = document.getElementById('export');
-    tableBody = document.querySelector('#ranking-table tbody');
     
     floatingBtn = document.getElementById('floating-form-btn');
     modal = document.getElementById('fantasy-modal');
@@ -36,15 +34,11 @@ function initializeElements() {
     
     apCheckbox = document.getElementById('ap-checkbox');
     fcCheckbox = document.getElementById('fc-checkbox');
-    songFilter = document.getElementById('song-filter');
-    diffFilter = document.getElementById('diff-filter');
     
     // 绑定事件
     if (floatingBtn) floatingBtn.addEventListener('click', openModal);
     if (modalClose) modalClose.addEventListener('click', closeModal);
     if (modalMask) modalMask.addEventListener('click', closeModal);
-    if (songFilter) songFilter.addEventListener('change', handleFilter);
-    if (diffFilter) diffFilter.addEventListener('change', handleFilter);
 }
 
 function getCurrentHourCycle(now = new Date()) {
@@ -75,10 +69,9 @@ function updateFantasyCountdown() {
     const s = seconds % 60;
     const timeStr = `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
     fantasyCountdown.textContent = timeStr;
-    // 动态渐变动画效果
-    fantasyCountdown.style.background = `linear-gradient(90deg, #a18cd1 ${(1-seconds/3600)*100}%, #fbc2eb 100%)`;
-    fantasyCountdown.style.webkitBackgroundClip = 'text';
-    fantasyCountdown.style.webkitTextFillColor = 'transparent';
+    fantasyCountdown.style.removeProperty('background');
+    fantasyCountdown.style.removeProperty('-webkit-background-clip');
+    fantasyCountdown.style.removeProperty('-webkit-text-fill-color');
 }
 
 function getCurrentCycleRange(now = new Date()) {
@@ -184,7 +177,7 @@ function addRecord(playerId, score, song, diff, ap, fc) {
     backupAllRecords();
     // 更新显示
     renderCycleInfo();
-    renderTable(getFilteredRecords());
+    renderRankingTables();
     renderTop1s();
     renderTotalTop1();
     return records;
@@ -223,15 +216,33 @@ function deleteRecord(targetRecord) {
     return records;
 }
 
-function renderTable(records) {
+function formatTimeOnly(value) {
+    if (!value) return '';
+    const match = String(value).match(/(\d{2}:\d{2}:\d{2})/);
+    return match ? match[1] : String(value);
+}
+
+function renderTable(records, tableBody) {
     if (!tableBody) return;
     tableBody.innerHTML = '';
+    if (records.length === 0) {
+        const tr = document.createElement('tr');
+        const td = document.createElement('td');
+        td.colSpan = 4;
+        td.className = 'ranking-empty';
+        td.textContent = '暂无记录';
+        tr.appendChild(td);
+        tableBody.appendChild(tr);
+        return;
+    }
     records.forEach((r, idx) => {
         const tr = document.createElement('tr');
-        const vals = [idx + 1, r.playerId, r.score.toFixed(2), r.song, r.diff, r.time];
+        tr.title = `提交时间：${r.time}`;
+        const vals = [idx + 1, r.playerId, r.score.toFixed(2), r.diff];
+        const colClasses = ['rank-col', 'player-col', 'score-col', 'diff-col'];
         vals.forEach((v, colIdx) => {
             const td = document.createElement('td');
-            td.classList.add('text-center');
+            td.classList.add('text-center', colClasses[colIdx]);
             
             // 分数栏特殊处理：添加垃圾桶图标
             if (colIdx === 2) {
@@ -254,7 +265,7 @@ function renderTable(records) {
                         console.log('用户确认删除');
                         const updatedRecords = deleteRecord(r);
                         console.log('删除后的记录:', updatedRecords);
-                        renderTable(getFilteredRecords());
+                        renderRankingTables();
                         renderTop1s();
                         renderTotalTop1();
                     }
@@ -265,8 +276,11 @@ function renderTable(records) {
                 td.appendChild(scoreContainer);
             } else {
                 td.textContent = v;
+                if (colIdx === 1) {
+                    td.title = r.playerId;
+                }
                 // 为难度列添加特殊样式
-                if (colIdx === 4) { // 难度列
+                if (colIdx === 3) { // 难度列
                     if (v === 'Master') {
                         td.classList.add('diff-master');
                     } else if (v === 'Expert') {
@@ -279,36 +293,13 @@ function renderTable(records) {
         });
         tableBody.appendChild(tr);
     });
-    
-    // 添加表格右下角的清空按钮
-    addClearAllButton();
 }
 
-function addClearAllButton() {
-    const rankingPanel = document.querySelector('.fantasy-ranking-panel');
-    if (!rankingPanel) return;
-    
-    let clearAllBtn = document.getElementById('clear-all-btn');
-    if (!clearAllBtn) {
-        clearAllBtn = document.createElement('button');
-        clearAllBtn.id = 'clear-all-btn';
-        clearAllBtn.className = 'clear-all-btn';
-        clearAllBtn.innerHTML = '🗑️';
-        clearAllBtn.title = '清空所有记录';
-        clearAllBtn.onclick = () => {
-            console.log('清空按钮被点击');
-            if (confirm('确定要清空所有记录吗？此操作不可恢复！')) {
-                console.log('用户确认清空');
-                clearRecords();
-                const emptyRecords = loadRecords(); // 重新加载确保为空
-                console.log('清空后的记录:', emptyRecords);
-                renderTable(getFilteredRecords());
-                renderTop1s();
-                renderTotalTop1();
-            }
-        };
-        rankingPanel.appendChild(clearAllBtn);
-    }
+function renderRankingTables() {
+    SONGS.forEach((song, idx) => {
+        const tableBody = document.querySelector(`#ranking-table-${idx} tbody`);
+        renderTable(getFilteredRecords(song), tableBody);
+    });
 }
 
 function exportCSV() {
@@ -329,6 +320,11 @@ function exportCSV() {
 function setupDifficulty() {
     if (!diffSelect) return;
     diffSelect.value = 'Master';
+}
+
+function setupDefaultScore() {
+    if (!scoreInput) return;
+    scoreInput.value = '100.5';
 }
 
 function getTop1s() {
@@ -388,7 +384,7 @@ function renderTop1s() {
                     <div class='top1-score'>${r.score.toFixed(2)}</div>
                     <div class='top1-player'>${r.playerId}</div>
                     <div class='top1-diff'>${r.diff}</div>
-                    <div class='top1-time'>${r.time}</div>
+                    <div class='top1-time'>${formatTimeOnly(r.time)}</div>
                 </div>`;
             
             // 为难度元素添加样式类
@@ -413,35 +409,13 @@ function setupSongSelect() {
     });
 }
 
-function setupSongFilter() {
-    if (!songFilter) return;
-    // 保留默认的"显示所有歌曲"选项，添加具体歌曲选项
-    const currentValue = songFilter.value;
-    songFilter.innerHTML = '<option value="all">显示所有歌曲</option>';
-    SONGS.forEach(s => {
-        const opt = document.createElement('option');
-        opt.value = s;
-        opt.textContent = s;
-        songFilter.appendChild(opt);
-    });
-    // 恢复之前的选择
-    if (currentValue) songFilter.value = currentValue;
-}
-
-function getFilteredRecords() {
+function getFilteredRecords(song = null) {
     const records = loadRecords();
-    const songValue = songFilter ? songFilter.value : 'all';
-    const diffValue = diffFilter ? diffFilter.value : 'all';
     
     return records.filter(r => {
-        const songMatch = songValue === 'all' || r.song === songValue;
-        const diffMatch = diffValue === 'all' || r.diff === diffValue;
-        return songMatch && diffMatch;
+        const songMatch = !song || r.song === song;
+        return songMatch;
     });
-}
-
-function handleFilter() {
-    renderTable(getFilteredRecords());
 }
 
 function openModal() {
@@ -451,6 +425,7 @@ function openModal() {
     
     setupSongSelect();
     setupDifficulty();
+    setupDefaultScore();
 
     // 解绑所有事件，防止重复绑定
     if (form) form.onsubmit = null;
@@ -475,11 +450,12 @@ function openModal() {
             const ap = apCheckbox.checked;
             const fc = fcCheckbox.checked;
             const records = addRecord(player, score, song, diff, ap, fc);
-            renderTable(getFilteredRecords());
+            renderRankingTables();
             renderTop1s();
             renderTotalTop1();
             form.reset();
             setupDifficulty();
+            setupDefaultScore();
             closeModal();
         };
     }
@@ -492,7 +468,7 @@ function openModal() {
                 clearRecords();
                 const emptyRecords = loadRecords(); // 重新加载确保为空
                 console.log('清空后的记录（模态框）:', emptyRecords);
-                renderTable(getFilteredRecords());
+                renderRankingTables();
                 renderTop1s();
                 renderTotalTop1();
             }
@@ -540,7 +516,7 @@ function getTotalRanking(records) {
         if (!map[r.playerId]) {
             map[r.playerId] = { songBest: {}, apCount: 0, fcCount: 0, details: [] };
         }
-        // Expert难度分数按96.5%计算
+        // Expert难度分数按98%计算
         const adjustedScore = r.diff === 'Expert' ? r.score * 0.98 : r.score;
         // 统计AP/FC
         if (r.ap) map[r.playerId].apCount++;
@@ -713,8 +689,7 @@ function renderFinalHistory() {
 window.addEventListener('DOMContentLoaded', () => {
     sanitizeRecords();
     initializeElements();
-    setupSongFilter();
-    renderTable(getFilteredRecords());
+    renderRankingTables();
     renderTop1s();
     renderTotalTop1();
     updateFantasyCountdown();
@@ -728,12 +703,10 @@ window.addEventListener('DOMContentLoaded', () => {
     if (timerDiv && !document.getElementById('settle-btn')) {
         const btn = document.createElement('button');
         btn.id = 'settle-btn';
-        btn.className = 'fantasy-btn-submit';
-        btn.style.margin = '1.2rem auto 0 auto';
-        btn.style.display = 'block';
+        btn.className = 'fantasy-btn-submit settle-btn';
         btn.innerText = '结算';
         btn.onclick = settleCurrentCycle;
-        timerDiv.parentNode.insertBefore(btn, timerDiv.nextSibling);
+        timerDiv.appendChild(btn);
     }
     
     // 渲染历史结算表

@@ -35,7 +35,7 @@
         <h2 class="fantasy-modal-title">填写新成绩</h2>
         <form id="record-form" class="fantasy-form">
           <input id="player" class="fantasy-input" placeholder="玩家ID" required />
-          <input id="score" type="number" min="0" max="101" step="0.01" class="fantasy-input" placeholder="分数"
+          <input id="score" type="number" min="0" max="101" step="0.01" value="100.5" class="fantasy-input" placeholder="分数"
             required />
           <div class="apfc-checkbox-group">
             <div class="apfc-label-title">分数属性：</div>
@@ -58,37 +58,45 @@
       </div>
     </div>
 
-          <div class="fantasy-ranking-panel">
-      <div class="filter-container">
-        <div class="song-filter-container">
-          <label for="song-filter" class="filter-label">曲目筛选：</label>
-          <select id="song-filter" class="fantasy-select song-filter">
-            <option value="all">显示所有歌曲</option>
-          </select>
+    <section class="rankings-section">
+      <div class="song-rankings-grid">
+        <div class="fantasy-ranking-panel song-ranking-panel">
+          <div class="song-ranking-header">
+            <div class="song-ranking-title">Sempre Vivacissimo</div>
+            <div class="song-ranking-subtitle">Polymath9</div>
+          </div>
+          <table id="ranking-table-0" class="fantasy-table song-ranking-table" data-song-index="0">
+            <thead>
+              <tr>
+                <th class="rank-col">排名</th>
+                <th class="player-col">玩家ID</th>
+                <th class="score-col">分数</th>
+                <th class="diff-col">难度</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
         </div>
-        <div class="diff-filter-container">
-          <label for="diff-filter" class="filter-label">难度筛选：</label>
-          <select id="diff-filter" class="fantasy-select diff-filter">
-            <option value="all">显示所有难度</option>
-            <option value="Master">Master</option>
-            <option value="Expert">Expert</option>
-          </select>
+
+        <div class="fantasy-ranking-panel song-ranking-panel">
+          <div class="song-ranking-header">
+            <div class="song-ranking-title">AYO WTF</div>
+            <div class="song-ranking-subtitle">Normal1zer as "Art Of Kickz"</div>
+          </div>
+          <table id="ranking-table-1" class="fantasy-table song-ranking-table" data-song-index="1">
+            <thead>
+              <tr>
+                <th class="rank-col">排名</th>
+                <th class="player-col">玩家ID</th>
+                <th class="score-col">分数</th>
+                <th class="diff-col">难度</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
         </div>
       </div>
-      <table id="ranking-table" class="fantasy-table">
-        <thead>
-          <tr>
-            <th>排名</th>
-            <th>玩家ID</th>
-            <th>分数</th>
-            <th>曲目</th>
-            <th>难度</th>
-            <th>时间</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
+    </section>
     <!-- 历史结算表会由JS自动插入 -->
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
