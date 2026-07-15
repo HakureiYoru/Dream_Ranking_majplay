@@ -176,6 +176,66 @@ button {
     margin: 18px 0 22px;
 }
 
+.song-board-panel {
+    width: 100%;
+    margin: 18px 0 24px;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.song-board-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.song-board-column {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    min-width: 0;
+    padding: 16px;
+}
+
+.song-board-column:first-child {
+    border-right: 1px solid rgba(242, 237, 227, 0.22);
+    box-shadow: 1px 0 12px rgba(242, 237, 227, 0.08);
+}
+
+.song-board-top.fantasy-top1-card {
+    min-height: 0;
+    margin: 0 0 12px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.song-board-top.fantasy-top1-card:hover {
+    transform: none;
+    border-color: transparent;
+    background: transparent;
+}
+
+.song-board-panel .song-ranking-table {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.song-board-panel .song-ranking-table thead th {
+    background: rgba(246, 241, 232, 0.06) !important;
+}
+
 .fantasy-top1-card {
     min-height: 216px;
     display: grid;
@@ -472,34 +532,10 @@ button {
     gap: 16px;
 }
 
-.fantasy-ranking-panel,
 .final-history-bar {
     width: 100%;
     margin: 0 0 24px;
     position: relative;
-}
-
-.song-ranking-panel {
-    margin-bottom: 0;
-}
-
-.song-ranking-header {
-    display: grid;
-    gap: 3px;
-    margin-bottom: 10px;
-}
-
-.song-ranking-title {
-    color: var(--text);
-    font-size: 1.05rem;
-    font-weight: 780;
-    line-height: 1.2;
-}
-
-.song-ranking-subtitle {
-    color: var(--text-muted);
-    font-size: 0.86rem;
-    line-height: 1.2;
 }
 
 .fantasy-table,
@@ -796,8 +832,15 @@ button {
         padding-top: 22px;
     }
 
-    .fantasy-top1-row {
+    .fantasy-top1-row,
+    .song-board-grid {
         grid-template-columns: 1fr;
+    }
+
+    .song-board-column:first-child {
+        border-right: none;
+        border-bottom: 1px solid rgba(242, 237, 227, 0.22);
+        box-shadow: 0 1px 12px rgba(242, 237, 227, 0.08);
     }
 
     .song-rankings-grid {
@@ -814,10 +857,20 @@ button {
         width: 100%;
     }
 
-    .fantasy-top1-card {
+    .fantasy-top1-card,
+    .song-board-top.fantasy-top1-card {
         grid-template-columns: 92px 1fr;
         min-height: 148px;
         gap: 12px;
+        padding: 12px;
+    }
+
+    .song-board-top.fantasy-top1-card {
+        padding: 0;
+        min-height: 0;
+    }
+
+    .song-board-column {
         padding: 12px;
     }
 
