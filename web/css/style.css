@@ -584,23 +584,42 @@ button {
 }
 
 .song-ranking-table .rank-col {
-    width: 12%;
+    width: 18%;
 }
 
 .song-ranking-table .player-col {
-    width: 31%;
+    width: 28%;
 }
 
 .song-ranking-table .score-col {
-    width: 35%;
+    width: 30%;
 }
 
 .song-ranking-table .diff-col {
-    width: 22%;
+    width: 24%;
+}
+
+.song-ranking-table thead th,
+.song-ranking-table tbody td {
+    padding: 11px 8px;
+}
+
+.song-ranking-table thead th {
+    overflow: visible;
+    text-overflow: clip;
+    white-space: nowrap;
+    font-size: 0.84rem;
+    letter-spacing: 0;
+}
+
+.song-ranking-table tbody td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .song-ranking-table td.score-col {
-    overflow: visible;
+    overflow: hidden;
 }
 
 .fantasy-table tbody tr,
@@ -897,7 +916,6 @@ button {
         grid-column: span 1;
     }
 
-    .fantasy-table,
     .final-history-table {
         display: block;
         overflow-x: auto;
