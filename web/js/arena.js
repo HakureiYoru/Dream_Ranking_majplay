@@ -82,6 +82,10 @@ function interactSumUrl(songId) {
     return `${state.apiRoot}/maichart/${encodeURIComponent(songId)}/interactsum`;
 }
 
+function interactUrl(songId) {
+    return `${state.apiRoot}/maichart/${encodeURIComponent(songId)}/interact`;
+}
+
 function accountIconUrl(username) {
     return `${state.apiRoot}/account/Icon?username=${encodeURIComponent(username || '')}`;
 }
@@ -170,6 +174,18 @@ function normalizeStats(source) {
     return hasAny ? stats : null;
 }
 
+function normalizeComments(comments) {
+    if (!Array.isArray(comments)) return [];
+    return comments
+        .map(comment => ({
+            sender: String(comment.sender || comment.username || comment.user || '').trim(),
+            content: String(comment.content || comment.text || comment.message || '').replace(/\s+/g, ' ').trim(),
+            timestamp: comment.timestamp || comment.time || ''
+        }))
+        .filter(comment => comment.content)
+        .slice(0, 3);
+}
+
 function normalizeSong(song) {
     const stats = normalizeStats(song.interactsum || song.interact || song.stats || song);
     return {
@@ -185,7 +201,8 @@ function normalizeSong(song) {
         hash: String(song.hash || ''),
         tags: Array.isArray(song.tags) ? song.tags : [],
         publicTags: Array.isArray(song.publicTags) ? song.publicTags : [],
-        stats
+        stats,
+        comments: normalizeComments(song.comments)
     };
 }
 
@@ -499,6 +516,7 @@ function setTopicFromSelected(event) {
         levelValue: level.value,
         targetScore: score,
         stats: song.stats,
+        comments: song.comments || [],
         note: refs.topicNote.value.trim(),
         createdAt: new Date().toISOString()
     };
@@ -517,9 +535,10 @@ async function refreshCurrentTopicDetails() {
     state.topicDetailsRequestKey = requestKey;
 
     try {
-        const [summaryResult, statsResult] = await Promise.allSettled([
+        const [summaryResult, statsResult, interactResult] = await Promise.allSettled([
             fetch(summaryUrl(topic.songId), { headers: { Accept: 'application/json' } }),
-            fetch(interactSumUrl(topic.songId), { headers: { Accept: 'application/json' } })
+            fetch(interactSumUrl(topic.songId), { headers: { Accept: 'application/json' } }),
+            fetch(interactUrl(topic.songId), { headers: { Accept: 'application/json' } })
         ]);
 
         if (state.topicDetailsRequestKey !== requestKey || !state.currentTopic) return;
@@ -542,6 +561,13 @@ async function refreshCurrentTopicDetails() {
         if (statsResult.status === 'fulfilled' && statsResult.value.ok) {
             const stats = normalizeStats(await statsResult.value.json());
             if (stats) updated.stats = stats;
+        }
+
+        if (interactResult.status === 'fulfilled' && interactResult.value.ok) {
+            const interact = await interactResult.value.json();
+            const stats = normalizeStats(interact);
+            if (stats) updated.stats = stats;
+            updated.comments = normalizeComments(interact.comments);
         }
 
         saveCurrentTopic(updated);
@@ -598,19 +624,41 @@ function renderCurrentTopic() {
 function renderTopicStats(stats) {
     const panel = createNode('aside', 'topic-stats-panel');
     panel.setAttribute('aria-label', '歌曲游玩数据');
+    const topic = state.currentTopic || {};
 
     [
         ['游玩次数', stats ? stats.plays : null],
         ['点赞数', stats ? stats.likes : null],
         ['评论数', stats ? stats.comments : null]
-    ].forEach(([label, value]) => {
-        const card = createNode('div', 'topic-stat-card');
+    ].forEach(([label, value], index) => {
+        const isCommentCard = index === 2;
+        const card = createNode('div', isCommentCard ? 'topic-stat-card topic-comments-card' : 'topic-stat-card');
         card.appendChild(createNode('div', 'topic-stat-label', label));
         card.appendChild(createNode('div', 'topic-stat-value', formatCount(value)));
+        if (isCommentCard) {
+            card.appendChild(renderCommentPreview(topic.comments || []));
+        }
         panel.appendChild(card);
     });
 
     return panel;
+}
+
+function renderCommentPreview(comments) {
+    const list = createNode('div', 'topic-comment-list');
+    if (!Array.isArray(comments) || comments.length === 0) {
+        list.appendChild(createNode('div', 'topic-comment-empty', '暂无评论'));
+        return list;
+    }
+
+    comments.slice(0, 3).forEach(comment => {
+        const item = createNode('div', 'topic-comment-item');
+        const sender = comment.sender ? `${comment.sender}: ` : '';
+        item.textContent = `${sender}${comment.content}`;
+        item.title = item.textContent;
+        list.appendChild(item);
+    });
+    return list;
 }
 
 function clearCurrentTopic() {

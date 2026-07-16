@@ -525,6 +525,11 @@
     border-radius: 8px;
 }
 
+.topic-comments-card {
+    align-content: start;
+    gap: 8px;
+}
+
 .topic-stat-label {
     color: rgba(246, 241, 232, 0.58);
     font-size: 0.78rem;
@@ -538,6 +543,38 @@
     font-weight: 850;
     line-height: 1.05;
     font-variant-numeric: tabular-nums;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.topic-comment-list {
+    display: grid;
+    gap: 6px;
+    min-width: 0;
+    max-height: 112px;
+    overflow: hidden;
+}
+
+.topic-comment-item,
+.topic-comment-empty {
+    min-width: 0;
+    color: rgba(246, 241, 232, 0.72);
+    font-size: 0.76rem;
+    font-weight: 650;
+    line-height: 1.28;
+}
+
+.topic-comment-item {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.topic-comment-empty {
+    color: rgba(246, 241, 232, 0.45);
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
