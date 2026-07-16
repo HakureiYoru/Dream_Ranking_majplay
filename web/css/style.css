@@ -66,6 +66,41 @@ button {
     margin-bottom: 24px;
 }
 
+.arena-title-row {
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.arena-nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 0 0 auto;
+}
+
+.arena-nav-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 40px;
+    padding: 0.6rem 0.95rem;
+    color: var(--text);
+    background: rgba(246, 241, 232, 0.08);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    font-weight: 750;
+    text-decoration: none;
+}
+
+.arena-nav-link:hover {
+    color: var(--text);
+    border-color: rgba(246, 241, 232, 0.32);
+    background: rgba(246, 241, 232, 0.12);
+}
+
 .fantasy-title {
     margin: 0;
     color: var(--text);
@@ -870,6 +905,15 @@ button {
 @media (max-width: 640px) {
     .fantasy-header {
         justify-items: stretch;
+    }
+
+    .arena-title-row {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .arena-nav {
+        justify-content: flex-start;
     }
 
     .fantasy-timer {

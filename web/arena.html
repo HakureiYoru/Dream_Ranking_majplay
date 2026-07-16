@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Majplay Arena</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/background.css">
+  <link rel="stylesheet" href="css/arena.css">
+</head>
+
+<body class="fantasy-bg arena-page">
+  <div class="main-content arena-content">
+    <header class="fantasy-header arena-header">
+      <div class="arena-title-row">
+        <h1 class="fantasy-title">Majplay Arena</h1>
+        <nav class="arena-nav">
+          <a class="arena-nav-link" href="index.html">打榜页</a>
+        </nav>
+      </div>
+      <div class="arena-subtitle">擂台赛课题与挑战记录</div>
+    </header>
+
+    <main class="arena-layout">
+      <section class="arena-panel current-topic-panel" aria-labelledby="current-topic-title">
+        <div class="arena-section-head">
+          <h2 id="current-topic-title">当前课题</h2>
+          <div class="arena-actions">
+            <button id="clear-topic" type="button" class="fantasy-btn-warning compact-btn">清除课题</button>
+          </div>
+        </div>
+        <div id="current-topic" class="current-topic"></div>
+        <div id="topic-stats" class="topic-stats"></div>
+      </section>
+
+      <div class="topic-stage-spacer" aria-hidden="true"></div>
+
+      <section class="arena-panel record-panel" aria-labelledby="record-title">
+        <div class="arena-section-head">
+          <h2 id="record-title">挑战记录</h2>
+          <label class="arena-filter">
+            <input id="current-topic-only" type="checkbox" checked>
+            当前课题
+          </label>
+        </div>
+
+        <div class="record-actions">
+          <button id="export-arena-records" type="button" class="fantasy-btn-success compact-btn">导出 CSV</button>
+          <button id="clear-arena-records" type="button" class="fantasy-btn-danger compact-btn">清空记录</button>
+        </div>
+
+        <div class="arena-table-wrap">
+          <table class="fantasy-table arena-record-table">
+            <colgroup>
+              <col class="record-time-col">
+              <col class="record-player-col">
+              <col class="record-score-col">
+              <col class="record-result-col">
+              <col class="record-song-col">
+              <col class="record-action-col">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>时间</th>
+                <th>挑战者</th>
+                <th>成绩</th>
+                <th>结果</th>
+                <th>课题</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="arena-records"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="arena-panel search-panel" aria-labelledby="song-search-title">
+        <div class="arena-section-head">
+          <h2 id="song-search-title">MajdataNet 搜索</h2>
+          <div class="arena-actions">
+            <button id="prev-page" type="button" class="fantasy-btn-warning compact-btn">上一页</button>
+            <button id="next-page" type="button" class="fantasy-btn-warning compact-btn">下一页</button>
+          </div>
+        </div>
+
+        <form id="song-search-form" class="search-form">
+          <input id="song-query" class="fantasy-input" placeholder="曲名 / 作者 / 谱师 / 标签" autocomplete="off">
+          <select id="song-sort" class="fantasy-select">
+            <option value="">默认排序</option>
+            <option value="title">曲名</option>
+            <option value="artist">艺术家</option>
+            <option value="uploader">上传者</option>
+          </select>
+          <button type="submit" class="fantasy-btn-submit">搜索</button>
+        </form>
+
+        <div class="selected-topic-strip" aria-labelledby="selected-song-title">
+          <div class="arena-section-head selected-topic-head">
+            <h2 id="selected-song-title">设置课题分</h2>
+          </div>
+          <div id="selected-song" class="selected-song"></div>
+          <form id="topic-form" class="topic-form">
+            <select id="topic-level" class="fantasy-select"></select>
+            <input id="target-score" type="number" min="0" max="101" step="0.01" value="100.50" class="fantasy-input"
+              placeholder="课题分">
+            <input id="topic-note" class="fantasy-input topic-note-input" placeholder="备注，可留空" autocomplete="off">
+            <button type="submit" class="fantasy-btn-submit">设为当前课题</button>
+          </form>
+        </div>
+
+        <div id="search-status" class="arena-status"></div>
+        <div class="arena-table-wrap search-table-wrap">
+          <table class="fantasy-table arena-search-table">
+            <colgroup>
+              <col class="cover-col">
+              <col class="song-col">
+              <col class="artist-col">
+              <col class="level-col">
+              <col class="uploader-col">
+              <col class="time-col">
+              <col class="action-col">
+            </colgroup>
+            <thead>
+              <tr>
+                <th>封面</th>
+                <th><button type="button" class="sort-header" data-sort-field="title">曲名</button></th>
+                <th><button type="button" class="sort-header" data-sort-field="artist">作者</button></th>
+                <th>等级</th>
+                <th><button type="button" class="sort-header" data-sort-field="uploader">上传者</button></th>
+                <th><button type="button" class="sort-header" data-sort-field="timestamp">更新</button></th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody id="search-results"></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <button id="open-record-form" type="button" class="arena-add-record-btn" title="添加挑战记录">＋</button>
+
+  <div id="record-modal-mask" class="arena-modal-mask" style="display:none;"></div>
+  <div id="record-modal" class="arena-modal" style="display:none;" role="dialog" aria-modal="true"
+    aria-labelledby="record-modal-title">
+    <div class="arena-modal-content">
+      <button id="record-modal-close" class="arena-modal-close" type="button">×</button>
+      <h2 id="record-modal-title" class="arena-modal-title">添加挑战记录</h2>
+      <form id="challenge-record-form" class="record-form">
+        <input id="challenger" class="fantasy-input" placeholder="挑战者ID" autocomplete="off" required>
+        <input id="challenge-score" type="number" min="0" max="101" step="0.01" value="100.50" class="fantasy-input"
+          placeholder="成绩" required>
+        <label class="arena-check"><input id="challenge-ap" type="checkbox"> AP</label>
+        <label class="arena-check"><input id="challenge-fc" type="checkbox"> FC</label>
+        <input id="challenge-note" class="fantasy-input record-note-input" placeholder="备注，可留空" autocomplete="off">
+        <button type="submit" class="fantasy-btn-submit">提交记录</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/arena.js"></script>
+</body>
+
+</html>
