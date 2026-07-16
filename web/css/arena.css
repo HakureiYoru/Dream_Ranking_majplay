@@ -1,5 +1,8 @@
 .arena-page .main-content {
     width: min(1280px, calc(100vw - 32px));
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
 .arena-header {
@@ -55,7 +58,8 @@
     display: grid;
     gap: 16px;
     grid-template-columns: 1fr;
-    align-items: start;
+    align-items: stretch;
+    min-height: calc(100vh - 172px);
 }
 
 .arena-panel {
@@ -72,14 +76,21 @@
 }
 
 .current-topic-panel,
-.topic-stage-spacer,
-.search-panel,
-.record-panel {
+.search-panel {
     grid-column: 1;
 }
 
 .current-topic-panel {
     position: relative;
+    display: grid;
+    min-height: clamp(520px, calc(100vh - 190px), 760px);
+    grid-template-rows: 1fr;
+    padding: 0;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
 }
 
 .topic-stage-spacer {
@@ -103,8 +114,7 @@
 }
 
 .arena-actions,
-.table-actions,
-.record-actions {
+.table-actions {
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -121,24 +131,29 @@
 }
 
 .compact-btn:disabled,
-.arena-add-record-btn:disabled,
+.arena-floating-btn:disabled,
 .fantasy-input:disabled,
 .fantasy-select:disabled {
     cursor: not-allowed;
     opacity: 0.52;
 }
 
-.arena-add-record-btn {
+.arena-floating-actions {
     position: fixed;
     right: max(20px, 3vw);
     bottom: max(20px, 4vh);
     z-index: 1002;
+    display: grid;
+    gap: 12px;
+}
+
+.arena-floating-btn {
     width: 56px;
     height: 56px;
     display: grid;
     place-items: center;
     color: #071a24;
-    background: var(--accent);
+    background: rgba(246, 241, 232, 0.94);
     border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 50%;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.34);
@@ -149,9 +164,37 @@
     transition: transform 0.16s ease, background-color 0.16s ease, opacity 0.16s ease;
 }
 
-.arena-add-record-btn:hover {
+.arena-floating-btn:hover {
     background: var(--accent-strong);
     transform: translateY(-2px);
+}
+
+.arena-floating-btn svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.arena-clear-topic-btn {
+    color: #ffddd8;
+    background: rgba(86, 38, 34, 0.9);
+}
+
+.arena-clear-topic-btn:hover {
+    background: rgba(135, 54, 47, 0.96);
+}
+
+.arena-clear-topic-btn:disabled {
+    visibility: hidden;
+}
+
+.arena-open-search-btn {
+    color: #071a24;
+    background: var(--accent);
 }
 
 .search-form {
@@ -160,8 +203,7 @@
     gap: 10px;
 }
 
-.topic-form,
-.record-form {
+.topic-form {
     display: grid;
     gap: 10px;
 }
@@ -174,16 +216,6 @@
 .topic-note-input,
 .topic-form .fantasy-btn-submit {
     grid-column: span 1;
-}
-
-.record-form {
-    grid-template-columns: minmax(150px, 1fr) 126px auto auto;
-    align-items: center;
-}
-
-.record-note-input,
-.record-form .fantasy-btn-submit {
-    grid-column: 1 / -1;
 }
 
 .arena-check,
@@ -216,17 +248,73 @@
 .arena-empty {
     display: grid;
     place-items: center;
+    width: min(320px, 100%);
     min-height: 124px;
+    padding: 18px;
     color: var(--text-muted);
     background: rgba(246, 241, 232, 0.055);
     border: 1px dashed rgba(246, 241, 232, 0.18);
     border-radius: 8px;
     font-weight: 700;
+    text-align: center;
 }
 
 .current-topic,
 .selected-song {
     min-width: 0;
+}
+
+.current-topic {
+    min-height: 100%;
+    display: grid;
+    place-items: center;
+}
+
+.current-topic-stage {
+    position: relative;
+    isolation: isolate;
+    width: min(1180px, 100%);
+    display: grid;
+    grid-template-columns: minmax(220px, 285px) minmax(0, 1fr) minmax(190px, 230px);
+    gap: 28px;
+    align-items: center;
+    justify-content: center;
+    min-height: 330px;
+    padding: clamp(22px, 3.2vw, 38px);
+    overflow: hidden;
+    background:
+        linear-gradient(100deg, rgba(24, 23, 25, 0.88) 0%, rgba(45, 39, 45, 0.76) 42%, rgba(74, 61, 70, 0.58) 100%),
+        rgba(246, 241, 232, 0.045);
+    border: 1px solid rgba(246, 241, 232, 0.18);
+    border-radius: 10px;
+    box-shadow:
+        0 18px 52px rgba(0, 0, 0, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.current-topic-stage::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background-image: var(--topic-cover-bg);
+    background-size: cover;
+    background-position: center;
+    opacity: 0.36;
+    filter: blur(18px) saturate(1.25);
+    transform: scale(1.12);
+}
+
+.current-topic-stage::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 22% 28%, rgba(255, 255, 255, 0.13), transparent 30%),
+        linear-gradient(90deg, rgba(17, 17, 18, 0.86) 0%, rgba(17, 17, 18, 0.55) 46%, rgba(17, 17, 18, 0.2) 100%),
+        repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 86px);
+    pointer-events: none;
 }
 
 .current-topic-body {
@@ -267,19 +355,100 @@
     gap: 7px;
 }
 
-.current-topic-label {
-    color: var(--text-muted);
-    font-size: 0.84rem;
+.current-topic-info {
+    justify-items: start;
+    align-content: center;
+    gap: 10px;
+    min-height: 100%;
+    padding: 4px 0;
+}
+
+.topic-designer-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 0.42rem 0.78rem 0.42rem 0.42rem;
+    color: rgba(246, 241, 232, 0.9);
+    background: rgba(20, 20, 22, 0.3);
+    border: 1px solid rgba(246, 241, 232, 0.12);
+    border-radius: 999px;
+}
+
+.topic-designer-avatar {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    overflow: hidden;
+    color: rgba(246, 241, 232, 0.78);
+    background: rgba(246, 241, 232, 0.1);
+    border: 1px solid rgba(246, 241, 232, 0.18);
+    border-radius: 50%;
+    font-size: 0.8rem;
+    font-weight: 850;
+}
+
+.topic-designer-avatar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.topic-designer-info {
+    min-width: 0;
+    display: grid;
+    gap: 3px;
+    padding-right: 2px;
+}
+
+.topic-designer-label {
+    color: rgba(246, 241, 232, 0.55);
+    font-size: 0.68rem;
     font-weight: 760;
-    letter-spacing: 0.04em;
+    line-height: 1.1;
+}
+
+.topic-designer-name {
+    max-width: min(260px, 45vw);
+    color: rgba(246, 241, 232, 0.92);
+    font-size: 0.9rem;
+    font-weight: 820;
+    line-height: 1.22;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.current-topic-label {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 0.22rem 0.68rem;
+    color: #101710;
+    background: #a9ff68;
+    border: 1px solid rgba(255, 255, 255, 0.34);
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 850;
+    letter-spacing: 0;
+    line-height: 1;
+    box-shadow: 0 6px 18px rgba(169, 255, 104, 0.14);
 }
 
 .current-topic-score {
-    color: var(--accent-strong);
-    font-size: 3.35rem;
+    color: #fff8ec;
+    font-size: 4.85rem;
     font-weight: 850;
     line-height: 0.95;
-    font-family: "Cascadia Mono", Consolas, Menlo, monospace;
+    font-family: "Segoe UI", "HarmonyOS Sans", "Microsoft YaHei", sans-serif;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0;
+    text-shadow:
+        0 3px 18px rgba(0, 0, 0, 0.44),
+        0 0 28px rgba(245, 222, 177, 0.15);
 }
 
 .current-topic-title,
@@ -293,7 +462,9 @@
 }
 
 .current-topic-title {
-    font-size: 1.55rem;
+    max-width: 100%;
+    font-size: 2.18rem;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.42);
 }
 
 .arena-song-title {
@@ -302,10 +473,7 @@
 
 .arena-song-artist,
 .arena-song-meta,
-.arena-song-tags,
-.record-song-meta,
-.record-song-note,
-.record-delta {
+.arena-song-tags {
     min-width: 0;
     color: var(--text-muted);
     font-size: 0.86rem;
@@ -314,8 +482,7 @@
     text-overflow: ellipsis;
 }
 
-.arena-song-tags,
-.record-song-note {
+.arena-song-tags {
     color: var(--text-soft);
 }
 
@@ -329,39 +496,49 @@
 }
 
 .topic-note {
-    color: var(--text-muted);
+    max-width: min(620px, 100%);
+    padding: 0.58rem 0.72rem;
+    color: rgba(246, 241, 232, 0.84);
+    background: rgba(20, 20, 22, 0.32);
+    border: 1px solid rgba(246, 241, 232, 0.12);
+    border-radius: 8px;
     font-size: 0.9rem;
     line-height: 1.4;
     overflow-wrap: anywhere;
 }
 
-.topic-stats {
+.topic-stats-panel {
+    align-self: stretch;
+    justify-self: stretch;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 8px;
+    align-content: center;
+    gap: 10px;
+    min-width: 0;
 }
 
-.topic-stat {
+.topic-stat-card {
     display: grid;
     gap: 4px;
     min-width: 0;
-    padding: 10px;
-    background: rgba(246, 241, 232, 0.06);
-    border: 1px solid rgba(246, 241, 232, 0.1);
+    padding: 14px;
+    background: rgba(18, 18, 20, 0.28);
+    border: 1px solid rgba(246, 241, 232, 0.12);
     border-radius: 8px;
 }
 
 .topic-stat-label {
-    color: var(--text-muted);
+    color: rgba(246, 241, 232, 0.58);
     font-size: 0.78rem;
-    font-weight: 720;
+    font-weight: 780;
+    line-height: 1;
 }
 
-.topic-stat strong {
-    min-width: 0;
-    color: var(--text);
-    font-size: 1.02rem;
-    line-height: 1.1;
+.topic-stat-value {
+    color: #fff8ec;
+    font-size: 1.52rem;
+    font-weight: 850;
+    line-height: 1.05;
+    font-variant-numeric: tabular-nums;
     overflow: hidden;
     text-overflow: ellipsis;
 }
@@ -373,8 +550,8 @@
     max-width: 100%;
     padding: 0.22rem 0.52rem;
     color: var(--text);
-    background: rgba(246, 241, 232, 0.08);
-    border: 1px solid var(--line);
+    background: rgba(246, 241, 232, 0.1);
+    border: 1px solid rgba(246, 241, 232, 0.18);
     border-radius: 999px;
     font-size: 0.78rem;
     font-weight: 760;
@@ -385,13 +562,14 @@
 }
 
 .level-badge {
-    color: #eee7f7;
-    background: rgba(155, 134, 184, 0.26);
-    border-color: rgba(155, 134, 184, 0.42);
+    color: #101710;
+    background: #a9ff68;
+    border-color: rgba(255, 255, 255, 0.38);
 }
 
 .muted-badge {
-    color: var(--text-muted);
+    color: rgba(246, 241, 232, 0.78);
+    background: rgba(246, 241, 232, 0.08);
 }
 
 .pass-badge {
@@ -430,8 +608,13 @@
 }
 
 .topic-cover-wrap {
-    width: 156px;
+    width: 100%;
     aspect-ratio: 1;
+    justify-self: center;
+    border-color: rgba(255, 255, 255, 0.22);
+    box-shadow:
+        0 16px 36px rgba(0, 0, 0, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.04);
 }
 
 .selected-cover-wrap {
@@ -457,9 +640,8 @@
     overflow-x: auto;
 }
 
-.arena-search-table,
-.arena-record-table {
-    min-width: 780px;
+.arena-search-table {
+    min-width: 900px;
 }
 
 .arena-search-table .cover-col {
@@ -491,19 +673,15 @@
 }
 
 .arena-search-table td,
-.arena-search-table th,
-.arena-record-table td,
-.arena-record-table th {
+.arena-search-table th {
     white-space: normal;
 }
 
-.arena-search-table td,
-.arena-record-table td {
+.arena-search-table td {
     vertical-align: middle;
 }
 
-.arena-search-table thead th,
-.arena-record-table thead th {
+.arena-search-table thead th {
     white-space: nowrap;
 }
 
@@ -543,51 +721,6 @@
     color: var(--text);
 }
 
-.record-time-col {
-    width: 112px;
-}
-
-.record-player-col {
-    width: 16%;
-}
-
-.record-score-col {
-    width: 118px;
-}
-
-.record-result-col {
-    width: 120px;
-}
-
-.record-song-col {
-    width: auto;
-}
-
-.record-action-col {
-    width: 88px;
-}
-
-.record-score-wrap {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 0;
-}
-
-.record-score {
-    color: var(--accent-strong);
-    font-weight: 850;
-    font-family: "Cascadia Mono", Consolas, Menlo, monospace;
-}
-
-.record-song-title {
-    color: var(--text);
-    font-weight: 760;
-    line-height: 1.2;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
 .arena-modal-mask {
     position: fixed;
     inset: 0;
@@ -610,6 +743,29 @@
     border-left: 1px solid var(--line-strong);
     box-shadow: -18px 0 60px rgba(0, 0, 0, 0.42);
     overflow-y: auto;
+}
+
+.arena-search-modal {
+    position: fixed;
+    inset: min(24px, 3vw);
+    z-index: 1003;
+    color: var(--text);
+    overflow-y: auto;
+}
+
+.arena-search-modal .search-panel {
+    min-height: 100%;
+    align-content: start;
+}
+
+.inline-close {
+    position: static;
+    width: 34px;
+    height: 34px;
+    color: var(--text-muted);
+    background: rgba(246, 241, 232, 0.06);
+    border: 1px solid var(--line);
+    font-size: 1.35rem;
 }
 
 .arena-modal-content {
@@ -648,6 +804,18 @@
     background: rgba(246, 241, 232, 0.08);
 }
 
+@media (max-width: 980px) {
+    .current-topic-stage {
+        width: min(820px, 100%);
+        grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+    }
+
+    .topic-stats-panel {
+        grid-column: 1 / -1;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 720px) {
     .arena-title-row,
     .arena-section-head {
@@ -656,8 +824,7 @@
     }
 
     .arena-nav,
-    .arena-actions,
-    .record-actions {
+    .arena-actions {
         justify-content: flex-start;
     }
 
@@ -665,31 +832,58 @@
         min-height: 34px;
     }
 
-    .arena-add-record-btn {
+    .arena-floating-btn {
         width: 52px;
         height: 52px;
     }
 
     .search-form,
-    .topic-form,
-    .record-form {
+    .topic-form {
         grid-template-columns: 1fr;
     }
 
     .topic-note-input,
-    .topic-form .fantasy-btn-submit,
-    .record-note-input,
-    .record-form .fantasy-btn-submit {
+    .topic-form .fantasy-btn-submit {
         grid-column: span 1;
     }
 
-    .current-topic-body {
-        grid-template-columns: 92px minmax(0, 1fr);
-        gap: 12px;
+    .arena-layout {
+        min-height: calc(100vh - 150px);
+    }
+
+    .current-topic-panel {
+        min-height: calc(100vh - 160px);
+    }
+
+    .current-topic-stage {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        justify-items: center;
+        text-align: center;
+        min-height: 0;
+        padding: 18px;
+    }
+
+    .current-topic-info {
+        justify-items: center;
+        text-align: center;
     }
 
     .topic-cover-wrap {
-        width: 92px;
+        width: min(220px, 62vw);
+    }
+
+    .topic-designer-row {
+        max-width: 100%;
+    }
+
+    .topic-designer-name {
+        max-width: min(260px, 70vw);
+    }
+
+    .topic-stats-panel {
+        grid-template-columns: 1fr;
+        width: 100%;
     }
 
     .selected-song-preview {
@@ -701,14 +895,10 @@
     }
 
     .current-topic-title {
-        font-size: 1.18rem;
+        font-size: 1.45rem;
     }
 
     .current-topic-score {
-        font-size: 2.25rem;
-    }
-
-    .topic-stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        font-size: 3.05rem;
     }
 }

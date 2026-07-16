@@ -1,7 +1,6 @@
 const DEFAULT_API_ROOT = 'https://majdata.net/api3/api';
 const API_ROOT_KEY = 'arena-api-root-v1';
 const CURRENT_TOPIC_KEY = 'arena-current-topic-v1';
-const RECORDS_KEY = 'arena-records-v1';
 
 const LEVEL_LABELS = ['Easy', 'Basic', 'Advanced', 'Expert', 'Master', 'Re:Master', 'UTAGE'];
 
@@ -14,18 +13,21 @@ const state = {
     results: [],
     selectedSong: null,
     currentTopic: null,
-    records: [],
     tableSort: { field: '', direction: 'asc' },
-    loading: false
+    loading: false,
+    searchLoaded: false,
+    topicDetailsRequestKey: ''
 };
 
 const refs = {};
 
 function initRefs() {
     refs.currentTopic = document.getElementById('current-topic');
-    refs.topicStats = document.getElementById('topic-stats');
-    refs.openRecordForm = document.getElementById('open-record-form');
     refs.clearTopic = document.getElementById('clear-topic');
+    refs.openSearch = document.getElementById('open-search');
+    refs.searchModal = document.getElementById('search-modal');
+    refs.searchModalMask = document.getElementById('search-modal-mask');
+    refs.searchModalClose = document.getElementById('search-modal-close');
     refs.searchForm = document.getElementById('song-search-form');
     refs.query = document.getElementById('song-query');
     refs.sort = document.getElementById('song-sort');
@@ -39,19 +41,6 @@ function initRefs() {
     refs.topicLevel = document.getElementById('topic-level');
     refs.targetScore = document.getElementById('target-score');
     refs.topicNote = document.getElementById('topic-note');
-    refs.recordForm = document.getElementById('challenge-record-form');
-    refs.challenger = document.getElementById('challenger');
-    refs.challengeScore = document.getElementById('challenge-score');
-    refs.challengeAp = document.getElementById('challenge-ap');
-    refs.challengeFc = document.getElementById('challenge-fc');
-    refs.challengeNote = document.getElementById('challenge-note');
-    refs.currentTopicOnly = document.getElementById('current-topic-only');
-    refs.exportRecords = document.getElementById('export-arena-records');
-    refs.clearRecords = document.getElementById('clear-arena-records');
-    refs.recordsBody = document.getElementById('arena-records');
-    refs.recordModal = document.getElementById('record-modal');
-    refs.recordModalMask = document.getElementById('record-modal-mask');
-    refs.recordModalClose = document.getElementById('record-modal-close');
 }
 
 function loadJson(key, fallback) {
@@ -81,17 +70,20 @@ function saveCurrentTopic(topic) {
     state.currentTopic = topic;
 }
 
-function loadRecords() {
-    return loadJson(RECORDS_KEY, []);
-}
-
-function saveRecords(records) {
-    state.records = records;
-    saveJson(RECORDS_KEY, records);
-}
-
 function imageUrl(songId) {
     return `${state.apiRoot}/maichart/${encodeURIComponent(songId)}/image`;
+}
+
+function summaryUrl(songId) {
+    return `${state.apiRoot}/maichart/${encodeURIComponent(songId)}/summary`;
+}
+
+function interactSumUrl(songId) {
+    return `${state.apiRoot}/maichart/${encodeURIComponent(songId)}/interactsum`;
+}
+
+function accountIconUrl(username) {
+    return `${state.apiRoot}/account/Icon?username=${encodeURIComponent(username || '')}`;
 }
 
 function songUrl(songId) {
@@ -108,6 +100,14 @@ function makeId(prefix) {
 function formatScore(value) {
     const score = Number(value);
     return Number.isFinite(score) ? score.toFixed(2) : '--';
+}
+
+function formatCount(value) {
+    const count = Number(value);
+    if (!Number.isFinite(count)) return '--';
+    if (count >= 10000) return `${(count / 10000).toFixed(1)}w`;
+    if (count >= 1000) return `${(count / 1000).toFixed(1)}k`;
+    return String(count);
 }
 
 function formatDateTime(value) {
@@ -157,7 +157,21 @@ function tagsText(song) {
     return [...new Set(tags)].slice(0, 4).join(' / ');
 }
 
+function normalizeStats(source) {
+    if (!source || typeof source !== 'object') return null;
+    const likes = Array.isArray(source.likes) ? source.likes.length : source.likes;
+    const comments = Array.isArray(source.comments) ? source.comments.length : source.comments;
+    const stats = {
+        plays: Number(source.plays),
+        likes: Number(likes),
+        comments: Number(comments)
+    };
+    const hasAny = Object.values(stats).some(Number.isFinite);
+    return hasAny ? stats : null;
+}
+
 function normalizeSong(song) {
+    const stats = normalizeStats(song.interactsum || song.interact || song.stats || song);
     return {
         id: String(song.id || ''),
         title: String(song.title || '未命名曲目'),
@@ -166,10 +180,12 @@ function normalizeSong(song) {
         description: String(song.description || ''),
         levels: Array.isArray(song.levels) ? song.levels : [],
         uploader: String(song.uploader || ''),
+        uploaderID: String(song.uploaderID || ''),
         timestamp: song.timestamp || '',
         hash: String(song.hash || ''),
         tags: Array.isArray(song.tags) ? song.tags : [],
-        publicTags: Array.isArray(song.publicTags) ? song.publicTags : []
+        publicTags: Array.isArray(song.publicTags) ? song.publicTags : [],
+        stats
     };
 }
 
@@ -197,8 +213,34 @@ function createCover(song, className = 'arena-cover') {
 }
 
 function createBadge(text, extraClass = '') {
-    const badge = createNode('span', `arena-badge ${extraClass}`.trim(), text);
-    return badge;
+    return createNode('span', `arena-badge ${extraClass}`.trim(), text);
+}
+
+function createDesignerAvatar(topic) {
+    const name = topic.uploader || '';
+    const fallback = topic.designer && topic.designer !== name ? topic.designer : '';
+    const wrapper = createNode('div', 'topic-designer-avatar');
+    if (!name && !fallback) {
+        wrapper.textContent = '?';
+        return wrapper;
+    }
+
+    const img = document.createElement('img');
+    let usingFallback = false;
+    img.alt = `${name || fallback} avatar`;
+    img.src = accountIconUrl(name || fallback);
+    img.onerror = () => {
+        if (fallback && !usingFallback) {
+            usingFallback = true;
+            img.src = accountIconUrl(fallback);
+            return;
+        }
+        img.remove();
+        wrapper.classList.add('avatar-missing');
+        wrapper.textContent = (name || fallback || '?').trim().slice(0, 1).toUpperCase();
+    };
+    wrapper.appendChild(img);
+    return wrapper;
 }
 
 function renderEmptyRow(tbody, colSpan, text) {
@@ -252,6 +294,7 @@ async function searchSongs(page = 0) {
         renderSearchResults();
         setSearchStatus(`第 ${state.page + 1} 页，当前 ${state.results.length} 条结果`);
         refs.nextPage.disabled = state.loading || count < state.pageSize || state.results.length < state.pageSize;
+        state.searchLoaded = true;
     } catch (err) {
         console.error(err);
         state.results = [];
@@ -446,6 +489,7 @@ function setTopicFromSelected(event) {
         artist: song.artist,
         designer: song.designer,
         uploader: song.uploader,
+        uploaderID: song.uploaderID,
         levels: song.levels,
         tags: song.tags,
         publicTags: song.publicTags,
@@ -454,14 +498,57 @@ function setTopicFromSelected(event) {
         levelName: level.label,
         levelValue: level.value,
         targetScore: score,
+        stats: song.stats,
         note: refs.topicNote.value.trim(),
         createdAt: new Date().toISOString()
     };
 
     saveCurrentTopic(topic);
-    refs.challengeScore.value = formatScore(score);
     renderCurrentTopic();
-    renderRecords();
+    refreshCurrentTopicDetails();
+    closeSearchModal();
+}
+
+async function refreshCurrentTopicDetails() {
+    const topic = state.currentTopic;
+    if (!topic || !topic.songId) return;
+
+    const requestKey = `${topic.topicSessionId}:${topic.songId}:${Date.now()}`;
+    state.topicDetailsRequestKey = requestKey;
+
+    try {
+        const [summaryResult, statsResult] = await Promise.allSettled([
+            fetch(summaryUrl(topic.songId), { headers: { Accept: 'application/json' } }),
+            fetch(interactSumUrl(topic.songId), { headers: { Accept: 'application/json' } })
+        ]);
+
+        if (state.topicDetailsRequestKey !== requestKey || !state.currentTopic) return;
+        const updated = { ...state.currentTopic };
+
+        if (summaryResult.status === 'fulfilled' && summaryResult.value.ok) {
+            const summary = await summaryResult.value.json();
+            updated.title = String(summary.title || updated.title || '');
+            updated.artist = String(summary.artist || updated.artist || '');
+            updated.designer = String(summary.designer || updated.designer || '');
+            updated.uploader = String(summary.uploader || updated.uploader || '');
+            updated.uploaderID = String(summary.uploaderID || updated.uploaderID || '');
+            updated.levels = Array.isArray(summary.levels) ? summary.levels : updated.levels;
+            updated.tags = Array.isArray(summary.tags) ? summary.tags : updated.tags;
+            updated.publicTags = Array.isArray(summary.publicTags) ? summary.publicTags : updated.publicTags;
+            updated.timestamp = summary.timestamp || updated.timestamp;
+            updated.hash = String(summary.hash || updated.hash || '');
+        }
+
+        if (statsResult.status === 'fulfilled' && statsResult.value.ok) {
+            const stats = normalizeStats(await statsResult.value.json());
+            if (stats) updated.stats = stats;
+        }
+
+        saveCurrentTopic(updated);
+        renderCurrentTopic();
+    } catch (err) {
+        console.warn('Failed to refresh topic details', err);
+    }
 }
 
 function renderCurrentTopic() {
@@ -469,20 +556,16 @@ function renderCurrentTopic() {
     const topic = state.currentTopic;
 
     if (!topic) {
-        refs.currentTopic.appendChild(createNode('div', 'arena-empty', '未设置课题'));
-        refs.topicStats.innerHTML = '';
-        refs.openRecordForm.disabled = true;
+        refs.currentTopic.appendChild(createNode('div', 'arena-empty topic-empty-state', '未设置课题'));
         refs.clearTopic.disabled = true;
-        refs.recordForm.querySelector('button[type="submit"]').disabled = true;
         return;
     }
 
-    refs.openRecordForm.disabled = false;
     refs.clearTopic.disabled = false;
-    refs.recordForm.querySelector('button[type="submit"]').disabled = false;
 
-    const body = createNode('div', 'current-topic-body');
-    body.appendChild(createCover({ id: topic.songId, title: topic.title }, 'topic-cover'));
+    const stage = createNode('div', 'current-topic-stage');
+    stage.style.setProperty('--topic-cover-bg', `url("${imageUrl(topic.songId).replace(/"/g, '%22')}")`);
+    stage.appendChild(createCover({ id: topic.songId, title: topic.title }, 'topic-cover'));
 
     const info = createNode('div', 'current-topic-info');
     info.appendChild(createNode('div', 'current-topic-label', '目标分数'));
@@ -490,9 +573,16 @@ function renderCurrentTopic() {
     info.appendChild(createNode('div', 'current-topic-title', topic.title));
     info.appendChild(createNode('div', 'arena-song-artist', topic.artist || '--'));
 
+    const designerRow = createNode('div', 'topic-designer-row');
+    designerRow.appendChild(createDesignerAvatar(topic));
+    const designerInfo = createNode('div', 'topic-designer-info');
+    designerInfo.appendChild(createNode('div', 'topic-designer-label', '谱师'));
+    designerInfo.appendChild(createNode('div', 'topic-designer-name', topic.designer || '--'));
+    designerRow.appendChild(designerInfo);
+    info.appendChild(designerRow);
+
     const meta = createNode('div', 'topic-meta-row');
     meta.appendChild(createBadge(`${topic.levelName || '谱面'} ${topic.levelValue || ''}`.trim(), 'level-badge'));
-    meta.appendChild(createBadge(`谱师 ${topic.designer || '--'}`, 'muted-badge'));
     meta.appendChild(createBadge(`设置 ${formatDateTime(topic.createdAt)}`, 'muted-badge'));
     info.appendChild(meta);
 
@@ -500,230 +590,49 @@ function renderCurrentTopic() {
         info.appendChild(createNode('div', 'topic-note', topic.note));
     }
 
-    body.appendChild(info);
-    refs.currentTopic.appendChild(body);
-    renderTopicStats();
+    stage.appendChild(info);
+    stage.appendChild(renderTopicStats(topic.stats));
+    refs.currentTopic.appendChild(stage);
 }
 
-function getVisibleRecords() {
-    if (!refs.currentTopicOnly.checked) {
-        return [...state.records];
-    }
-    if (!state.currentTopic) {
-        return [];
-    }
-    return state.records.filter(record => record.topicSessionId === state.currentTopic.topicSessionId);
-}
+function renderTopicStats(stats) {
+    const panel = createNode('aside', 'topic-stats-panel');
+    panel.setAttribute('aria-label', '歌曲游玩数据');
 
-function getCurrentTopicRecords() {
-    if (!state.currentTopic) return [];
-    return state.records.filter(record => record.topicSessionId === state.currentTopic.topicSessionId);
-}
-
-function renderTopicStats() {
-    const topic = state.currentTopic;
-    if (!topic) {
-        refs.topicStats.innerHTML = '';
-        return;
-    }
-
-    const records = getCurrentTopicRecords();
-    const passed = records.filter(record => record.score >= topic.targetScore).length;
-    const best = records.reduce((max, record) => Math.max(max, Number(record.score) || 0), 0);
-    const leader = records
-        .slice()
-        .sort((a, b) => Number(b.score) - Number(a.score))[0];
-
-    refs.topicStats.innerHTML = '';
-    const items = [
-        ['挑战次数', records.length],
-        ['达成', passed],
-        ['最高分', records.length ? formatScore(best) : '--'],
-        ['当前最高', leader ? leader.playerId : '--']
-    ];
-    items.forEach(([label, value]) => {
-        const item = createNode('div', 'topic-stat');
-        item.appendChild(createNode('span', 'topic-stat-label', label));
-        item.appendChild(createNode('strong', '', String(value)));
-        refs.topicStats.appendChild(item);
+    [
+        ['游玩次数', stats ? stats.plays : null],
+        ['点赞数', stats ? stats.likes : null],
+        ['评论数', stats ? stats.comments : null]
+    ].forEach(([label, value]) => {
+        const card = createNode('div', 'topic-stat-card');
+        card.appendChild(createNode('div', 'topic-stat-label', label));
+        card.appendChild(createNode('div', 'topic-stat-value', formatCount(value)));
+        panel.appendChild(card);
     });
-}
 
-function addChallengeRecord(event) {
-    event.preventDefault();
-    const topic = state.currentTopic;
-    if (!topic) {
-        alert('请先设置当前课题');
-        return;
-    }
-
-    const playerId = refs.challenger.value.trim();
-    if (!playerId) {
-        alert('请输入挑战者ID');
-        return;
-    }
-
-    const score = Number.parseFloat(refs.challengeScore.value);
-    if (!Number.isFinite(score) || score < 0 || score > 101) {
-        alert('请输入 0 到 101 之间的成绩');
-        return;
-    }
-
-    const record = {
-        id: makeId('record'),
-        topicSessionId: topic.topicSessionId,
-        songId: topic.songId,
-        title: topic.title,
-        artist: topic.artist,
-        levelName: topic.levelName,
-        levelValue: topic.levelValue,
-        targetScore: topic.targetScore,
-        playerId,
-        score,
-        ap: refs.challengeAp.checked,
-        fc: refs.challengeFc.checked,
-        note: refs.challengeNote.value.trim(),
-        time: new Date().toISOString()
-    };
-
-    saveRecords([record, ...state.records]);
-    refs.recordForm.reset();
-    refs.challengeScore.value = formatScore(topic.targetScore);
-    closeRecordModal();
-    renderCurrentTopic();
-    renderRecords();
-}
-
-function deleteRecord(recordId) {
-    if (!confirm('确定删除这条挑战记录吗？')) return;
-    saveRecords(state.records.filter(record => record.id !== recordId));
-    renderCurrentTopic();
-    renderRecords();
-}
-
-function renderRecords() {
-    const visible = getVisibleRecords();
-    refs.recordsBody.innerHTML = '';
-    if (visible.length === 0) {
-        renderEmptyRow(refs.recordsBody, 6, '暂无挑战记录');
-        renderTopicStats();
-        return;
-    }
-
-    visible.forEach(record => {
-        const tr = document.createElement('tr');
-        const delta = Number(record.score) - Number(record.targetScore);
-        const passed = delta >= 0;
-
-        const timeTd = createNode('td', '', formatShortDate(record.time));
-        timeTd.title = formatDateTime(record.time);
-
-        const playerTd = createNode('td', '', record.playerId);
-        playerTd.title = record.playerId;
-
-        const scoreTd = document.createElement('td');
-        const scoreWrap = createNode('div', 'record-score-wrap');
-        const score = createNode('span', 'record-score', formatScore(record.score));
-        if (record.ap) score.classList.add('score-ap');
-        else if (record.fc) score.classList.add('score-fc');
-        scoreWrap.appendChild(score);
-        scoreTd.appendChild(scoreWrap);
-
-        const resultTd = document.createElement('td');
-        resultTd.appendChild(createBadge(passed ? '达成' : '未达成', passed ? 'pass-badge' : 'fail-badge'));
-        resultTd.appendChild(createNode('div', 'record-delta', `${delta >= 0 ? '+' : ''}${formatScore(delta)}`));
-
-        const songTd = document.createElement('td');
-        songTd.appendChild(createNode('div', 'record-song-title', record.title));
-        songTd.appendChild(createNode('div', 'record-song-meta', `${record.levelName || '谱面'} ${record.levelValue || ''} / 课题 ${formatScore(record.targetScore)}`.trim()));
-        if (record.note) songTd.appendChild(createNode('div', 'record-song-note', record.note));
-
-        const actionTd = document.createElement('td');
-        const deleteBtn = createNode('button', 'fantasy-btn-danger compact-btn', '删除');
-        deleteBtn.type = 'button';
-        deleteBtn.addEventListener('click', () => deleteRecord(record.id));
-        actionTd.appendChild(deleteBtn);
-
-        tr.append(timeTd, playerTd, scoreTd, resultTd, songTd, actionTd);
-        refs.recordsBody.appendChild(tr);
-    });
-    renderTopicStats();
+    return panel;
 }
 
 function clearCurrentTopic() {
     if (!state.currentTopic) return;
-    if (!confirm('确定清除当前课题吗？挑战记录会保留。')) return;
+    if (!confirm('确定清除当前课题吗？')) return;
+    state.topicDetailsRequestKey = '';
     saveCurrentTopic(null);
     renderCurrentTopic();
-    renderRecords();
 }
 
-function clearArenaRecords() {
-    if (state.records.length === 0) return;
-    if (!confirm('确定清空所有擂台赛挑战记录吗？')) return;
-    saveRecords([]);
-    renderCurrentTopic();
-    renderRecords();
-}
-
-function csvCell(value) {
-    const text = value == null ? '' : String(value);
-    return `"${text.replace(/"/g, '""')}"`;
-}
-
-function exportArenaRecords() {
-    const rows = getVisibleRecords();
-    if (rows.length === 0) {
-        alert('当前没有可导出的记录');
-        return;
+function openSearchModal() {
+    refs.searchModal.style.display = '';
+    refs.searchModalMask.style.display = '';
+    if (!state.searchLoaded) {
+        searchSongs(0);
     }
-
-    const header = ['时间', '挑战者', '成绩', '课题分', '结果', '差值', '曲目', '艺术家', '谱面', 'AP', 'FC', '备注'];
-    const body = rows.map(record => {
-        const delta = Number(record.score) - Number(record.targetScore);
-        return [
-            formatDateTime(record.time),
-            record.playerId,
-            formatScore(record.score),
-            formatScore(record.targetScore),
-            delta >= 0 ? '达成' : '未达成',
-            `${delta >= 0 ? '+' : ''}${formatScore(delta)}`,
-            record.title,
-            record.artist,
-            `${record.levelName || ''} ${record.levelValue || ''}`.trim(),
-            record.ap ? '1' : '0',
-            record.fc ? '1' : '0',
-            record.note || ''
-        ];
-    });
-
-    const csv = [header, ...body].map(row => row.map(csvCell).join(',')).join('\n');
-    const blob = new Blob([`\uFEFF${csv}`], { type: 'text/csv;charset=utf-8;' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    const scope = refs.currentTopicOnly.checked ? 'current' : 'all';
-    link.href = url;
-    link.download = `arena-records-${scope}.csv`;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    URL.revokeObjectURL(url);
+    window.setTimeout(() => refs.query.focus(), 0);
 }
 
-function openRecordModal() {
-    if (!state.currentTopic) {
-        alert('请先设置当前课题');
-        return;
-    }
-    refs.challengeScore.value = formatScore(state.currentTopic.targetScore);
-    refs.recordModal.style.display = '';
-    refs.recordModalMask.style.display = '';
-    window.setTimeout(() => refs.challenger.focus(), 0);
-}
-
-function closeRecordModal() {
-    refs.recordModal.style.display = 'none';
-    refs.recordModalMask.style.display = 'none';
+function closeSearchModal() {
+    refs.searchModal.style.display = 'none';
+    refs.searchModalMask.style.display = 'none';
 }
 
 function bindEvents() {
@@ -737,17 +646,13 @@ function bindEvents() {
         button.addEventListener('click', () => setTableSort(button.dataset.sortField));
     });
     refs.topicForm.addEventListener('submit', setTopicFromSelected);
-    refs.recordForm.addEventListener('submit', addChallengeRecord);
-    refs.currentTopicOnly.addEventListener('change', renderRecords);
-    refs.openRecordForm.addEventListener('click', openRecordModal);
-    refs.recordModalMask.addEventListener('click', closeRecordModal);
-    refs.recordModalClose.addEventListener('click', closeRecordModal);
     refs.clearTopic.addEventListener('click', clearCurrentTopic);
-    refs.clearRecords.addEventListener('click', clearArenaRecords);
-    refs.exportRecords.addEventListener('click', exportArenaRecords);
+    refs.openSearch.addEventListener('click', openSearchModal);
+    refs.searchModalMask.addEventListener('click', closeSearchModal);
+    refs.searchModalClose.addEventListener('click', closeSearchModal);
     window.addEventListener('keydown', event => {
-        if (event.key === 'Escape' && refs.recordModal.style.display !== 'none') {
-            closeRecordModal();
+        if (event.key === 'Escape' && refs.searchModal.style.display !== 'none') {
+            closeSearchModal();
         }
     });
 }
@@ -755,12 +660,12 @@ function bindEvents() {
 function initialize() {
     initRefs();
     state.currentTopic = getCurrentTopic();
-    state.records = loadRecords();
     bindEvents();
     renderCurrentTopic();
+    refreshCurrentTopicDetails();
     renderSelectedSong();
-    renderRecords();
-    searchSongs(0);
+    renderEmptyRow(refs.searchResults, 7, '点击右下角按钮后可搜索并设置课题');
+    setButtonsLoading(false);
 }
 
 window.addEventListener('DOMContentLoaded', initialize);
