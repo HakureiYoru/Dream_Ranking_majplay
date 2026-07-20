@@ -1,0 +1,5201 @@
+{
+  "syncedAt": "2026-07-20T18:53:38+00:00",
+  "limit": 200,
+  "sort": "likep",
+  "apiRoot": "https://majdata.net/api3/api",
+  "count": 200,
+  "songs": [
+    {
+      "id": "a39f378a-d95d-43a5-b667-ae9bfd248b85",
+      "title": "Tic! Tac! Toe!",
+      "artist": "TAK x Corbin",
+      "designer": "MMFC7: Perfume of Jasmine",
+      "uploader": "zjb",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14.0",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "DJMAX",
+        "Korean"
+      ],
+      "timestamp": "2025-05-11T16:14:13.173Z",
+      "plays": 1956,
+      "likes": 70,
+      "comments": 3,
+      "cover": "assets/majnet-covers/a39f378a-d95d-43a5-b667-ae9bfd248b85.jpg"
+    },
+    {
+      "id": "9b49ce1a-22ef-4f72-997a-2b1ab3b9686e",
+      "title": "Designant.",
+      "artist": "Designant.",
+      "designer": "Dororo",
+      "uploader": "Dororo",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-11-11T16:14:21.712Z",
+      "plays": 3348,
+      "likes": 63,
+      "comments": 0,
+      "cover": "assets/majnet-covers/9b49ce1a-22ef-4f72-997a-2b1ab3b9686e.jpg"
+    },
+    {
+      "id": "b811f3d6-8deb-4c80-88fe-8f2b993258e0",
+      "title": "MONTAGEM XONADA",
+      "artist": "MXZI",
+      "designer": "TRG",
+      "uploader": "TRG",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "memes",
+        "Game",
+        "Anime"
+      ],
+      "timestamp": "2025-12-24T21:53:32.794Z",
+      "plays": 1882,
+      "likes": 57,
+      "comments": 1,
+      "cover": "assets/majnet-covers/b811f3d6-8deb-4c80-88fe-8f2b993258e0.jpg"
+    },
+    {
+      "id": "0401e48c-a570-47a3-ad6e-c76a27b2f723",
+      "title": "⊇繧�ﾚよ☆ｽ〒≠ﾅょ魔シ去❣❗⋆｡:ﾟ･*☽",
+      "artist": "佐藤乃子; 名前シレズ",
+      "designer": "王耑",
+      "uploader": "MMFoonC",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "技巧",
+        "MajFoon"
+      ],
+      "timestamp": "2025-03-31T15:27:41.445Z",
+      "plays": 2103,
+      "likes": 56,
+      "comments": 4,
+      "cover": "assets/majnet-covers/0401e48c-a570-47a3-ad6e-c76a27b2f723.jpg"
+    },
+    {
+      "id": "96ade0a1-d785-4669-b9e0-721aa4288abd",
+      "title": "月下繚乱 ~2022 Re:Master~",
+      "artist": "minus7LUFS",
+      "designer": "Neya & 缀梦音游嘉年华",
+      "uploader": "hakureiyoru",
+      "levels": [
+        "",
+        "6",
+        "9",
+        "11",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "Majplay",
+        "Original"
+      ],
+      "timestamp": "2025-07-13T15:56:15.26Z",
+      "plays": 2027,
+      "likes": 51,
+      "comments": 0,
+      "cover": "assets/majnet-covers/96ade0a1-d785-4669-b9e0-721aa4288abd.jpg"
+    },
+    {
+      "id": "3d727656-fbbc-4d28-8c41-df8e4dbfaefe",
+      "title": "海神",
+      "artist": "兎々",
+      "designer": "After Legend of Wadatsumi ~ Respect for 2018 ver.",
+      "uploader": "Kurage",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "14",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "MMFC9",
+        "Ranked_challenge",
+        "BEMANI",
+        "Game",
+        "OTOGE"
+      ],
+      "timestamp": "2024-09-08T17:01:17Z",
+      "plays": 1552,
+      "likes": 50,
+      "comments": 2,
+      "cover": "assets/majnet-covers/3d727656-fbbc-4d28-8c41-df8e4dbfaefe.jpg"
+    },
+    {
+      "id": "fabbd75f-a056-47c3-901c-2cd0d9c8aa14",
+      "title": "Breakfast is ham and eggs",
+      "artist": "Burton (オトメ*ドメイン OST)",
+      "designer": "AsukaHana",
+      "uploader": "AsukaHana",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "宴"
+      ],
+      "tags": [],
+      "publicTags": [
+        "Game",
+        "少女领域",
+        "BPM减半",
+        "星星",
+        "技巧",
+        "早餐蛋",
+        "MMFC3",
+        "Ranked_brilliant"
+      ],
+      "timestamp": "2024-02-08T18:04:48Z",
+      "plays": 1958,
+      "likes": 49,
+      "comments": 2,
+      "cover": "assets/majnet-covers/fabbd75f-a056-47c3-901c-2cd0d9c8aa14.jpg"
+    },
+    {
+      "id": "c04c4236-5e25-40c5-902b-2f0e834a26eb",
+      "title": "Alb",
+      "artist": "Avans",
+      "designer": "鲈鱼",
+      "uploader": "dilei",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "14",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-08-09T15:13:14.631Z",
+      "plays": 1510,
+      "likes": 48,
+      "comments": 15,
+      "cover": "assets/majnet-covers/c04c4236-5e25-40c5-902b-2f0e834a26eb.jpg"
+    },
+    {
+      "id": "fec04c9d-d795-4152-841b-12f4bb2ec268",
+      "title": "Segue",
+      "artist": "Sobrem",
+      "designer": "S-RANDOM",
+      "uploader": "海鲜杯2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [
+        "海鲜杯2-15",
+        "海鲜杯2正赛"
+      ],
+      "publicTags": [],
+      "timestamp": "2026-05-23T15:40:27.832Z",
+      "plays": 469,
+      "likes": 47,
+      "comments": 1,
+      "cover": "assets/majnet-covers/fec04c9d-d795-4152-841b-12f4bb2ec268.jpg"
+    },
+    {
+      "id": "07e4ca9f-b446-4e66-93d3-3a595c35b3a3",
+      "title": "Flashback",
+      "artist": "MIYAVI vs KenKen",
+      "designer": "Deja Vu",
+      "uploader": "LOA",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA正赛"
+      ],
+      "timestamp": "2025-11-25T18:14:44.184Z",
+      "plays": 974,
+      "likes": 45,
+      "comments": 0,
+      "cover": "assets/majnet-covers/07e4ca9f-b446-4e66-93d3-3a595c35b3a3.jpg"
+    },
+    {
+      "id": "29144e8e-ae1b-4b50-aa80-d96c9ca700ad",
+      "title": "狂水一華",
+      "artist": "BEMANI Sound Team \"HuΣeR Vs. SYUNN\" feat.いちか",
+      "designer": "いちか",
+      "uploader": "Kurage",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "BEMANI",
+        "MMFC",
+        "键盘",
+        "狂睡一花",
+        "MMFC11#9",
+        "MMFC11"
+      ],
+      "timestamp": "2025-04-09T07:47:50.763Z",
+      "plays": 1511,
+      "likes": 44,
+      "comments": 0,
+      "cover": "assets/majnet-covers/29144e8e-ae1b-4b50-aa80-d96c9ca700ad.jpg"
+    },
+    {
+      "id": "009e9804-5de9-4042-9f3e-ea93139d62fd",
+      "title": "多次元宇宙融合論",
+      "artist": "TAKIO feat. つぐ",
+      "designer": "Do次元KuSA融虹論",
+      "uploader": "KuSA",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-07-28T16:24:22.317Z",
+      "plays": 1828,
+      "likes": 44,
+      "comments": 2,
+      "cover": "assets/majnet-covers/009e9804-5de9-4042-9f3e-ea93139d62fd.jpg"
+    },
+    {
+      "id": "30110fd9-3030-4c51-bb0d-1bf36363903d",
+      "title": "ネリと琥珀糖",
+      "artist": "sasakure.UK",
+      "designer": "おにねこ",
+      "uploader": "onineko",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "14",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "BEMANI",
+        "Jubeat",
+        "技巧",
+        "KOM"
+      ],
+      "timestamp": "2024-01-11T11:03:22Z",
+      "plays": 1422,
+      "likes": 42,
+      "comments": 8,
+      "cover": "assets/majnet-covers/30110fd9-3030-4c51-bb0d-1bf36363903d.jpg"
+    },
+    {
+      "id": "864c90d2-4296-44f6-ac30-458a7feda2b9",
+      "title": "早安大森林",
+      "artist": "李智平",
+      "designer": "守护★我们最♡好の「狗熊岭」~♪",
+      "uploader": "dontwin",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [
+        "LOA",
+        "动漫",
+        "国漫",
+        "熊出没",
+        "星星",
+        "BPM减半"
+      ],
+      "publicTags": [
+        "Ranked_brilliant"
+      ],
+      "timestamp": "2025-11-15T13:31:57.209Z",
+      "plays": 2007,
+      "likes": 40,
+      "comments": 5,
+      "cover": "assets/majnet-covers/864c90d2-4296-44f6-ac30-458a7feda2b9.jpg"
+    },
+    {
+      "id": "8d9caf61-bb0a-479a-a830-5a7a9ba678d7",
+      "title": "管理员变成凑企鹅了！",
+      "artist": "凉凉凉Official",
+      "designer": "Biggy变成凑企鹅了！",
+      "uploader": "Biggy",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "？",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "Game",
+        "PV演出"
+      ],
+      "timestamp": "2026-04-27T15:57:54.449Z",
+      "plays": 947,
+      "likes": 41,
+      "comments": 2,
+      "cover": "assets/majnet-covers/8d9caf61-bb0a-479a-a830-5a7a9ba678d7.jpg"
+    },
+    {
+      "id": "61c29132-38f0-4bc1-83f8-4012eb43fae4",
+      "title": "Obelisque",
+      "artist": "ESTi/M2U",
+      "designer": "小小白虹",
+      "uploader": "zjb",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "From your OblivioN",
+        "Korean",
+        "DJMAX",
+        "Game"
+      ],
+      "timestamp": "2025-05-06T17:01:12.886Z",
+      "plays": 1829,
+      "likes": 41,
+      "comments": 10,
+      "cover": "assets/majnet-covers/61c29132-38f0-4bc1-83f8-4012eb43fae4.jpg"
+    },
+    {
+      "id": "00a76cf6-6332-4230-ac25-146c055ba0b6",
+      "title": "APT.",
+      "artist": "Rosé & Bruno Mars",
+      "designer": "TRG",
+      "uploader": "TRG",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        "14?"
+      ],
+      "tags": [],
+      "publicTags": [
+        "非常规要素",
+        "星星",
+        "技巧",
+        "POPS"
+      ],
+      "timestamp": "2026-01-25T11:46:58.438Z",
+      "plays": 1954,
+      "likes": 38,
+      "comments": 7,
+      "cover": "assets/majnet-covers/00a76cf6-6332-4230-ac25-146c055ba0b6.jpg"
+    },
+    {
+      "id": "7a584ce2-6313-4d8f-aa60-5068539a4bae",
+      "title": "“人民叫师”讲数学",
+      "artist": "铭门学府张超",
+      "designer": "寺子屋学府Holi",
+      "uploader": "Holinality",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "？"
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2026-04-29T03:03:34.897Z",
+      "plays": 698,
+      "likes": 39,
+      "comments": 0,
+      "cover": "assets/majnet-covers/7a584ce2-6313-4d8f-aa60-5068539a4bae.jpg"
+    },
+    {
+      "id": "30655572-a10b-4ba6-b591-cf271c009ad9",
+      "title": "花冷列車",
+      "artist": "三月のパンタシア",
+      "designer": "「The next station is XINJIEKOU, please get ready to get off for transferring to METRO LINE 2.」",
+      "uploader": "LTCalter",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [
+        "MMFC",
+        "Japanese",
+        "POPS",
+        "Fes"
+      ],
+      "publicTags": [
+        "MMFC11#29",
+        "MMFC11"
+      ],
+      "timestamp": "2025-04-06T18:03:02.649Z",
+      "plays": 999,
+      "likes": 39,
+      "comments": 2,
+      "cover": "assets/majnet-covers/30655572-a10b-4ba6-b591-cf271c009ad9.jpg"
+    },
+    {
+      "id": "645e97d4-48e6-4c1d-a938-03f689c83d3f",
+      "title": "魔女達の舞踏会",
+      "artist": "黄昏フロンティア / 上海アリス幻樂団",
+      "designer": "我也要似吗",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-68",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-19T13:39:55.664Z",
+      "plays": 340,
+      "likes": 38,
+      "comments": 1,
+      "cover": "assets/majnet-covers/645e97d4-48e6-4c1d-a938-03f689c83d3f.jpg"
+    },
+    {
+      "id": "3a2dee52-2818-474a-a8fb-76593782fc5f",
+      "title": "シルエット",
+      "artist": "KANA-BOON",
+      "designer": "はくこう",
+      "uploader": "KuSA",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "12+",
+        "13",
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "Anime",
+        "POPS",
+        "NARUTO",
+        "MMFC",
+        "那你摸",
+        "MMFC10#1",
+        "MMFC10"
+      ],
+      "timestamp": "2024-11-19T16:19:08Z",
+      "plays": 1430,
+      "likes": 37,
+      "comments": 0,
+      "cover": "assets/majnet-covers/3a2dee52-2818-474a-a8fb-76593782fc5f.jpg"
+    },
+    {
+      "id": "976bf53a-7c71-4276-8cb7-41a7d6cc641d",
+      "title": "Bad Riddim!!",
+      "artist": "Rainbow Illusion",
+      "designer": "神：差点绷住 普通人：没绷住 我：轻快绷住，松弛绷住，舒缓绷住，安逸绷住，自在绷住，悠闲绷住，悠然绷住，闲适绷住，惬意绷住，舒畅绷住，畅快绷住，舒坦绷住，放松绷住，从容绷住，淡定绷住，坦然绷住，轻便绷住，轻巧绷住，轻盈绷住，轻捷绷住",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "区"
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-67"
+      ],
+      "timestamp": "2026-05-19T13:35:30.989Z",
+      "plays": 358,
+      "likes": 35,
+      "comments": 15,
+      "cover": "assets/majnet-covers/976bf53a-7c71-4276-8cb7-41a7d6cc641d.jpg"
+    },
+    {
+      "id": "3d822392-5bec-4db0-bf89-19623df6ebc6",
+      "title": "セレナーデ",
+      "artist": "なとり",
+      "designer": "Electro Swing",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-15T19:29:34.097Z",
+      "plays": 682,
+      "likes": 35,
+      "comments": 1,
+      "cover": "assets/majnet-covers/3d822392-5bec-4db0-bf89-19623df6ebc6.jpg"
+    },
+    {
+      "id": "e80cd72a-fa04-4007-9954-d8f8231a6664",
+      "title": "New World",
+      "artist": "FELT",
+      "designer": "新世界へようこそ",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-71"
+      ],
+      "timestamp": "2026-05-19T13:41:40.115Z",
+      "plays": 364,
+      "likes": 35,
+      "comments": 2,
+      "cover": "assets/majnet-covers/e80cd72a-fa04-4007-9954-d8f8231a6664.jpg"
+    },
+    {
+      "id": "c06770fd-043d-4941-9fb0-40c191bb2bdf",
+      "title": "hop",
+      "artist": "AZIS",
+      "designer": "luvlily",
+      "uploader": "luvlily",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "宴"
+      ],
+      "tags": [],
+      "publicTags": [
+        "非常规要素",
+        "R-18G",
+        "星星",
+        "Western",
+        "妹妹滴爸爸撸爆蛋",
+        "技巧",
+        "STD",
+        "WorldMusic",
+        "自慰",
+        "POPS"
+      ],
+      "timestamp": "2023-11-18T08:49:45Z",
+      "plays": 1659,
+      "likes": 35,
+      "comments": 2,
+      "cover": "assets/majnet-covers/c06770fd-043d-4941-9fb0-40c191bb2bdf.jpg"
+    },
+    {
+      "id": "0a5a1ea5-fc75-4a8a-9eb9-fcbaffeb8625",
+      "title": "sister's noise",
+      "artist": "fripSide",
+      "designer": "Delta-V",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛",
+        "POPS",
+        "Anime"
+      ],
+      "timestamp": "2026-03-15T15:04:53.923Z",
+      "plays": 733,
+      "likes": 34,
+      "comments": 1,
+      "cover": "assets/majnet-covers/0a5a1ea5-fc75-4a8a-9eb9-fcbaffeb8625.jpg"
+    },
+    {
+      "id": "0e4d7934-784f-4dad-8009-3f1955e7e731",
+      "title": "BOW AND ARROW",
+      "artist": "米津玄師",
+      "designer": "ここまで、ここまで",
+      "uploader": "LOA",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA正赛"
+      ],
+      "timestamp": "2025-11-15T18:23:55.615Z",
+      "plays": 956,
+      "likes": 34,
+      "comments": 4,
+      "cover": "assets/majnet-covers/0e4d7934-784f-4dad-8009-3f1955e7e731.jpg"
+    },
+    {
+      "id": "471d7132-f701-40a4-b474-128b06b951b3",
+      "title": "太陽曰く燃えよカオス",
+      "artist": "後ろから這いより隊G",
+      "designer": "笨蛋太阳总是太耀眼 黑暗才更美丽ᶻz ₍^_   ̫ _^₎",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛",
+        "Anime"
+      ],
+      "timestamp": "2026-03-15T12:57:07.866Z",
+      "plays": 641,
+      "likes": 33,
+      "comments": 0,
+      "cover": "assets/majnet-covers/471d7132-f701-40a4-b474-128b06b951b3.jpg"
+    },
+    {
+      "id": "a8c3de20-e2b6-419d-80bf-16809f5cc754",
+      "title": "WAVE",
+      "artist": "niki",
+      "designer": "///3ʌ//∀/Ⅿ///",
+      "uploader": "海鲜杯2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        ""
+      ],
+      "tags": [
+        "海鲜杯2-83",
+        "海鲜杯2正赛"
+      ],
+      "publicTags": [],
+      "timestamp": "2026-05-31T12:26:41.872Z",
+      "plays": 340,
+      "likes": 33,
+      "comments": 0,
+      "cover": "assets/majnet-covers/a8c3de20-e2b6-419d-80bf-16809f5cc754.jpg"
+    },
+    {
+      "id": "9cb2637c-f046-4529-b8c6-6c683ab1b4c9",
+      "title": "Weaponize",
+      "artist": "causeluve",
+      "designer": "Neya",
+      "uploader": "NayaFox",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "拯救",
+        "DJMAX"
+      ],
+      "timestamp": "2026-01-07T04:19:12.251Z",
+      "plays": 845,
+      "likes": 32,
+      "comments": 1,
+      "cover": "assets/majnet-covers/9cb2637c-f046-4529-b8c6-6c683ab1b4c9.jpg"
+    },
+    {
+      "id": "8085734c-bf40-4256-a0d2-46b7158383a4",
+      "title": "felzione",
+      "artist": "onoken",
+      "designer": "一小节一变速",
+      "uploader": "fpdqwq",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "OTOGE",
+        "Ranked_enjoy"
+      ],
+      "timestamp": "2025-10-08T12:42:21.781Z",
+      "plays": 781,
+      "likes": 32,
+      "comments": 5,
+      "cover": "assets/majnet-covers/8085734c-bf40-4256-a0d2-46b7158383a4.jpg"
+    },
+    {
+      "id": "8697d755-63dd-480d-a551-f68db22eaab2",
+      "title": "ANU",
+      "artist": "sasakure.UK VS 穴山大輔",
+      "designer": "TRG",
+      "uploader": "TRG",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "15",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2026-03-16T18:41:11.209Z",
+      "plays": 1630,
+      "likes": 32,
+      "comments": 0,
+      "cover": "assets/majnet-covers/8697d755-63dd-480d-a551-f68db22eaab2.jpg"
+    },
+    {
+      "id": "f2b5192f-1d78-4fba-a09b-36e89011c9f0",
+      "title": "自己肯定感爆上げ↑↑しゅきしゅきソング",
+      "artist": "藤田ことね (CV. 飯田ヒカル)",
+      "designer": "Kurage",
+      "uploader": "Kurage",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "学マス",
+        "アイドルマスター",
+        "IDOL",
+        "POPS",
+        "Anime",
+        "Game"
+      ],
+      "timestamp": "2025-08-19T15:11:52.335Z",
+      "plays": 1184,
+      "likes": 32,
+      "comments": 2,
+      "cover": "assets/majnet-covers/f2b5192f-1d78-4fba-a09b-36e89011c9f0.jpg"
+    },
+    {
+      "id": "99b05554-0da3-41b2-8906-38f8abe35d6e",
+      "title": "偶像に世界を委ねて ～ Idoratrize World",
+      "artist": "上海アリス幻樂団",
+      "designer": "孤立無援が誂えた造形神",
+      "uploader": "Kurage",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "MMFC12",
+        "Game",
+        "MMFC",
+        "DX",
+        "Fes",
+        "Touhou"
+      ],
+      "timestamp": "2026-01-19T16:56:15.037Z",
+      "plays": 742,
+      "likes": 32,
+      "comments": 2,
+      "cover": "assets/majnet-covers/99b05554-0da3-41b2-8906-38f8abe35d6e.jpg"
+    },
+    {
+      "id": "98270754-7bd4-449e-9fc7-71a265f0cff3",
+      "title": "Hydra",
+      "artist": "James Landino ＆ Akira Complex",
+      "designer": "Keep on 尼姆，跪下",
+      "uploader": "dilei",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-08-13T16:43:50.743Z",
+      "plays": 1100,
+      "likes": 31,
+      "comments": 0,
+      "cover": "assets/majnet-covers/98270754-7bd4-449e-9fc7-71a265f0cff3.jpg"
+    },
+    {
+      "id": "27780b46-f351-4611-a7f4-166e7895291a",
+      "title": "Beautiful Nightmare",
+      "artist": "八王子P",
+      "designer": "Tane",
+      "uploader": "Tane",
+      "levels": [
+        "2",
+        "4",
+        "7",
+        "10",
+        "12",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "VOCALOID",
+        "多难度",
+        "Japanese",
+        "星星"
+      ],
+      "timestamp": "2025-10-21T12:37:29.256Z",
+      "plays": 978,
+      "likes": 31,
+      "comments": 3,
+      "cover": "assets/majnet-covers/27780b46-f351-4611-a7f4-166e7895291a.jpg"
+    },
+    {
+      "id": "612988c7-fcdf-4c42-b814-36b8afe3a1c3",
+      "title": "Take Flight",
+      "artist": "Lindsey Stirling",
+      "designer": "TFgirls",
+      "uploader": "KuSA",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-12-25T14:47:52.866Z",
+      "plays": 929,
+      "likes": 31,
+      "comments": 0,
+      "cover": "assets/majnet-covers/612988c7-fcdf-4c42-b814-36b8afe3a1c3.jpg"
+    },
+    {
+      "id": "adcbdcbe-660b-4662-9845-7192e3b6dd4b",
+      "title": "Doll's Garden",
+      "artist": "Memme",
+      "designer": "Kurage",
+      "uploader": "Kurage",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "13+",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "EZ2ON",
+        "MMFC",
+        "Korean",
+        "MMFC7"
+      ],
+      "timestamp": "2024-09-08T16:58:17Z",
+      "plays": 988,
+      "likes": 31,
+      "comments": 0,
+      "cover": "assets/majnet-covers/adcbdcbe-660b-4662-9845-7192e3b6dd4b.jpg"
+    },
+    {
+      "id": "88318323-3ef7-4b40-9eed-daba613207ee",
+      "title": "上弦の月",
+      "artist": "黒うさP(feat. KAITO)",
+      "designer": "おにねこ",
+      "uploader": "onineko",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [
+        "VOCALOID",
+        "MMFC",
+        "STD",
+        "星星",
+        "技巧"
+      ],
+      "publicTags": [
+        "真猫",
+        "MMFC11#1",
+        "MMFC11"
+      ],
+      "timestamp": "2025-04-06T18:54:39.128Z",
+      "plays": 1181,
+      "likes": 31,
+      "comments": 3,
+      "cover": "assets/majnet-covers/88318323-3ef7-4b40-9eed-daba613207ee.jpg"
+    },
+    {
+      "id": "9a0e23f8-6c06-4859-ae3c-2eb1158e3bf7",
+      "title": "妖魔夜行",
+      "artist": "上海アリス幻樂団",
+      "designer": "对不起呀qwq",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-72",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-19T13:42:02.517Z",
+      "plays": 425,
+      "likes": 30,
+      "comments": 1,
+      "cover": "assets/majnet-covers/9a0e23f8-6c06-4859-ae3c-2eb1158e3bf7.jpg"
+    },
+    {
+      "id": "890446f9-1803-4fd5-a980-2da20865e0b4",
+      "title": "doppel",
+      "artist": "ヒトリエ",
+      "designer": "MYOU",
+      "uploader": "MYOU",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "13+",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "MMFC",
+        "MMFC8"
+      ],
+      "timestamp": "2024-06-08T05:10:15Z",
+      "plays": 783,
+      "likes": 30,
+      "comments": 2,
+      "cover": "assets/majnet-covers/890446f9-1803-4fd5-a980-2da20865e0b4.jpg"
+    },
+    {
+      "id": "8d09e15d-ecf9-45d3-943f-06d989360a6c",
+      "title": "Lucid Traveler",
+      "artist": "Akira Complex vs 3R2",
+      "designer": "はくこう",
+      "uploader": "白虹",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-09-24T10:12:43.55Z",
+      "plays": 866,
+      "likes": 29,
+      "comments": 1,
+      "cover": "assets/majnet-covers/8d09e15d-ecf9-45d3-943f-06d989360a6c.jpg"
+    },
+    {
+      "id": "b879d921-e66d-40b2-bf47-4f5be0e1eac6",
+      "title": "星の器",
+      "artist": "魂音泉",
+      "designer": "さくと先生",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "TPK-20",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-14T14:16:44.894Z",
+      "plays": 312,
+      "likes": 29,
+      "comments": 1,
+      "cover": "assets/majnet-covers/b879d921-e66d-40b2-bf47-4f5be0e1eac6.jpg"
+    },
+    {
+      "id": "16b579a7-94c5-45c7-8d3a-c974bcfa5b7a",
+      "title": "蛙石",
+      "artist": "舞風-Maikaze",
+      "designer": "Naïvilizer",
+      "uploader": "tr1u14",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "0",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "Touhou",
+        "非常规要素",
+        "星星",
+        "技巧",
+        "绝活"
+      ],
+      "timestamp": "2024-10-09T12:20:45Z",
+      "plays": 1546,
+      "likes": 29,
+      "comments": 3,
+      "cover": "assets/majnet-covers/16b579a7-94c5-45c7-8d3a-c974bcfa5b7a.jpg"
+    },
+    {
+      "id": "6736ad77-97bf-44a2-b154-b096f3019fe0",
+      "title": "海と、山と、空と、、、",
+      "artist": "masaki kawasaki",
+      "designer": "遠くへ、、、",
+      "uploader": "海鲜杯2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [
+        "海鲜杯2-49",
+        "海鲜杯2正赛"
+      ],
+      "publicTags": [],
+      "timestamp": "2026-05-25T12:42:37.152Z",
+      "plays": 292,
+      "likes": 29,
+      "comments": 0,
+      "cover": "assets/majnet-covers/6736ad77-97bf-44a2-b154-b096f3019fe0.jpg"
+    },
+    {
+      "id": "6bccc554-c53c-405d-b69c-030d0494d8b2",
+      "title": "魔理沙は大変なものを盗んでいきました 森羅万象Ver",
+      "artist": "あやぽんず*",
+      "designer": "H@ppy",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "TPK-35",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-16T14:40:31.115Z",
+      "plays": 381,
+      "likes": 28,
+      "comments": 0,
+      "cover": "assets/majnet-covers/6bccc554-c53c-405d-b69c-030d0494d8b2.jpg"
+    },
+    {
+      "id": "f23d1fd1-0be6-4e05-acad-dd69109cc42d",
+      "title": "恋ひ恋ふ縁",
+      "artist": "KOTOKO",
+      "designer": "丛雨是我老婆",
+      "uploader": "LSP",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LSP-53号作品",
+        "LSP正赛",
+        "Anime"
+      ],
+      "timestamp": "2026-02-01T11:48:13.015Z",
+      "plays": 1114,
+      "likes": 28,
+      "comments": 0,
+      "cover": "assets/majnet-covers/f23d1fd1-0be6-4e05-acad-dd69109cc42d.jpg"
+    },
+    {
+      "id": "13707d31-f0ed-4ef9-a42d-cddfad11520b",
+      "title": "ノリノリばんきちゃん",
+      "artist": "ぱらどっと",
+      "designer": "师傅，这里掉头",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "12+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "TPK-22",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-14T14:19:07.702Z",
+      "plays": 321,
+      "likes": 28,
+      "comments": 0,
+      "cover": "assets/majnet-covers/13707d31-f0ed-4ef9-a42d-cddfad11520b.jpg"
+    },
+    {
+      "id": "4407b6d5-ca2a-4a50-a718-bbf5193896b2",
+      "title": "蛍火の雪",
+      "artist": "Endorfin.",
+      "designer": "藍雪の月",
+      "uploader": "zjb",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "我错了",
+        "Japanese"
+      ],
+      "timestamp": "2025-05-06T17:02:37.757Z",
+      "plays": 930,
+      "likes": 28,
+      "comments": 2,
+      "cover": "assets/majnet-covers/4407b6d5-ca2a-4a50-a718-bbf5193896b2.jpg"
+    },
+    {
+      "id": "aba4fb64-795d-4d1e-8277-993dadeaea2b",
+      "title": "竹ノ花",
+      "artist": "めらみぽっぷ",
+      "designer": "来生",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-66",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-19T13:35:07.873Z",
+      "plays": 337,
+      "likes": 28,
+      "comments": 0,
+      "cover": "assets/majnet-covers/aba4fb64-795d-4d1e-8277-993dadeaea2b.jpg"
+    },
+    {
+      "id": "01e7f0ad-b026-42f8-bbda-3a12a8aa9e14",
+      "title": "IRIS OUT",
+      "artist": "米津玄师",
+      "designer": "JANE DOE",
+      "uploader": "LOA",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA正赛"
+      ],
+      "timestamp": "2025-11-15T11:30:49.512Z",
+      "plays": 1059,
+      "likes": 28,
+      "comments": 4,
+      "cover": "assets/majnet-covers/01e7f0ad-b026-42f8-bbda-3a12a8aa9e14.jpg"
+    },
+    {
+      "id": "53bf20ed-5644-4667-a0aa-87acdfe9eb50",
+      "title": "电动车",
+      "artist": "电动车",
+      "designer": "不要乱停车",
+      "uploader": "雅迪星人",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "电动车",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-08-09T05:10:23.695Z",
+      "plays": 1306,
+      "likes": 28,
+      "comments": 1,
+      "cover": "assets/majnet-covers/53bf20ed-5644-4667-a0aa-87acdfe9eb50.jpg"
+    },
+    {
+      "id": "3831b466-7aa4-4403-afd6-ef7a64ba1b07",
+      "title": "とくとく…… とく……",
+      "artist": "佐城雪美 (CV:中澤ミナ)",
+      "designer": "『恋文海月』",
+      "uploader": "TeamXmmcg",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "11+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "Game",
+        "IDOL",
+        "CGSS",
+        "Idolmaster",
+        "舞蹈",
+        "PV演出",
+        "非常规要素"
+      ],
+      "timestamp": "2025-04-16T15:15:42.302Z",
+      "plays": 1103,
+      "likes": 27,
+      "comments": 12,
+      "cover": "assets/majnet-covers/3831b466-7aa4-4403-afd6-ef7a64ba1b07.jpg"
+    },
+    {
+      "id": "d0c1b1bb-7f46-48bb-bea6-73653e8768a7",
+      "title": "Midnight Boogie",
+      "artist": "FELT",
+      "designer": "ミストレイク ~ Mist L⑨ke",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "TPK-62",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-18T07:57:39.13Z",
+      "plays": 284,
+      "likes": 27,
+      "comments": 1,
+      "cover": "assets/majnet-covers/d0c1b1bb-7f46-48bb-bea6-73653e8768a7.jpg"
+    },
+    {
+      "id": "634dca8f-2189-4822-83ba-9db22c5b5c15",
+      "title": "ストックホルムワルツ",
+      "artist": "イマニシ feat.yuki",
+      "designer": "冰山清辉",
+      "uploader": "woxxow",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "12+",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "MMFC6"
+      ],
+      "timestamp": "2024-02-20T06:19:18Z",
+      "plays": 898,
+      "likes": 27,
+      "comments": 0,
+      "cover": "assets/majnet-covers/634dca8f-2189-4822-83ba-9db22c5b5c15.jpg"
+    },
+    {
+      "id": "79333e78-7cb1-4a1c-97c6-f3bc02f8d32e",
+      "title": "天空の花の都",
+      "artist": "上海アリス幻樂団",
+      "designer": "春を告げる",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "TPK-36"
+      ],
+      "timestamp": "2026-05-16T14:41:07.734Z",
+      "plays": 284,
+      "likes": 27,
+      "comments": 0,
+      "cover": "assets/majnet-covers/79333e78-7cb1-4a1c-97c6-f3bc02f8d32e.jpg"
+    },
+    {
+      "id": "6e34917d-208e-497d-9e69-9f554de9ec7a",
+      "title": "La'qryma of the Wasteland",
+      "artist": "DJ Noriken",
+      "designer": "To Drink from a Dry Well(The line descends to sound the void, returning with silt that dreams of rivers and sometimes, pressed to its heart, a petal yet unlearned of bloom. This is the arid liturgy: where thirst communes with latent springs, and dust remembers how to bear what never was)",
+      "uploader": "zjb2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-12-04T04:15:21.403Z",
+      "plays": 790,
+      "likes": 27,
+      "comments": 1,
+      "cover": "assets/majnet-covers/6e34917d-208e-497d-9e69-9f554de9ec7a.jpg"
+    },
+    {
+      "id": "01711a70-2e0c-4603-9e5b-66e494b38a56",
+      "title": "TOMORROW",
+      "artist": "Machico",
+      "designer": "このす발",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛",
+        "POPS",
+        "Anime",
+        "BEMANI"
+      ],
+      "timestamp": "2026-03-04T03:08:47.818Z",
+      "plays": 578,
+      "likes": 26,
+      "comments": 1,
+      "cover": "assets/majnet-covers/01711a70-2e0c-4603-9e5b-66e494b38a56.jpg"
+    },
+    {
+      "id": "be9e6561-1c4c-4880-87ef-ece7b40db1ef",
+      "title": "Empty Backdoor",
+      "artist": "森羅万象",
+      "designer": "「门扉」之后",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-119",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-06-04T13:47:05.349Z",
+      "plays": 225,
+      "likes": 26,
+      "comments": 0,
+      "cover": "assets/majnet-covers/be9e6561-1c4c-4880-87ef-ece7b40db1ef.jpg"
+    },
+    {
+      "id": "fafc16cf-648b-473d-ae19-b8d426293fd1",
+      "title": "Revive",
+      "artist": "倉木麻衣",
+      "designer": "resume and \"Revive\"",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-01T06:03:28.753Z",
+      "plays": 582,
+      "likes": 26,
+      "comments": 1,
+      "cover": "assets/majnet-covers/fafc16cf-648b-473d-ae19-b8d426293fd1.jpg"
+    },
+    {
+      "id": "8e665796-e6e6-439e-8948-f50a5464f359",
+      "title": "流桜ノ門",
+      "artist": "tokiwa",
+      "designer": "Dororo",
+      "uploader": "Dororo",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "14",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "BEMANI",
+        "MMFC",
+        "MMFC9"
+      ],
+      "timestamp": "2024-07-27T13:20:40Z",
+      "plays": 1006,
+      "likes": 25,
+      "comments": 4,
+      "cover": "assets/majnet-covers/8e665796-e6e6-439e-8948-f50a5464f359.jpg"
+    },
+    {
+      "id": "f1ea9829-c6ed-4f3b-b281-b857faa6d8cd",
+      "title": "Breath of Faith",
+      "artist": "satie",
+      "designer": "Booths of Fighters",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-70",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-19T13:40:54.947Z",
+      "plays": 367,
+      "likes": 25,
+      "comments": 0,
+      "cover": "assets/majnet-covers/f1ea9829-c6ed-4f3b-b281-b857faa6d8cd.jpg"
+    },
+    {
+      "id": "36a1d964-37c3-4bad-b772-fa0957f157b2",
+      "title": "Dazzling You",
+      "artist": "Vivienne",
+      "designer": "谷底石",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "TPK-14",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-14T14:12:40.659Z",
+      "plays": 270,
+      "likes": 25,
+      "comments": 1,
+      "cover": "assets/majnet-covers/36a1d964-37c3-4bad-b772-fa0957f157b2.jpg"
+    },
+    {
+      "id": "af074062-adca-4472-9043-4c91c7c66534",
+      "title": "目撃！テト31世",
+      "artist": "はろける",
+      "designer": "你有多久没有在打舞萌的时候没有边唱边跳了？",
+      "uploader": "panpan",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        "+31"
+      ],
+      "tags": [
+        "VOCALOID",
+        "Japanese",
+        "DX",
+        "非常规要素",
+        "舞蹈",
+        "PV演出"
+      ],
+      "publicTags": [
+        "MajFoon",
+        "Ranked_enjoy"
+      ],
+      "timestamp": "2026-04-01T10:08:34.263Z",
+      "plays": 524,
+      "likes": 25,
+      "comments": 0,
+      "cover": "assets/majnet-covers/af074062-adca-4472-9043-4c91c7c66534.jpg"
+    },
+    {
+      "id": "55a3e8eb-343a-43b7-9a2d-3e8ea9b4f88b",
+      "title": "ATLAS RUSH",
+      "artist": "kanone",
+      "designer": "Kurage",
+      "uploader": "Kurage",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "14+",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2026-07-04T06:02:44.652Z",
+      "plays": 255,
+      "likes": 25,
+      "comments": 3,
+      "cover": "assets/majnet-covers/55a3e8eb-343a-43b7-9a2d-3e8ea9b4f88b.jpg"
+    },
+    {
+      "id": "ac9c75fc-fd77-42fe-bbb1-1dd351ef254f",
+      "title": "Mistletoe",
+      "artist": "葉月ゆら",
+      "designer": "luvlily",
+      "uploader": "luvlily",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "13",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "星星",
+        "技巧"
+      ],
+      "timestamp": "2023-11-18T08:50:36Z",
+      "plays": 1280,
+      "likes": 25,
+      "comments": 0,
+      "cover": "assets/majnet-covers/ac9c75fc-fd77-42fe-bbb1-1dd351ef254f.jpg"
+    },
+    {
+      "id": "31c8319c-52b9-4868-9668-521916d31e15",
+      "title": "我爱玩典韦",
+      "artist": "雷雷",
+      "designer": "不是本人",
+      "uploader": "Kurage",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "农",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2024-09-08T17:27:27Z",
+      "plays": 1317,
+      "likes": 25,
+      "comments": 1,
+      "cover": "assets/majnet-covers/31c8319c-52b9-4868-9668-521916d31e15.jpg"
+    },
+    {
+      "id": "5911d202-d92b-401f-9770-8dff7572c1ac",
+      "title": "二月の兵隊",
+      "artist": "the cabs",
+      "designer": "woxxow",
+      "uploader": "woxxow",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "Project Calendar",
+        "Ranked_enjoy",
+        "初代"
+      ],
+      "timestamp": "2025-02-17T13:19:39.979Z",
+      "plays": 699,
+      "likes": 25,
+      "comments": 0,
+      "cover": "assets/majnet-covers/5911d202-d92b-401f-9770-8dff7572c1ac.jpg"
+    },
+    {
+      "id": "084ed7c0-b4c6-4773-b5e6-94675378659b",
+      "title": "PRECIOUS",
+      "artist": "HIMEKA",
+      "designer": "天使の翼。",
+      "uploader": "LSP",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LSP-37号作品",
+        "LSP正赛"
+      ],
+      "timestamp": "2026-01-23T16:58:14.743Z",
+      "plays": 513,
+      "likes": 24,
+      "comments": 2,
+      "cover": "assets/majnet-covers/084ed7c0-b4c6-4773-b5e6-94675378659b.jpg"
+    },
+    {
+      "id": "7af78e86-53f8-4db0-9c9a-ccd2f04c2797",
+      "title": "追想ブロカント",
+      "artist": "onoken feat. Rin",
+      "designer": "お客様はお目が高い",
+      "uploader": "zjb",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "伪猫",
+        "前面这个tag不是谱师加的然后还有猫我是你粉丝啊猫看我一眼求求你"
+      ],
+      "timestamp": "2025-05-06T16:15:46.822Z",
+      "plays": 851,
+      "likes": 24,
+      "comments": 2,
+      "cover": "assets/majnet-covers/7af78e86-53f8-4db0-9c9a-ccd2f04c2797.jpg"
+    },
+    {
+      "id": "ab273c50-0d98-4183-b818-09cb093423bc",
+      "title": "Shoot the shrine maiden!",
+      "artist": "凋叶棕",
+      "designer": "【Photograph】",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-101",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-30T12:31:38.617Z",
+      "plays": 204,
+      "likes": 24,
+      "comments": 1,
+      "cover": "assets/majnet-covers/ab273c50-0d98-4183-b818-09cb093423bc.jpg"
+    },
+    {
+      "id": "d8ebaf4b-1842-493e-be2e-3e82c8bf6dc4",
+      "title": "ΔRTIFACTS",
+      "artist": "ぱらどっと",
+      "designer": "Γeometric Δrtifacts",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "TPK-54",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-18T07:43:47.13Z",
+      "plays": 335,
+      "likes": 24,
+      "comments": 0,
+      "cover": "assets/majnet-covers/d8ebaf4b-1842-493e-be2e-3e82c8bf6dc4.jpg"
+    },
+    {
+      "id": "6d108d33-7456-4c45-8c6d-311db8e6c26e",
+      "title": "少女Ｓ",
+      "artist": "SCANDAL",
+      "designer": "Shoujo Shinigami",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-11T05:30:56.927Z",
+      "plays": 511,
+      "likes": 24,
+      "comments": 0,
+      "cover": "assets/majnet-covers/6d108d33-7456-4c45-8c6d-311db8e6c26e.jpg"
+    },
+    {
+      "id": "eb3e312e-6ab1-4759-ad31-1b27d7be656e",
+      "title": "白金ディスコ",
+      "artist": "井口裕香",
+      "designer": "はっぴ二",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "12",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-12T07:57:39.859Z",
+      "plays": 599,
+      "likes": 24,
+      "comments": 0,
+      "cover": "assets/majnet-covers/eb3e312e-6ab1-4759-ad31-1b27d7be656e.jpg"
+    },
+    {
+      "id": "a709697a-155b-4c43-8013-616a3763eceb",
+      "title": "GETCHA!",
+      "artist": "Giga & KIRA",
+      "designer": "MYOU",
+      "uploader": "MYOU",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "MMFC13"
+      ],
+      "timestamp": "2026-05-20T16:01:17.347Z",
+      "plays": 289,
+      "likes": 23,
+      "comments": 0,
+      "cover": "assets/majnet-covers/a709697a-155b-4c43-8013-616a3763eceb.jpg"
+    },
+    {
+      "id": "55313b8f-3b1d-42e4-829f-6ab90576552c",
+      "title": "dica dica",
+      "artist": "REMO-CON",
+      "designer": "acid acid",
+      "uploader": "KasumCiella",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-12-29T14:49:05.916Z",
+      "plays": 618,
+      "likes": 23,
+      "comments": 0,
+      "cover": "assets/majnet-covers/55313b8f-3b1d-42e4-829f-6ab90576552c.jpg"
+    },
+    {
+      "id": "67b3e6ff-11d2-4d2c-be68-0438e1536f65",
+      "title": "Never Say",
+      "artist": "ND Lee",
+      "designer": "TNO138",
+      "uploader": "zjb",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-05-11T16:08:36.772Z",
+      "plays": 619,
+      "likes": 23,
+      "comments": 3,
+      "cover": "assets/majnet-covers/67b3e6ff-11d2-4d2c-be68-0438e1536f65.jpg"
+    },
+    {
+      "id": "7b294d7f-91fd-4eb8-8b42-bce4d5e31fdd",
+      "title": "Aqua Stars",
+      "artist": "Sound Souler",
+      "designer": "zjb",
+      "uploader": "zjb",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-05-06T16:42:24.068Z",
+      "plays": 646,
+      "likes": 23,
+      "comments": 2,
+      "cover": "assets/majnet-covers/7b294d7f-91fd-4eb8-8b42-bce4d5e31fdd.jpg"
+    },
+    {
+      "id": "c90d0fdd-f05a-44be-bc85-de1ebeb89d32",
+      "title": "TECHNOPOLIS 1042.5",
+      "artist": "PRASTIK DANCEFLOOR",
+      "designer": "TRG",
+      "uploader": "TRG",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2026-03-18T11:47:40.385Z",
+      "plays": 975,
+      "likes": 23,
+      "comments": 1,
+      "cover": "assets/majnet-covers/c90d0fdd-f05a-44be-bc85-de1ebeb89d32.jpg"
+    },
+    {
+      "id": "d8711258-ce19-46f5-a598-dea7cf31b34c",
+      "title": "基米一起哈 - 上世纪北欧热潮带你鸡爆电基地带",
+      "artist": "bbben_",
+      "designer": "哈基心 vs 哈基白",
+      "uploader": "HeartWhite",
+      "levels": [
+        "",
+        "1",
+        "",
+        "1",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-07-03T13:23:54.823Z",
+      "plays": 1509,
+      "likes": 23,
+      "comments": 5,
+      "cover": "assets/majnet-covers/d8711258-ce19-46f5-a598-dea7cf31b34c.jpg"
+    },
+    {
+      "id": "dbe15a64-3d01-44b9-81a8-44a706f41441",
+      "title": "ヒステリックナイトガール -Awakening- (feat. Such)",
+      "artist": "PSYQUI; Such",
+      "designer": "歇斯底里深夜水母",
+      "uploader": "海鲜杯2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [
+        "海鲜杯2-52",
+        "海鲜杯2正赛"
+      ],
+      "publicTags": [],
+      "timestamp": "2026-05-26T12:08:50.272Z",
+      "plays": 314,
+      "likes": 23,
+      "comments": 0,
+      "cover": "assets/majnet-covers/dbe15a64-3d01-44b9-81a8-44a706f41441.jpg"
+    },
+    {
+      "id": "aeabc4a9-70a5-4e32-9eb9-2e906f56259e",
+      "title": "蓬莱伝説",
+      "artist": "上海アリス幻樂団",
+      "designer": "正直者[0]:IndexOutOfRange",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "TPK-42"
+      ],
+      "timestamp": "2026-05-16T14:54:03.664Z",
+      "plays": 252,
+      "likes": 23,
+      "comments": 0,
+      "cover": "assets/majnet-covers/aeabc4a9-70a5-4e32-9eb9-2e906f56259e.jpg"
+    },
+    {
+      "id": "06391880-6457-4487-ab4b-f54e075106c9",
+      "title": "少女レイ",
+      "artist": "みきとP feat.初音ミク",
+      "designer": "woxxow",
+      "uploader": "woxxow",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "12",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "VOCALOID",
+        "MMFC",
+        "铁轨不一样长"
+      ],
+      "timestamp": "2024-01-29T07:43:49Z",
+      "plays": 1007,
+      "likes": 23,
+      "comments": 4,
+      "cover": "assets/majnet-covers/06391880-6457-4487-ab4b-f54e075106c9.jpg"
+    },
+    {
+      "id": "cd6e40ff-a6ef-48ec-bd51-5c851f84027f",
+      "title": "Ex-Otogibanashi (Anime ver.)",
+      "artist": "ryo (supercell); かぐや(cv.夏吉ゆうこ); 月見ヤチヨ(cv.早見沙織)",
+      "designer": "LTCalter",
+      "uploader": "LTCalter",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "Anime",
+        "IDOL",
+        "POPS"
+      ],
+      "timestamp": "2026-01-26T17:34:23.12Z",
+      "plays": 908,
+      "likes": 22,
+      "comments": 0,
+      "cover": "assets/majnet-covers/cd6e40ff-a6ef-48ec-bd51-5c851f84027f.jpg"
+    },
+    {
+      "id": "3272cb55-29c9-43f8-beb5-85abab9d90a6",
+      "title": "Midnight Lady",
+      "artist": "Dirty Androids",
+      "designer": "Coastline Bartender",
+      "uploader": "白虹",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "MMFC11#2",
+        "MMFC11",
+        "安卓"
+      ],
+      "timestamp": "2025-04-09T00:24:47.574Z",
+      "plays": 849,
+      "likes": 22,
+      "comments": 0,
+      "cover": "assets/majnet-covers/3272cb55-29c9-43f8-beb5-85abab9d90a6.jpg"
+    },
+    {
+      "id": "525fc8ad-9e6a-4ba9-b7f1-99c1699cd174",
+      "title": "怪獣",
+      "artist": "サカナクション",
+      "designer": "Holinality",
+      "uploader": "Holinality",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "踊"
+      ],
+      "tags": [],
+      "publicTags": [
+        "POPS",
+        "Anime",
+        "IDOL",
+        "Japanese",
+        "Fes",
+        "非常规要素",
+        "星星",
+        "技巧",
+        "PV演出",
+        "舞蹈",
+        "观赏用",
+        "送给我孩子的歌",
+        "下饭"
+      ],
+      "timestamp": "2025-05-09T10:02:35.604Z",
+      "plays": 771,
+      "likes": 22,
+      "comments": 4,
+      "cover": "assets/majnet-covers/525fc8ad-9e6a-4ba9-b7f1-99c1699cd174.jpg"
+    },
+    {
+      "id": "514dbfca-93e7-4548-b48c-2358cb4f2a1a",
+      "title": "My Soul, Your Beats!",
+      "artist": "VISUAL ARTS/Key Sounds Label/Lia",
+      "designer": "奏",
+      "uploader": "LSP",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LSP-45号作品",
+        "LSP正赛"
+      ],
+      "timestamp": "2026-01-26T10:08:26.372Z",
+      "plays": 522,
+      "likes": 22,
+      "comments": 1,
+      "cover": "assets/majnet-covers/514dbfca-93e7-4548-b48c-2358cb4f2a1a.jpg"
+    },
+    {
+      "id": "a11ea56a-f3c7-49d3-bd24-4131a057e409",
+      "title": "新人類 (feat. 鏡音リン)",
+      "artist": "まらしぃ; 堀江晶太;  じん",
+      "designer": "外部新厨房",
+      "uploader": "なないし",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "13+",
+        null,
+        null
+      ],
+      "tags": [
+        "VOCALOID",
+        "MMFC",
+        "Japanese",
+        "STD",
+        "耐力",
+        "技巧",
+        "键盘"
+      ],
+      "publicTags": [
+        "MMFC6"
+      ],
+      "timestamp": "2023-12-31T10:51:06Z",
+      "plays": 828,
+      "likes": 22,
+      "comments": 5,
+      "cover": "assets/majnet-covers/a11ea56a-f3c7-49d3-bd24-4131a057e409.jpg"
+    },
+    {
+      "id": "151a8efb-74bf-4e94-a030-47ac9e665c7b",
+      "title": "RGB",
+      "artist": "MEMODEMO; AQUASINE",
+      "designer": "挑战失败",
+      "uploader": "zjb",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "9+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-05-11T16:09:14.604Z",
+      "plays": 755,
+      "likes": 22,
+      "comments": 3,
+      "cover": "assets/majnet-covers/151a8efb-74bf-4e94-a030-47ac9e665c7b.jpg"
+    },
+    {
+      "id": "3555b958-a2f2-49e9-8cd6-ab8af2c0e591",
+      "title": "トウキョウ・シャンディ・ランデヴ",
+      "artist": "MAISONdes feat. 花譜, ツミキ",
+      "designer": "Ragna",
+      "uploader": "hakureiyoru",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "12+",
+        "",
+        ""
+      ],
+      "tags": [
+        "MMFC",
+        "Anime",
+        "STD",
+        "<2min"
+      ],
+      "publicTags": [
+        "MMFC1"
+      ],
+      "timestamp": "2025-05-30T17:18:14.245Z",
+      "plays": 868,
+      "likes": 21,
+      "comments": 2,
+      "cover": "assets/majnet-covers/3555b958-a2f2-49e9-8cd6-ab8af2c0e591.jpg"
+    },
+    {
+      "id": "09107fba-1da0-4490-aa29-7a7b7e67e69f",
+      "title": "影色舞",
+      "artist": "MyGO!!!!!",
+      "designer": "はくこう",
+      "uploader": "白虹",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "12+",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2024-02-24T18:09:08Z",
+      "plays": 983,
+      "likes": 21,
+      "comments": 0,
+      "cover": "assets/majnet-covers/09107fba-1da0-4490-aa29-7a7b7e67e69f.jpg"
+    },
+    {
+      "id": "8796e97e-78f7-4d7e-901f-6897041a240d",
+      "title": "挖掘机技术哪家强？",
+      "artist": "伊丽莎白鼠",
+      "designer": "Hoshi",
+      "uploader": "Hoshi",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "13+",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2024-10-01T18:56:45Z",
+      "plays": 1230,
+      "likes": 21,
+      "comments": 0,
+      "cover": "assets/majnet-covers/8796e97e-78f7-4d7e-901f-6897041a240d.jpg"
+    },
+    {
+      "id": "9a45d050-ad75-43c7-a62b-4be696f5cc04",
+      "title": "Battlefield of love",
+      "artist": "伊沢麻未",
+      "designer": "Last Present",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "12+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-01T06:07:08.808Z",
+      "plays": 467,
+      "likes": 21,
+      "comments": 0,
+      "cover": "assets/majnet-covers/9a45d050-ad75-43c7-a62b-4be696f5cc04.jpg"
+    },
+    {
+      "id": "08f6f2c7-b5d6-4cfe-b575-1c990a5e581f",
+      "title": "Chronicle and Scarlet",
+      "artist": "神尾光临/miko/Avalon",
+      "designer": "KAMI TaiL vs mMmMk vs kUsa",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-79",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-22T18:46:41.334Z",
+      "plays": 253,
+      "likes": 21,
+      "comments": 0,
+      "cover": "assets/majnet-covers/08f6f2c7-b5d6-4cfe-b575-1c990a5e581f.jpg"
+    },
+    {
+      "id": "3e61c3f6-ef63-4468-baa9-7fddcb527793",
+      "title": "恋ノ蟲",
+      "artist": "花たん",
+      "designer": "坏利哪里提",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "TPK-23",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-14T14:19:39.22Z",
+      "plays": 285,
+      "likes": 21,
+      "comments": 1,
+      "cover": "assets/majnet-covers/3e61c3f6-ef63-4468-baa9-7fddcb527793.jpg"
+    },
+    {
+      "id": "c8034886-ec91-4d9b-bf98-530f2e8c7150",
+      "title": "彩",
+      "artist": "MisoilePunch♪",
+      "designer": "也够大队队长",
+      "uploader": "dilei",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-08-13T16:44:41.871Z",
+      "plays": 739,
+      "likes": 21,
+      "comments": 6,
+      "cover": "assets/majnet-covers/c8034886-ec91-4d9b-bf98-530f2e8c7150.jpg"
+    },
+    {
+      "id": "252d1dc1-eb4d-40dd-a190-6455bf247510",
+      "title": "Candy a Mine",
+      "artist": "茶太",
+      "designer": "❤冰织❤",
+      "uploader": "LSP",
+      "levels": [
+        "",
+        "",
+        "",
+        "13",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LSP-14号作品",
+        "LSP正赛"
+      ],
+      "timestamp": "2026-01-16T05:34:26.401Z",
+      "plays": 422,
+      "likes": 21,
+      "comments": 0,
+      "cover": "assets/majnet-covers/252d1dc1-eb4d-40dd-a190-6455bf247510.jpg"
+    },
+    {
+      "id": "65c5bb72-fe93-430a-8022-bec6414af923",
+      "title": "Far east nightbird",
+      "artist": "猫叉master",
+      "designer": "Far east nightclub",
+      "uploader": "KuSA",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        "14",
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "BEMANI"
+      ],
+      "timestamp": "2024-08-23T16:33:28Z",
+      "plays": 958,
+      "likes": 21,
+      "comments": 0,
+      "cover": "assets/majnet-covers/65c5bb72-fe93-430a-8022-bec6414af923.jpg"
+    },
+    {
+      "id": "22eedee9-daae-4fdd-ba02-b40a2828151f",
+      "title": "Johann.Mouse（chapter Ⅱ）",
+      "artist": "-",
+      "designer": "How to play the waltz in six \"Easy\" lessons",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-15T19:29:57.051Z",
+      "plays": 508,
+      "likes": 21,
+      "comments": 1,
+      "cover": "assets/majnet-covers/22eedee9-daae-4fdd-ba02-b40a2828151f.jpg"
+    },
+    {
+      "id": "97397e0a-bc6d-4fd2-bcdb-f3562c5dc2d2",
+      "title": "furioso melodia",
+      "artist": "gmtn.(witch's slave)",
+      "designer": "おにねこ",
+      "uploader": "onineko",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "14+",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "MMFC4",
+        "Ranked_challenge"
+      ],
+      "timestamp": "2024-08-09T16:06:20Z",
+      "plays": 1024,
+      "likes": 21,
+      "comments": 0,
+      "cover": "assets/majnet-covers/97397e0a-bc6d-4fd2-bcdb-f3562c5dc2d2.jpg"
+    },
+    {
+      "id": "7b081469-7cde-49ad-bfc9-3a6b51a79461",
+      "title": "I Wish You Were Mine",
+      "artist": "GALAXIKA, ELIN",
+      "designer": "paff",
+      "uploader": "KuSA",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-02-17T15:44:06.947Z",
+      "plays": 835,
+      "likes": 21,
+      "comments": 0,
+      "cover": "assets/majnet-covers/7b081469-7cde-49ad-bfc9-3a6b51a79461.jpg"
+    },
+    {
+      "id": "0f0b1bf1-e426-41d9-9e34-dc5f1ab1f1c1",
+      "title": "恋色マスタースパーク ~ 爆音ジャズ ver.",
+      "artist": "東京アクティブNEETs",
+      "designer": "再也不写爵士了",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "TPK-37",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-16T14:55:37.221Z",
+      "plays": 265,
+      "likes": 21,
+      "comments": 1,
+      "cover": "assets/majnet-covers/0f0b1bf1-e426-41d9-9e34-dc5f1ab1f1c1.jpg"
+    },
+    {
+      "id": "45f0f73e-35f1-4a90-ba61-f955cd5bb965",
+      "title": "My last stand",
+      "artist": "Robbie Wyckoff",
+      "designer": "Neya",
+      "uploader": "NayaFox",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "MMFC12",
+        "Game",
+        "MMFC",
+        "DX",
+        "Fes"
+      ],
+      "timestamp": "2026-01-19T18:07:07.815Z",
+      "plays": 491,
+      "likes": 21,
+      "comments": 1,
+      "cover": "assets/majnet-covers/45f0f73e-35f1-4a90-ba61-f955cd5bb965.jpg"
+    },
+    {
+      "id": "2c6bf9b2-ab13-4773-bb06-0f4578de8669",
+      "title": "Break your world",
+      "artist": "佐咲纱花",
+      "designer": "8qq8/1pp1",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-15T08:44:52.645Z",
+      "plays": 465,
+      "likes": 20,
+      "comments": 0,
+      "cover": "assets/majnet-covers/2c6bf9b2-ab13-4773-bb06-0f4578de8669.jpg"
+    },
+    {
+      "id": "862155c8-9f2a-4ae2-923e-25b113671cfd",
+      "title": "“ちぇんにゃんぽい!”",
+      "artist": "葉月ゆら",
+      "designer": "神秘哥特女",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "TPK-2",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-14T14:01:30.486Z",
+      "plays": 242,
+      "likes": 20,
+      "comments": 0,
+      "cover": "assets/majnet-covers/862155c8-9f2a-4ae2-923e-25b113671cfd.jpg"
+    },
+    {
+      "id": "ffad3e27-af25-4587-9686-772afece90cd",
+      "title": "Egret and Willow",
+      "artist": "Dirty Androids",
+      "designer": "Tsuki no Kaze",
+      "uploader": "woxxow",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "MMFC11#6",
+        "MMFC11"
+      ],
+      "timestamp": "2025-04-06T18:12:59.013Z",
+      "plays": 689,
+      "likes": 20,
+      "comments": 0,
+      "cover": "assets/majnet-covers/ffad3e27-af25-4587-9686-772afece90cd.jpg"
+    },
+    {
+      "id": "fcd2ffe1-b33b-44d3-b603-ed69cf6ca256",
+      "title": "嗚呼 絢爛の泡沫が如く",
+      "artist": "おっちょこバニー/ういにゃす",
+      "designer": "❤",
+      "uploader": "LSP",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LSP-31号作品",
+        "LSP正赛"
+      ],
+      "timestamp": "2026-01-23T16:50:07.863Z",
+      "plays": 501,
+      "likes": 20,
+      "comments": 0,
+      "cover": "assets/majnet-covers/fcd2ffe1-b33b-44d3-b603-ed69cf6ca256.jpg"
+    },
+    {
+      "id": "1f7c2fa8-5e57-4ea2-b791-e3832934c94d",
+      "title": "Gun's & Roses",
+      "artist": "Paradise Lunch",
+      "designer": "爵色",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-06T04:55:36.863Z",
+      "plays": 528,
+      "likes": 20,
+      "comments": 0,
+      "cover": "assets/majnet-covers/1f7c2fa8-5e57-4ea2-b791-e3832934c94d.jpg"
+    },
+    {
+      "id": "67ee2617-78fa-4c61-8fba-074ec1be6389",
+      "title": "L.L.L.",
+      "artist": "MYTH & ROID",
+      "designer": "L.L.L.",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-14T17:14:28.917Z",
+      "plays": 514,
+      "likes": 20,
+      "comments": 0,
+      "cover": "assets/majnet-covers/67ee2617-78fa-4c61-8fba-074ec1be6389.jpg"
+    },
+    {
+      "id": "03e5a804-8e55-4b04-85ff-91568d154010",
+      "title": "Wish a Shooting Star",
+      "artist": "森羅万象",
+      "designer": "M,O: Holinality; ReM: Glowen",
+      "uploader": "Holinality",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "13+",
+        "星"
+      ],
+      "tags": [],
+      "publicTags": [
+        "Touhou"
+      ],
+      "timestamp": "2025-09-05T04:37:39.854Z",
+      "plays": 686,
+      "likes": 20,
+      "comments": 3,
+      "cover": "assets/majnet-covers/03e5a804-8e55-4b04-85ff-91568d154010.jpg"
+    },
+    {
+      "id": "53801287-b5d5-42d2-8e92-389a1b0ed1e7",
+      "title": "紋",
+      "artist": "喜多村英梨",
+      "designer": "C3",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛",
+        "圈圈Amaoto"
+      ],
+      "timestamp": "2026-03-05T08:17:10.855Z",
+      "plays": 544,
+      "likes": 20,
+      "comments": 0,
+      "cover": "assets/majnet-covers/53801287-b5d5-42d2-8e92-389a1b0ed1e7.jpg"
+    },
+    {
+      "id": "aa1200e4-9c68-4ea0-9ca1-f95c740d08d3",
+      "title": "桃源郷エイリアン",
+      "artist": "serial TV drama",
+      "designer": "ないやいや",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-04T03:08:40.772Z",
+      "plays": 532,
+      "likes": 20,
+      "comments": 0,
+      "cover": "assets/majnet-covers/aa1200e4-9c68-4ea0-9ca1-f95c740d08d3.jpg"
+    },
+    {
+      "id": "9e7ea552-bd88-4798-be7e-80aa82e05b38",
+      "title": "ちっちゃな私",
+      "artist": "重音テト/マサラダ",
+      "designer": "ぱんぱんとちっちゃなぱんぱん",
+      "uploader": "panpan",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [
+        "VOCALOID",
+        "Japanese",
+        "STD",
+        "非常规要素",
+        "技巧",
+        "FULL",
+        "PV演出",
+        "teto"
+      ],
+      "publicTags": [
+        "POPS"
+      ],
+      "timestamp": "2025-04-08T16:55:59.919Z",
+      "plays": 1096,
+      "likes": 20,
+      "comments": 2,
+      "cover": "assets/majnet-covers/9e7ea552-bd88-4798-be7e-80aa82e05b38.jpg"
+    },
+    {
+      "id": "1fd1a48e-c346-45e4-98b4-7d3fc81e0abb",
+      "title": "AIZO",
+      "artist": "King Gnu",
+      "designer": "五条悟",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-15T19:28:46.487Z",
+      "plays": 543,
+      "likes": 20,
+      "comments": 0,
+      "cover": "assets/majnet-covers/1fd1a48e-c346-45e4-98b4-7d3fc81e0abb.jpg"
+    },
+    {
+      "id": "df41896b-a599-4939-b998-309f547e450c",
+      "title": "パチュリーズ・ベストヒットGSK",
+      "artist": "IOSYS",
+      "designer": "MC帕琪",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "TPK-59",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-18T07:55:58.253Z",
+      "plays": 274,
+      "likes": 20,
+      "comments": 0,
+      "cover": "assets/majnet-covers/df41896b-a599-4939-b998-309f547e450c.jpg"
+    },
+    {
+      "id": "84c68165-5041-4add-b722-d432788975be",
+      "title": "Let's chu-chu",
+      "artist": "風鈴ぼるけいの",
+      "designer": "这首歌居然是东方的？",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "TPK-9"
+      ],
+      "timestamp": "2026-05-14T14:50:36.713Z",
+      "plays": 251,
+      "likes": 20,
+      "comments": 0,
+      "cover": "assets/majnet-covers/84c68165-5041-4add-b722-d432788975be.jpg"
+    },
+    {
+      "id": "f361f80b-345a-4262-9f6f-40d03d835819",
+      "title": "Wonder Dog Parade",
+      "artist": "夏山よつぎ",
+      "designer": "能不能别狗叫了",
+      "uploader": "海鲜杯",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-07-30T08:26:19.36Z",
+      "plays": 626,
+      "likes": 20,
+      "comments": 2,
+      "cover": "assets/majnet-covers/f361f80b-345a-4262-9f6f-40d03d835819.jpg"
+    },
+    {
+      "id": "0394814c-bfbd-419f-bf8d-a1f8e0c5945c",
+      "title": "Techno Racer",
+      "artist": "Paul Bazooka",
+      "designer": "Better Eater",
+      "uploader": "zjb",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-05-06T16:48:29.996Z",
+      "plays": 610,
+      "likes": 20,
+      "comments": 1,
+      "cover": "assets/majnet-covers/0394814c-bfbd-419f-bf8d-a1f8e0c5945c.jpg"
+    },
+    {
+      "id": "6e9f4a36-ea2a-4827-a378-fa28f5453e32",
+      "title": "snowloop*",
+      "artist": "棗いつき × 藍月なくる",
+      "designer": "神様、どうか二人を照らして",
+      "uploader": "KOL_NEW 2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "KOL20-35",
+        "fpdqwq"
+      ],
+      "timestamp": "2026-02-16T14:35:02.393Z",
+      "plays": 564,
+      "likes": 20,
+      "comments": 3,
+      "cover": "assets/majnet-covers/6e9f4a36-ea2a-4827-a378-fa28f5453e32.jpg"
+    },
+    {
+      "id": "48cb4673-fd8f-4c3a-8702-87a23a856418",
+      "title": "2 Minutes Euphoria -2分間の多幸感-",
+      "artist": "Sta & Feryquitous",
+      "designer": "- Six Second Later -",
+      "uploader": "zjb",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "拯救",
+        "OTOGE",
+        "Japanese",
+        "Fes",
+        "耐力",
+        "24踩完了真玩不了了要",
+        "聋子流踩音",
+        "哈哈我的品味"
+      ],
+      "timestamp": "2025-05-06T16:12:10.157Z",
+      "plays": 908,
+      "likes": 20,
+      "comments": 2,
+      "cover": "assets/majnet-covers/48cb4673-fd8f-4c3a-8702-87a23a856418.jpg"
+    },
+    {
+      "id": "f0a644df-eb64-4036-9feb-f22a3a02d5d0",
+      "title": "万有ヱレキテル",
+      "artist": "sasakure.UK",
+      "designer": "LuvLoli",
+      "uploader": "KuSA",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "MMFC",
+        "MMFC2"
+      ],
+      "timestamp": "2025-07-31T16:26:25.471Z",
+      "plays": 793,
+      "likes": 20,
+      "comments": 2,
+      "cover": "assets/majnet-covers/f0a644df-eb64-4036-9feb-f22a3a02d5d0.jpg"
+    },
+    {
+      "id": "64e1ac51-dc81-4583-909b-93336ec804df",
+      "title": "ユメミ",
+      "artist": "r-906 feat. LeuR",
+      "designer": "野猫来了哦",
+      "uploader": "海鲜杯2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [
+        "海鲜杯2-111",
+        "海鲜杯2正赛"
+      ],
+      "publicTags": [],
+      "timestamp": "2026-06-04T12:13:42.731Z",
+      "plays": 209,
+      "likes": 20,
+      "comments": 0,
+      "cover": "assets/majnet-covers/64e1ac51-dc81-4583-909b-93336ec804df.jpg"
+    },
+    {
+      "id": "8640e519-b1c0-43da-b3ea-693a5ab020bd",
+      "title": "GET OUT",
+      "artist": "ND Lee",
+      "designer": "Make u mind",
+      "uploader": "zjb2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "OTOGE",
+        "Game",
+        "Hip-hop",
+        "DJMAX"
+      ],
+      "timestamp": "2025-11-30T16:07:20.623Z",
+      "plays": 616,
+      "likes": 20,
+      "comments": 5,
+      "cover": "assets/majnet-covers/8640e519-b1c0-43da-b3ea-693a5ab020bd.jpg"
+    },
+    {
+      "id": "108334cd-15ef-41d1-a5a4-3cda1e09545f",
+      "title": "しゃにむに",
+      "artist": "ど〜ぱみん; 重音テト",
+      "designer": "カンナカム",
+      "uploader": "FRANCIUMN",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [
+        "MMFC"
+      ],
+      "publicTags": [
+        "MMFC13"
+      ],
+      "timestamp": "2026-05-18T14:48:48.202Z",
+      "plays": 236,
+      "likes": 20,
+      "comments": 1,
+      "cover": "assets/majnet-covers/108334cd-15ef-41d1-a5a4-3cda1e09545f.jpg"
+    },
+    {
+      "id": "3e46e9cc-5819-416b-9d64-01387634a2e1",
+      "title": "Kronos",
+      "artist": "削除",
+      "designer": "Ragna",
+      "uploader": "hakureiyoru",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "BMS",
+        "MMFC",
+        "MMFC4"
+      ],
+      "timestamp": "2025-05-31T04:09:17.309Z",
+      "plays": 967,
+      "likes": 20,
+      "comments": 0,
+      "cover": "assets/majnet-covers/3e46e9cc-5819-416b-9d64-01387634a2e1.jpg"
+    },
+    {
+      "id": "a320c9f4-ded5-4358-8376-5b3cbd8a2f18",
+      "title": "공격전이다",
+      "artist": "攻撃戦",
+      "designer": "장군님의 은정",
+      "uploader": "Kanata",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "12+",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "POPS",
+        "K?pop",
+        "将军",
+        "Korean"
+      ],
+      "timestamp": "2024-01-29T07:30:59Z",
+      "plays": 855,
+      "likes": 19,
+      "comments": 4,
+      "cover": "assets/majnet-covers/a320c9f4-ded5-4358-8376-5b3cbd8a2f18.jpg"
+    },
+    {
+      "id": "463fa3dd-3fa8-4324-bc70-e676295fb4ee",
+      "title": "明日散る運命なら",
+      "artist": "幽閉サテライト",
+      "designer": "Hinasuki",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-99",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-30T12:30:08.511Z",
+      "plays": 200,
+      "likes": 19,
+      "comments": 0,
+      "cover": "assets/majnet-covers/463fa3dd-3fa8-4324-bc70-e676295fb4ee.jpg"
+    },
+    {
+      "id": "78c32334-002b-4872-bcb0-3f2db92dc98b",
+      "title": "透明人間(Adult Version)",
+      "artist": "東京事変",
+      "designer": "再见、東京事変",
+      "uploader": "Anshin_W.",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [
+        "POPS",
+        "MMFC",
+        "Japanese",
+        "Fes"
+      ],
+      "publicTags": [
+        "MMFC8"
+      ],
+      "timestamp": "2025-04-17T18:22:50.938Z",
+      "plays": 611,
+      "likes": 19,
+      "comments": 1,
+      "cover": "assets/majnet-covers/78c32334-002b-4872-bcb0-3f2db92dc98b.jpg"
+    },
+    {
+      "id": "3483f322-8817-4d96-a4b5-4c872422c52f",
+      "title": "ray",
+      "artist": "かぐや(cv.夏吉ゆうこ)/月見ヤチヨ(cv.早見沙織)",
+      "designer": "Zqu3ra",
+      "uploader": "Zqu3ra",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2026-02-05T08:38:28.718Z",
+      "plays": 673,
+      "likes": 19,
+      "comments": 0,
+      "cover": "assets/majnet-covers/3483f322-8817-4d96-a4b5-4c872422c52f.jpg"
+    },
+    {
+      "id": "e9a09667-74a1-4f3b-b7da-62e6dd55d373",
+      "title": "ナイワ(不含内无)",
+      "artist": "演唱：3年1班(雨夜燕，有村麻央，十王星南，姬崎莉波) /作词、作曲、编曲：佐伯youthK",
+      "designer": "变成光守护sena小姐",
+      "uploader": "Mmmmk",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "MMFC12",
+        "Game",
+        "MMFC",
+        "Japanese",
+        "DX",
+        "Fes",
+        "IDOL"
+      ],
+      "timestamp": "2026-01-21T06:55:14.082Z",
+      "plays": 490,
+      "likes": 19,
+      "comments": 0,
+      "cover": "assets/majnet-covers/e9a09667-74a1-4f3b-b7da-62e6dd55d373.jpg"
+    },
+    {
+      "id": "cdc66867-5783-4b0f-8e4d-32f3ccfe69cd",
+      "title": "Phantasia",
+      "artist": "Yunosuke",
+      "designer": "Tainted Halo",
+      "uploader": "zjb2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-12-04T12:02:34.621Z",
+      "plays": 468,
+      "likes": 19,
+      "comments": 1,
+      "cover": "assets/majnet-covers/cdc66867-5783-4b0f-8e4d-32f3ccfe69cd.jpg"
+    },
+    {
+      "id": "87be00e0-ae3c-40ec-96fd-920c2b056aa0",
+      "title": "R.I.P.",
+      "artist": "eicateve",
+      "designer": "ImagineWind",
+      "uploader": "ImagineWind",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "14+?"
+      ],
+      "tags": [],
+      "publicTags": [
+        "BMS",
+        "STD",
+        "变启动",
+        "爆发",
+        "键盘",
+        "发狂",
+        "PV演出"
+      ],
+      "timestamp": "2025-12-10T21:18:50.536Z",
+      "plays": 694,
+      "likes": 19,
+      "comments": 1,
+      "cover": "assets/majnet-covers/87be00e0-ae3c-40ec-96fd-920c2b056aa0.jpg"
+    },
+    {
+      "id": "5b391051-2d87-447c-8807-252b4cde05a0",
+      "title": "黒蝶のワルツ",
+      "artist": "ぺのれり",
+      "designer": "Yepfox & Taiyehu & Neya",
+      "uploader": "NayaFox",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-07-31T15:27:30.883Z",
+      "plays": 779,
+      "likes": 19,
+      "comments": 0,
+      "cover": "assets/majnet-covers/5b391051-2d87-447c-8807-252b4cde05a0.jpg"
+    },
+    {
+      "id": "b1f21215-de85-4ba7-bf8b-350b1a85c7a9",
+      "title": "Luna say maybe",
+      "artist": "月村手毬（CV：小鹿奈绪）",
+      "designer": "最上 静香",
+      "uploader": "Esc0490",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "IDOL",
+        "Game",
+        "Gakumas",
+        "手球胖宝宝",
+        "耐力",
+        "MMFC11#51",
+        "MMFC11",
+        "idolmaster"
+      ],
+      "timestamp": "2025-04-15T17:05:08.188Z",
+      "plays": 863,
+      "likes": 19,
+      "comments": 1,
+      "cover": "assets/majnet-covers/b1f21215-de85-4ba7-bf8b-350b1a85c7a9.jpg"
+    },
+    {
+      "id": "392f9b25-919a-4b11-a1b6-e76e731cfe0c",
+      "title": "三灯火",
+      "artist": "ゆりと",
+      "designer": "Wozozo",
+      "uploader": "dilei",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-07-19T17:02:31.407Z",
+      "plays": 814,
+      "likes": 19,
+      "comments": 4,
+      "cover": "assets/majnet-covers/392f9b25-919a-4b11-a1b6-e76e731cfe0c.jpg"
+    },
+    {
+      "id": "9300cecb-3209-4dd1-8305-e1a71dc0bd49",
+      "title": "ボーイ・ミート・ミー！",
+      "artist": "lapix; Avans; Eye",
+      "designer": "水母・遇见・我",
+      "uploader": "海鲜杯2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [
+        "海鲜杯2-129",
+        "海鲜杯2正赛"
+      ],
+      "publicTags": [],
+      "timestamp": "2026-06-08T10:03:20.347Z",
+      "plays": 213,
+      "likes": 19,
+      "comments": 0,
+      "cover": "assets/majnet-covers/9300cecb-3209-4dd1-8305-e1a71dc0bd49.jpg"
+    },
+    {
+      "id": "dabd1fca-ae83-46fa-9d6c-199897c275c3",
+      "title": "我爱玩亚索",
+      "artist": "雷雷",
+      "designer": "不是水母",
+      "uploader": "Kurage",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "101",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2024-09-15T15:08:50Z",
+      "plays": 799,
+      "likes": 19,
+      "comments": 0,
+      "cover": "assets/majnet-covers/dabd1fca-ae83-46fa-9d6c-199897c275c3.jpg"
+    },
+    {
+      "id": "24c8760e-0186-45b0-8415-420a564e69da",
+      "title": "オッド♡ラヴィ",
+      "artist": "Lapix feat. PANXI",
+      "designer": "iimachi chart team",
+      "uploader": "FFMC",
+      "levels": [
+        "",
+        "",
+        "",
+        "11+",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2026-04-30T17:50:52.915Z",
+      "plays": 496,
+      "likes": 19,
+      "comments": 0,
+      "cover": "assets/majnet-covers/24c8760e-0186-45b0-8415-420a564e69da.jpg"
+    },
+    {
+      "id": "fb09c260-a7f3-40c9-a9a8-a9162fec3787",
+      "title": "First Letter",
+      "artist": "かねこちはる",
+      "designer": "四季花语",
+      "uploader": "dilei",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-08-13T16:21:58.916Z",
+      "plays": 444,
+      "likes": 19,
+      "comments": 2,
+      "cover": "assets/majnet-covers/fb09c260-a7f3-40c9-a9a8-a9162fec3787.jpg"
+    },
+    {
+      "id": "21533676-573e-480a-a298-6373ff49d1ae",
+      "title": "Corruption",
+      "artist": "3R2",
+      "designer": "CorrupteD",
+      "uploader": "KOL_NEW",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "OTOGE",
+        "Game",
+        "Arcaea"
+      ],
+      "timestamp": "2025-10-15T09:05:17.538Z",
+      "plays": 666,
+      "likes": 19,
+      "comments": 4,
+      "cover": "assets/majnet-covers/21533676-573e-480a-a298-6373ff49d1ae.jpg"
+    },
+    {
+      "id": "7ddff8d9-d0c4-46fd-a1de-2f539c1aebf1",
+      "title": "星空クラヴィア",
+      "artist": "m@sumi",
+      "designer": "舞舞でらっくす",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-77",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-22T18:45:39.638Z",
+      "plays": 243,
+      "likes": 19,
+      "comments": 0,
+      "cover": "assets/majnet-covers/7ddff8d9-d0c4-46fd-a1de-2f539c1aebf1.jpg"
+    },
+    {
+      "id": "a7b0cf06-758b-462a-b129-006af3aa299e",
+      "title": "浙江温州江南皮革厂倒闭了",
+      "artist": "女孩为何穿短裙",
+      "designer": "日本东京世嘉株式会社倒闭了",
+      "uploader": "HPjun",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "Chinese",
+        "Fes",
+        "发狂",
+        "<2min",
+        "R-18G",
+        "鬼畜"
+      ],
+      "timestamp": "2025-11-28T15:57:26.93Z",
+      "plays": 996,
+      "likes": 19,
+      "comments": 0,
+      "cover": "assets/majnet-covers/a7b0cf06-758b-462a-b129-006af3aa299e.jpg"
+    },
+    {
+      "id": "827425b4-a6f4-4585-bbdb-99fa0ff9cce2",
+      "title": "スイサイ／アンブレラ／ロクガツ／ドライフラワ",
+      "artist": "ツミキ",
+      "designer": "晴晴卡缇@MMFC",
+      "uploader": "Mmmmk",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "MMFC11#15",
+        "MMFC11"
+      ],
+      "timestamp": "2025-06-05T07:34:24.216Z",
+      "plays": 660,
+      "likes": 19,
+      "comments": 0,
+      "cover": "assets/majnet-covers/827425b4-a6f4-4585-bbdb-99fa0ff9cce2.jpg"
+    },
+    {
+      "id": "5c786a95-8262-4215-957e-320086a74d26",
+      "title": "Lionheart [DX]",
+      "artist": "Masayoshi Minoshima",
+      "designer": "Dororo",
+      "uploader": "Dororo",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "13+",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2024-03-18T18:25:21Z",
+      "plays": 885,
+      "likes": 19,
+      "comments": 2,
+      "cover": "assets/majnet-covers/5c786a95-8262-4215-957e-320086a74d26.jpg"
+    },
+    {
+      "id": "2195f9d6-d7fb-4ebe-b35d-6a194d1f7cef",
+      "title": "妖怪寺へようこそ",
+      "artist": "上海アリス幻楽団",
+      "designer": "甜蜜蜜",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-111",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-06-04T13:29:31.004Z",
+      "plays": 204,
+      "likes": 19,
+      "comments": 0,
+      "cover": "assets/majnet-covers/2195f9d6-d7fb-4ebe-b35d-6a194d1f7cef.jpg"
+    },
+    {
+      "id": "10796f47-b8d4-45ea-b65c-c4e7f7534e93",
+      "title": "ÅMARA(大未来電脳)",
+      "artist": "sasakure.UK",
+      "designer": "KuSA",
+      "uploader": "KuSA",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-10-03T04:17:17.029Z",
+      "plays": 954,
+      "likes": 19,
+      "comments": 0,
+      "cover": "assets/majnet-covers/10796f47-b8d4-45ea-b65c-c4e7f7534e93.jpg"
+    },
+    {
+      "id": "a51020b0-fbb2-4167-b374-6e2407bbdf73",
+      "title": "Logos",
+      "artist": "polysha feat. 高城みよ",
+      "designer": "はくこう",
+      "uploader": "白虹",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-06-02T06:31:20.096Z",
+      "plays": 666,
+      "likes": 19,
+      "comments": 1,
+      "cover": "assets/majnet-covers/a51020b0-fbb2-4167-b374-6e2407bbdf73.jpg"
+    },
+    {
+      "id": "a755232a-0f4e-4b1b-b34a-9c75fea782a5",
+      "title": "飛天",
+      "artist": "Ayase ✕ R-指定",
+      "designer": "天翔龍閃",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-07T17:33:11.631Z",
+      "plays": 416,
+      "likes": 19,
+      "comments": 0,
+      "cover": "assets/majnet-covers/a755232a-0f4e-4b1b-b34a-9c75fea782a5.jpg"
+    },
+    {
+      "id": "d65e56b8-9240-438a-8c40-c740346704ca",
+      "title": "海色",
+      "artist": "AKINO from bless4",
+      "designer": "Kurage",
+      "uploader": "Kurage",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "13+",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "Anime",
+        "舰队Collection"
+      ],
+      "timestamp": "2024-09-25T15:58:34Z",
+      "plays": 800,
+      "likes": 19,
+      "comments": 1,
+      "cover": "assets/majnet-covers/d65e56b8-9240-438a-8c40-c740346704ca.jpg"
+    },
+    {
+      "id": "5268c39d-a459-443a-89d0-8545d3a89d19",
+      "title": "燐寸と緞帳",
+      "artist": "Juka_Box feat. 綜花",
+      "designer": "바다로 돌아가고 싶어",
+      "uploader": "海鲜杯2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [
+        "海鲜杯2正赛",
+        "海鲜杯2-152"
+      ],
+      "publicTags": [],
+      "timestamp": "2026-06-11T11:02:24.752Z",
+      "plays": 273,
+      "likes": 19,
+      "comments": 0,
+      "cover": "assets/majnet-covers/5268c39d-a459-443a-89d0-8545d3a89d19.jpg"
+    },
+    {
+      "id": "d822ab0d-0d08-453c-a608-8eda14493fea",
+      "title": "Ex-Otogibanashi",
+      "artist": "ryo",
+      "designer": "昏迷50年之一觉醒来loa2开赛遂新建文件夹写了一半发现场上一万个辉夜姬",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-14T10:29:19.626Z",
+      "plays": 741,
+      "likes": 18,
+      "comments": 1,
+      "cover": "assets/majnet-covers/d822ab0d-0d08-453c-a608-8eda14493fea.jpg"
+    },
+    {
+      "id": "80c78441-3d35-409c-9bb4-691f13f6d051",
+      "title": "Wonderer",
+      "artist": "ReoNa",
+      "designer": "C.C.C.",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-10T06:01:24.655Z",
+      "plays": 410,
+      "likes": 18,
+      "comments": 0,
+      "cover": "assets/majnet-covers/80c78441-3d35-409c-9bb4-691f13f6d051.jpg"
+    },
+    {
+      "id": "8d3b98e7-1ec8-43f1-9b3a-c39c4cafed9f",
+      "title": "Diver",
+      "artist": "NICO Touches the Walls",
+      "designer": "下潜者",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-03T04:55:32.087Z",
+      "plays": 426,
+      "likes": 18,
+      "comments": 0,
+      "cover": "assets/majnet-covers/8d3b98e7-1ec8-43f1-9b3a-c39c4cafed9f.jpg"
+    },
+    {
+      "id": "b7832166-19c2-4226-8d10-ac79c2cf0e6c",
+      "title": "Bull’s Eye",
+      "artist": "ナノ",
+      "designer": "我不是钉宫控+双马尾+贫乳控+傲娇控",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-02T03:41:41.137Z",
+      "plays": 540,
+      "likes": 18,
+      "comments": 1,
+      "cover": "assets/majnet-covers/b7832166-19c2-4226-8d10-ac79c2cf0e6c.jpg"
+    },
+    {
+      "id": "d3499f8d-dfb7-4878-a672-1f4149f8e8fb",
+      "title": "Journey",
+      "artist": "佐藤直之",
+      "designer": "旅人と",
+      "uploader": "woxxow",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "13+",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "MMFC9"
+      ],
+      "timestamp": "2024-08-10T16:37:16Z",
+      "plays": 722,
+      "likes": 18,
+      "comments": 0,
+      "cover": "assets/majnet-covers/d3499f8d-dfb7-4878-a672-1f4149f8e8fb.jpg"
+    },
+    {
+      "id": "575d7031-94c7-45ce-9629-277327db4149",
+      "title": "innocent arrogance",
+      "artist": "BiSH",
+      "designer": "B2f",
+      "uploader": "LOA",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA正赛"
+      ],
+      "timestamp": "2025-11-15T11:31:49.862Z",
+      "plays": 1611,
+      "likes": 18,
+      "comments": 2,
+      "cover": "assets/majnet-covers/575d7031-94c7-45ce-9629-277327db4149.jpg"
+    },
+    {
+      "id": "3d36bbc7-4b7b-42b6-bc92-2254b0a59a13",
+      "title": "ムリムリ進化論",
+      "artist": "ナナヲアカリ",
+      "designer": "Kurage",
+      "uploader": "Kurage",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "POPS",
+        "Anime"
+      ],
+      "timestamp": "2025-08-12T09:53:16.791Z",
+      "plays": 880,
+      "likes": 18,
+      "comments": 1,
+      "cover": "assets/majnet-covers/3d36bbc7-4b7b-42b6-bc92-2254b0a59a13.jpg"
+    },
+    {
+      "id": "51ac0962-bec2-4a2a-99a7-682ff7a5595a",
+      "title": "Gravity",
+      "artist": "M2U",
+      "designer": "gugugaga",
+      "uploader": "dilei",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "我看了你的谱我只能默默流泪我破防了我真的破防了我为什么写不出这种谱面我只能看着你的谱面交上去之后大杀四方而我只能看着我的也够谱面也够播放量也够点赞数泣不成声他妈的装逼的人为什么不能是我我的谱面难道真的就这么烂吗我眼红了我真的眼红了为什么为什么为什么我的谱面像垃圾堆里的废纸凭什么你的就能闪闪发光凭什么凭什么凭什么凭什么我熬夜翻烂了别人的谱面改稿改到眼睛发花还是这坨屎他妈的这世界太不公平了凭什么你能轻轻松松写出神作而我拼了命还是废物我恨死我自己了我恨死这双手这脑子为什么它们不争气为什么为什么为什么凭什么不是我站在上面接受欢呼凭什么不是我凭什么不是我凭什么凭什么凭什么凭什么你的音符会发光我的就像腐烂的蛆在爬凭什么凭什么凭什么我砸烂了键盘砸到手流血还是写不出你一个休止符的优雅我嫉妒得发狂我恨得想把你的谱子撕成碎片踩进泥里可我又他妈舍不得看一遍哭一遍看一遍心碎一遍我像个疯子我像个彻头彻尾的失败小丑我对着屏幕嘶吼为什么为什么为什么老天爷你瞎了吗你聋了吗你听不见我的谱子像垂死的哀嚎吗你听不见我的不甘心在烧吗烧得我五脏六腑都焦了都烂了凭什么不是我凭什么不是我站在聚光灯下享受尖叫凭什么不是我凭什么不是我凭什么我他妈好想成为你啊我他妈好恨我自己啊为什么为什么为什么为什么凭什么我呕心沥血掏出来的东西像呕吐物一样恶心凭什么凭什么凭什么我跪着改谱改到膝盖淤青指尖开裂还是追不上你随手划过的轨迹凭什么你的灵感像喷泉我的脑子像干涸的臭水沟我恨透这具没用的身体我恨透这双聋了的耳朵我恨透这颗想不出好旋律的猪脑我拿头撞墙撞出血也想不明白为什么为什么为什么被选中的不是我我流的汗还不够多吗我熬的夜还不够长吗我咽下的眼泪还不够咸吗为什么不是我凭什么不是我站在巅峰被所有人仰望凭什么不是我凭什么凭什么凭什么我攥着谱纸攥到指骨发白发青像攥着我烂透的命运我恨不得把这堆垃圾塞进喉咙噎死自己噎死这不甘心的魂魄可为什么我还是想写为什么我还是想赢为什么我他妈还是想站到光里去啊操他妈的凭什么不给我机会凭什么不给我一条活路凭什么连一点光都不肯施舍给我我到底要如何跪着如何爬着如何流干最后一滴血才能让你看见我啊老天爷你告诉我你告诉我啊告诉我这无底洞一样的不甘心到底要怎么填平怎么杀死怎么埋葬啊凭什么凭什么凭什么凭什么凭什么",
+        "Game",
+        "OTOGE"
+      ],
+      "timestamp": "2025-07-25T13:12:15.657Z",
+      "plays": 898,
+      "likes": 18,
+      "comments": 4,
+      "cover": "assets/majnet-covers/51ac0962-bec2-4a2a-99a7-682ff7a5595a.jpg"
+    },
+    {
+      "id": "0178e796-c20d-45d6-8217-c1bbd5b037d1",
+      "title": "talking",
+      "artist": "KANA-BOON",
+      "designer": "Hexadecimal",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-13T04:31:42.702Z",
+      "plays": 496,
+      "likes": 18,
+      "comments": 0,
+      "cover": "assets/majnet-covers/0178e796-c20d-45d6-8217-c1bbd5b037d1.jpg"
+    },
+    {
+      "id": "9d026f09-7119-495a-b4ea-62cf9506734f",
+      "title": "晚安大小姐",
+      "artist": "ASMRZ",
+      "designer": "MYOU",
+      "uploader": "MYOU",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "安"
+      ],
+      "tags": [],
+      "publicTags": [
+        "舞蹈",
+        "Japanese",
+        "Korean",
+        "非常规要素"
+      ],
+      "timestamp": "2025-01-05T16:54:58.542Z",
+      "plays": 1376,
+      "likes": 18,
+      "comments": 1,
+      "cover": "assets/majnet-covers/9d026f09-7119-495a-b4ea-62cf9506734f.jpg"
+    },
+    {
+      "id": "12226dec-dfbf-4eda-8ec1-706186eead06",
+      "title": "スーパーイザナギオブジェクト",
+      "artist": "er",
+      "designer": "☆ ～('▽^人)",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-89",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-27T04:09:49.547Z",
+      "plays": 250,
+      "likes": 18,
+      "comments": 1,
+      "cover": "assets/majnet-covers/12226dec-dfbf-4eda-8ec1-706186eead06.jpg"
+    },
+    {
+      "id": "e1947503-729d-48f4-bf68-19087afc982e",
+      "title": "Filament",
+      "artist": "Puru",
+      "designer": "Folernment",
+      "uploader": "zjb2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-12-07T04:25:51.214Z",
+      "plays": 691,
+      "likes": 18,
+      "comments": 1,
+      "cover": "assets/majnet-covers/e1947503-729d-48f4-bf68-19087afc982e.jpg"
+    },
+    {
+      "id": "c3eaa676-592f-492b-a5db-6cd6b37a3298",
+      "title": "プロポーズ",
+      "artist": "名取",
+      "designer": "Kurage",
+      "uploader": "Kurage",
+      "levels": [
+        "13",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "VOCALOID",
+        "Ranked_enjoy",
+        "POPS"
+      ],
+      "timestamp": "2025-09-09T16:09:06.992Z",
+      "plays": 640,
+      "likes": 18,
+      "comments": 1,
+      "cover": "assets/majnet-covers/c3eaa676-592f-492b-a5db-6cd6b37a3298.jpg"
+    },
+    {
+      "id": "b4f477bc-b33b-4c1e-b4bc-2e689ec2dfc0",
+      "title": "蓬莱人形",
+      "artist": "東京アクティブNEETs",
+      "designer": "小登活的久了就变成了老登",
+      "uploader": "海鲜杯2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [
+        "海鲜杯2-123",
+        "海鲜杯2正赛"
+      ],
+      "publicTags": [],
+      "timestamp": "2026-06-07T11:37:09.382Z",
+      "plays": 193,
+      "likes": 18,
+      "comments": 0,
+      "cover": "assets/majnet-covers/b4f477bc-b33b-4c1e-b4bc-2e689ec2dfc0.jpg"
+    },
+    {
+      "id": "2a55d20b-61f2-4dfc-8901-6a9da004e7e7",
+      "title": "Vitrum",
+      "artist": "BEMANI Sound Team \"Yvya\"",
+      "designer": "鬼方カヨコ",
+      "uploader": "fpdqwq",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2026-01-03T16:26:06.44Z",
+      "plays": 443,
+      "likes": 18,
+      "comments": 11,
+      "cover": "assets/majnet-covers/2a55d20b-61f2-4dfc-8901-6a9da004e7e7.jpg"
+    },
+    {
+      "id": "8fdce4de-7474-4930-aee5-da50d23d7be6",
+      "title": "Purgatorium",
+      "artist": "お月さま交響曲",
+      "designer": "-Purgatorio-",
+      "uploader": "KOL_NEW",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-10-17T16:45:42.518Z",
+      "plays": 670,
+      "likes": 18,
+      "comments": 9,
+      "cover": "assets/majnet-covers/8fdce4de-7474-4930-aee5-da50d23d7be6.jpg"
+    },
+    {
+      "id": "34739639-e687-46e1-add3-8c7302b27369",
+      "title": "スカーレット革命",
+      "artist": "森羅万象",
+      "designer": "坏梨这里提＊",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-123"
+      ],
+      "timestamp": "2026-06-05T06:08:41.113Z",
+      "plays": 172,
+      "likes": 18,
+      "comments": 1,
+      "cover": "assets/majnet-covers/34739639-e687-46e1-add3-8c7302b27369.jpg"
+    },
+    {
+      "id": "fc317ae5-6759-4164-b94d-edf46211b8ac",
+      "title": "ロストエンファウンド",
+      "artist": "sasakure.UK + 有形ランペイジ feat. 初音未来",
+      "designer": "『―いま、見い附けた。』",
+      "uploader": "海鲜杯",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-08-01T16:16:59.917Z",
+      "plays": 619,
+      "likes": 18,
+      "comments": 2,
+      "cover": "assets/majnet-covers/fc317ae5-6759-4164-b94d-edf46211b8ac.jpg"
+    },
+    {
+      "id": "db67cd71-61da-42b9-9a93-35ddccd09c96",
+      "title": "Nostalgia",
+      "artist": "Sound Online",
+      "designer": "ProjectNostalgia",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-113",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-06-04T13:37:40.488Z",
+      "plays": 190,
+      "likes": 18,
+      "comments": 0,
+      "cover": "assets/majnet-covers/db67cd71-61da-42b9-9a93-35ddccd09c96.jpg"
+    },
+    {
+      "id": "6c8b0e7a-d73b-4cfe-b792-f964fe59707f",
+      "title": "Galactic mermaid",
+      "artist": "Mermaid Sisters",
+      "designer": "鱼人兄弟",
+      "uploader": "LOA",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA正赛"
+      ],
+      "timestamp": "2025-11-23T12:56:09.469Z",
+      "plays": 529,
+      "likes": 18,
+      "comments": 3,
+      "cover": "assets/majnet-covers/6c8b0e7a-d73b-4cfe-b792-f964fe59707f.jpg"
+    },
+    {
+      "id": "6d4cd2d1-3ab4-4e24-83ac-5436e113479f",
+      "title": "BLRINK",
+      "artist": "Sta",
+      "designer": "散打和扫键相比",
+      "uploader": "zjb2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-12-07T04:44:02.768Z",
+      "plays": 543,
+      "likes": 17,
+      "comments": 1,
+      "cover": "assets/majnet-covers/6d4cd2d1-3ab4-4e24-83ac-5436e113479f.jpg"
+    },
+    {
+      "id": "cd148cad-65c1-48ba-954e-fc86a30cb88b",
+      "title": "恋するマリオネット",
+      "artist": "葉月ゆら",
+      "designer": "我抄的走喵老师的！",
+      "uploader": "海鲜杯2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [
+        "海鲜杯2-54",
+        "海鲜杯2正赛"
+      ],
+      "publicTags": [],
+      "timestamp": "2026-05-26T12:09:39.714Z",
+      "plays": 224,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/cd148cad-65c1-48ba-954e-fc86a30cb88b.jpg"
+    },
+    {
+      "id": "46421dbd-7eba-4f6a-b457-8ed5426d1814",
+      "title": "Twinkle Starlight",
+      "artist": "佐咲纱花",
+      "designer": "momo",
+      "uploader": "fpdqwq",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2026-06-15T01:46:47.73Z",
+      "plays": 740,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/46421dbd-7eba-4f6a-b457-8ed5426d1814.jpg"
+    },
+    {
+      "id": "c0e89de4-df42-4997-865a-6c13278e1a2d",
+      "title": "推活天使ビビアンちゃん",
+      "artist": "ファル公/DJ Myosuke",
+      "designer": "パエトン様、私と付き合ってください!!!!!",
+      "uploader": "海鲜杯2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [
+        "海鲜杯2-5"
+      ],
+      "publicTags": [],
+      "timestamp": "2026-05-23T15:34:25.013Z",
+      "plays": 227,
+      "likes": 17,
+      "comments": 1,
+      "cover": "assets/majnet-covers/c0e89de4-df42-4997-865a-6c13278e1a2d.jpg"
+    },
+    {
+      "id": "a06ca483-e406-4edc-b192-8c69c8504a10",
+      "title": "今、歩き出す君へ。",
+      "artist": "Ceui",
+      "designer": "君という奇跡",
+      "uploader": "LSP",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LSP-65号作品",
+        "LSP正赛"
+      ],
+      "timestamp": "2026-02-09T10:45:32.763Z",
+      "plays": 475,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/a06ca483-e406-4edc-b192-8c69c8504a10.jpg"
+    },
+    {
+      "id": "8aff3280-ea72-4b37-beec-b75e72ed17a3",
+      "title": "Gas Gas Gas",
+      "artist": "Manuel",
+      "designer": "cqxl",
+      "uploader": "cqxl",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14.5",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "MMFC10#26",
+        "MMFC10"
+      ],
+      "timestamp": "2025-02-17T16:25:05.202Z",
+      "plays": 734,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/8aff3280-ea72-4b37-beec-b75e72ed17a3.jpg"
+    },
+    {
+      "id": "fe8543ac-4d09-4b04-a8fa-fc50ce368cda",
+      "title": "かなしばりに遭ったら",
+      "artist": "あばらや／歌愛ユキ、ナースロボ＿タイプＴ",
+      "designer": "Sono Yume",
+      "uploader": "noka",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-10-22T07:55:39.043Z",
+      "plays": 573,
+      "likes": 17,
+      "comments": 2,
+      "cover": "assets/majnet-covers/fe8543ac-4d09-4b04-a8fa-fc50ce368cda.jpg"
+    },
+    {
+      "id": "83e37ca8-c93a-4cfb-95ec-a16821c99c46",
+      "title": "会いたかった空",
+      "artist": "茅原実里",
+      "designer": "境界の彼方",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-05T08:16:15.411Z",
+      "plays": 531,
+      "likes": 17,
+      "comments": 2,
+      "cover": "assets/majnet-covers/83e37ca8-c93a-4cfb-95ec-a16821c99c46.jpg"
+    },
+    {
+      "id": "c0625c78-d98a-4c8d-a10a-841ced58f828",
+      "title": "IndiHome Paket Phoenix",
+      "artist": "IndiHome",
+      "designer": "夜梨",
+      "uploader": "夜梨",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "POPS",
+        "WorldMusic",
+        "STD",
+        "星星",
+        "<2min",
+        "叮",
+        "印尼宽带"
+      ],
+      "timestamp": "2025-05-08T18:18:35.52Z",
+      "plays": 1136,
+      "likes": 17,
+      "comments": 1,
+      "cover": "assets/majnet-covers/c0625c78-d98a-4c8d-a10a-841ced58f828.jpg"
+    },
+    {
+      "id": "b455ffb5-5488-4422-88dc-68d38673552b",
+      "title": "LEVEL5-judgelight-",
+      "artist": "fripSide／TVアニメ「とある科学の超電磁砲」後期OPテーマ",
+      "designer": "Ragna",
+      "uploader": "Ragna",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2026-01-05T14:56:23.107Z",
+      "plays": 494,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/b455ffb5-5488-4422-88dc-68d38673552b.jpg"
+    },
+    {
+      "id": "6c4ea88d-29c5-49e0-a50d-2eaa55cac04d",
+      "title": "Mrs.Jacqueline's Melancholy",
+      "artist": "sasakure.UK vs Patrick Bartley",
+      "designer": "The illegal queen Vs bAd Companyz",
+      "uploader": "KuSA",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2026-02-04T09:28:22.088Z",
+      "plays": 704,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/6c4ea88d-29c5-49e0-a50d-2eaa55cac04d.jpg"
+    },
+    {
+      "id": "31280a9c-b1d3-4810-9aac-823017172bfe",
+      "title": "Re:birth Day",
+      "artist": "Roselia",
+      "designer": "再生",
+      "uploader": "Kurage",
+      "levels": [
+        null,
+        null,
+        null,
+        null,
+        "13+",
+        null,
+        null
+      ],
+      "tags": [],
+      "publicTags": [
+        "Game",
+        "IDOL",
+        "BanGDream",
+        "xmmcg"
+      ],
+      "timestamp": "2024-10-15T04:44:12Z",
+      "plays": 835,
+      "likes": 17,
+      "comments": 2,
+      "cover": "assets/majnet-covers/31280a9c-b1d3-4810-9aac-823017172bfe.jpg"
+    },
+    {
+      "id": "c395399a-e1ad-45da-8b9d-fa22cc823d6a",
+      "title": "Cutter",
+      "artist": "EmoCosine",
+      "designer": "Cute Anime Girl",
+      "uploader": "海鲜杯2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [
+        "海鲜杯2-115",
+        "海鲜杯2正赛"
+      ],
+      "publicTags": [],
+      "timestamp": "2026-06-05T09:58:03.62Z",
+      "plays": 236,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/c395399a-e1ad-45da-8b9d-fa22cc823d6a.jpg"
+    },
+    {
+      "id": "322bcd34-8c62-4236-90ff-3aba10423ddc",
+      "title": "开不尽的雪莲华",
+      "artist": "Tokini11",
+      "designer": "灵魂之莲花，盛开在雪原之上",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-76",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-22T18:45:21.343Z",
+      "plays": 213,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/322bcd34-8c62-4236-90ff-3aba10423ddc.jpg"
+    },
+    {
+      "id": "edb1d57a-9d38-4e74-af74-3a25b940efcb",
+      "title": "踊る水飛沫",
+      "artist": "あきやまうに",
+      "designer": "哈哈。...",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "tpk-84"
+      ],
+      "timestamp": "2026-05-24T11:36:00.1Z",
+      "plays": 176,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/edb1d57a-9d38-4e74-af74-3a25b940efcb.jpg"
+    },
+    {
+      "id": "4e439307-23ee-4b25-ab20-c1b70ed21300",
+      "title": "夜のうた",
+      "artist": "きくお; 初音ミク",
+      "designer": "ひゅー",
+      "uploader": "IMRIS",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [
+        "VOCALOID",
+        "MMFC",
+        "Japanese",
+        "变启动",
+        "DX",
+        "Fes",
+        "变速"
+      ],
+      "publicTags": [
+        "MMFC11#3",
+        "MMFC11"
+      ],
+      "timestamp": "2025-04-06T15:00:13.776Z",
+      "plays": 612,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/4e439307-23ee-4b25-ab20-c1b70ed21300.jpg"
+    },
+    {
+      "id": "f4ae7c02-cdc2-45f1-b420-b9945b537929",
+      "title": "God Only Knows",
+      "artist": "ELISA / TV动画《只有神知道的世界》OP",
+      "designer": "攻陷之神",
+      "uploader": "LOA",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "神",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-12-25T08:22:20.662Z",
+      "plays": 489,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/f4ae7c02-cdc2-45f1-b420-b9945b537929.jpg"
+    },
+    {
+      "id": "c89fab9f-9019-4fcb-a92c-e3dc26c3ce01",
+      "title": "パステルレイン",
+      "artist": "三月のパンタシア",
+      "designer": "NOKalter",
+      "uploader": "noka",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-07-31T14:38:57.12Z",
+      "plays": 491,
+      "likes": 17,
+      "comments": 2,
+      "cover": "assets/majnet-covers/c89fab9f-9019-4fcb-a92c-e3dc26c3ce01.jpg"
+    },
+    {
+      "id": "315980eb-c3cf-4f33-b496-cd818fad12ae",
+      "title": "Senkyou",
+      "artist": "MYTK",
+      "designer": "Fox 2 -UNCAGED-",
+      "uploader": "fpdqwq",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2026-06-06T17:36:51.323Z",
+      "plays": 250,
+      "likes": 17,
+      "comments": 1,
+      "cover": "assets/majnet-covers/315980eb-c3cf-4f33-b496-cd818fad12ae.jpg"
+    },
+    {
+      "id": "52fb366f-69f5-412e-91c9-742e90e912fa",
+      "title": "ロミとロボの宇宙飛行",
+      "artist": "onoken",
+      "designer": "fpd",
+      "uploader": "fpdqwq",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-07-25T15:17:21.908Z",
+      "plays": 510,
+      "likes": 17,
+      "comments": 1,
+      "cover": "assets/majnet-covers/52fb366f-69f5-412e-91c9-742e90e912fa.jpg"
+    },
+    {
+      "id": "7ef1cc58-26b4-4eb8-8fb1-022bf110cafe",
+      "title": "It's Peppa Pig",
+      "artist": "Peppa Pig",
+      "designer": "chieko vs IQ9",
+      "uploader": "无声战 · COS",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2026-02-23T16:46:25.903Z",
+      "plays": 380,
+      "likes": 17,
+      "comments": 4,
+      "cover": "assets/majnet-covers/7ef1cc58-26b4-4eb8-8fb1-022bf110cafe.jpg"
+    },
+    {
+      "id": "583c15ad-e77a-4ac1-816f-59618a9957a5",
+      "title": "Renegade",
+      "artist": "R・O・N",
+      "designer": "怎么全是海底谭",
+      "uploader": "LOA2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA2正赛"
+      ],
+      "timestamp": "2026-03-15T19:27:59.681Z",
+      "plays": 374,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/583c15ad-e77a-4ac1-816f-59618a9957a5.jpg"
+    },
+    {
+      "id": "67126b8e-e135-4f12-a693-aece0a2a4c86",
+      "title": "Swan Song",
+      "artist": "void(Mournfinale)",
+      "designer": "Dororo vs Renekton",
+      "uploader": "Dororo",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-06-11T08:54:49.62Z",
+      "plays": 1074,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/67126b8e-e135-4f12-a693-aece0a2a4c86.jpg"
+    },
+    {
+      "id": "53052163-8efb-4fa3-a326-0f14d5d9a322",
+      "title": "Cosmic Train",
+      "artist": "Shoichiro Hirata feat.SUIMI",
+      "designer": "ARIES",
+      "uploader": "zjb2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "13",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [],
+      "timestamp": "2025-12-04T12:10:20.517Z",
+      "plays": 439,
+      "likes": 17,
+      "comments": 6,
+      "cover": "assets/majnet-covers/53052163-8efb-4fa3-a326-0f14d5d9a322.jpg"
+    },
+    {
+      "id": "2708591a-a0c2-41e7-ad33-1a8dbd6f1795",
+      "title": "Gérard",
+      "artist": "Widowmaker",
+      "designer": "Troublemaker",
+      "uploader": "海鲜杯2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [
+        "海鲜杯2-57",
+        "海鲜杯2正赛"
+      ],
+      "publicTags": [],
+      "timestamp": "2026-05-27T11:50:37.302Z",
+      "plays": 259,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/2708591a-a0c2-41e7-ad33-1a8dbd6f1795.jpg"
+    },
+    {
+      "id": "608fec35-2770-4245-8c5d-0d6e99ebe99e",
+      "title": "浮世絵横丁",
+      "artist": "魔界都市ニイガタ",
+      "designer": "///////",
+      "uploader": "KuSA",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "BMS",
+        "MMFC",
+        "MMFC4",
+        "Ranked_challenge"
+      ],
+      "timestamp": "2025-03-26T15:43:53.185Z",
+      "plays": 957,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/608fec35-2770-4245-8c5d-0d6e99ebe99e.jpg"
+    },
+    {
+      "id": "33fe10a6-6203-463a-8fbf-13480e2736f0",
+      "title": "bloom",
+      "artist": "NECRY TALKIE",
+      "designer": "邪恶前任联盟",
+      "uploader": "LOA",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "LOA正赛"
+      ],
+      "timestamp": "2025-11-15T11:41:05.491Z",
+      "plays": 445,
+      "likes": 17,
+      "comments": 0,
+      "cover": "assets/majnet-covers/33fe10a6-6203-463a-8fbf-13480e2736f0.jpg"
+    },
+    {
+      "id": "c0f2749d-1b7b-449e-920d-9a042a644355",
+      "title": "大东北◆我的家乡",
+      "artist": "何◆玉",
+      "designer": "老◆蒯",
+      "uploader": "hanyage",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "13+",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "脚图",
+        "PV演出",
+        "梗要素大量发生",
+        "下饭",
+        "Chinese"
+      ],
+      "timestamp": "2025-08-07T18:10:40.738Z",
+      "plays": 1128,
+      "likes": 17,
+      "comments": 1,
+      "cover": "assets/majnet-covers/c0f2749d-1b7b-449e-920d-9a042a644355.jpg"
+    },
+    {
+      "id": "e1f68bc1-de61-4618-9fa3-d0bf93936bdc",
+      "title": "元祖！天才チルノちゃん☆",
+      "artist": "Yuya Kobayashi feat.miko",
+      "designer": "大酱炒笨蛋",
+      "uploader": "东方舞音祭",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [],
+      "publicTags": [
+        "TPK-19",
+        "TPK正赛"
+      ],
+      "timestamp": "2026-05-14T14:16:21.548Z",
+      "plays": 248,
+      "likes": 16,
+      "comments": 0,
+      "cover": "assets/majnet-covers/e1f68bc1-de61-4618-9fa3-d0bf93936bdc.jpg"
+    },
+    {
+      "id": "8be216bf-9736-4675-b2dc-1f7c9af4535e",
+      "title": "Signal",
+      "artist": "rejection feat.Such",
+      "designer": "Signal Lost",
+      "uploader": "海鲜杯2",
+      "levels": [
+        "",
+        "",
+        "",
+        "",
+        "14",
+        "",
+        ""
+      ],
+      "tags": [
+        "海鲜杯2-11"
+      ],
+      "publicTags": [],
+      "timestamp": "2026-05-23T15:38:14.596Z",
+      "plays": 280,
+      "likes": 16,
+      "comments": 0,
+      "cover": "assets/majnet-covers/8be216bf-9736-4675-b2dc-1f7c9af4535e.jpg"
+    }
+  ]
+}

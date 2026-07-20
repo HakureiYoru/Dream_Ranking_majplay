@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>猜曲绘 · 舞萌官谱</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/background.css">
+  <link rel="stylesheet" href="css/arena.css">
+  <link rel="stylesheet" href="css/guess.css?v=22">
+</head>
+
+<body class="fantasy-bg arena-page guess-page">
+  <div class="main-content arena-content guess-content">
+    <header class="fantasy-header arena-header">
+      <div class="arena-title-row">
+        <h1 class="fantasy-title" id="guess-page-title">猜曲绘 · 官谱</h1>
+        <nav class="arena-nav">
+          <a class="arena-nav-link" href="index.html">打榜页</a>
+          <a class="arena-nav-link" href="arena.html">擂台页</a>
+          <a class="arena-nav-link" href="guess.html">MajNet</a>
+          <a class="arena-nav-link" id="guess-mode-toggle" href="guess_official.html?mode=endless">无尽</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="guess-layout">
+      <div id="guess-scoreboard" class="guess-scoreboard" hidden>
+        <div class="guess-score-pill" id="guess-pill-round">轮次 <strong id="guess-round-label">0 / 10</strong></div>
+        <div class="guess-score-pill" id="guess-pill-pass">通过 <strong id="guess-pass-label">0 / 5</strong></div>
+        <div class="guess-score-pill" id="guess-pill-score" hidden>得分 <strong id="guess-score-label">0</strong></div>
+        <div class="guess-score-pill" id="guess-pill-best" hidden>最佳 <strong id="guess-best-label">0</strong></div>
+      </div>
+
+      <p id="guess-status" class="arena-status guess-status" role="status"></p>
+
+      <section id="guess-play-panel" class="guess-play-panel" hidden>
+        <div class="guess-prompt">
+          <div class="guess-prompt-label">这首歌的曲绘是？</div>
+          <h2 id="guess-song-title" class="guess-song-title"></h2>
+          <div id="guess-song-artist" class="guess-song-artist"></div>
+          <div id="guess-song-levels" class="guess-song-levels" hidden></div>
+          <div id="guess-song-meta" class="guess-song-meta" hidden></div>
+        </div>
+        <div id="guess-cover-grid" class="guess-cover-grid" aria-label="二十五宫格曲绘选项"></div>
+      </section>
+
+      <section id="guess-reveal-panel" class="guess-reveal-panel" hidden>
+        <div id="guess-reveal-card" class="guess-reveal-hero"></div>
+        <div class="guess-actions">
+          <button id="guess-next-btn" type="button" class="fantasy-btn-submit guess-action-btn">下一轮</button>
+        </div>
+      </section>
+
+      <section id="guess-result-panel" class="guess-result-panel glass-panel" hidden>
+        <h2 id="guess-result-title" class="guess-result-title">本局结束</h2>
+        <p id="guess-result-text" class="guess-result-text"></p>
+        <div class="guess-actions">
+          <button id="guess-restart-btn" type="button" class="fantasy-btn-submit guess-action-btn">再来一局</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    window.GUESS_CONFIG = {
+      catalogUrl: 'data/official_catalog.json',
+      emptyHint: '曲库不足：请运行 python -u tools/sync_official_catalog.py',
+      modeLabel: 'official',
+      gridSize: 25,
+      gridClass: 'is-5x5',
+      cropZoomMin: 0.24,
+      cropZoomMax: 0.38,
+      promptFields: ['version', 'levels', 'aliases'],
+      aliasMax: 8
+    };
+    (function syncEndlessNav() {
+      var endless = /(?:\?|&)mode=endless\b/i.test(location.search);
+      var title = document.getElementById('guess-page-title');
+      var toggle = document.getElementById('guess-mode-toggle');
+      if (title) title.textContent = endless ? '猜曲绘 · 官谱无尽' : '猜曲绘 · 官谱';
+      if (toggle) {
+        toggle.href = endless ? 'guess_official.html' : 'guess_official.html?mode=endless';
+        toggle.textContent = endless ? '经典' : '无尽';
+      }
+      document.title = endless ? '猜曲绘 · 官谱无尽' : '猜曲绘 · 舞萌官谱';
+    })();
+  </script>
+  <script src="js/guess.js?v=22"></script>
+</body>
+
+</html>
