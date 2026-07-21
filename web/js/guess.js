@@ -460,9 +460,9 @@ function showResult(passed) {
     }
 }
 
-function renderReveal(correct) {
+function renderReveal(correct, songOverride) {
     refs.revealCard.innerHTML = '';
-    const song = state.answer || {};
+    const song = songOverride || state.answer || {};
     const url = coverUrl(song);
     if (url) {
         refs.revealCard.style.setProperty('--topic-cover-bg', `url("${url.replace(/"/g, '%22')}")`);
@@ -540,7 +540,7 @@ function renderReveal(correct) {
 function enterWrongReview() {
     refs.playPanel.hidden = false;
     refs.playPanel.classList.add('is-review');
-    refs.playPanel.classList.remove('is-reveal-only');
+    refs.playPanel.classList.remove('is-reveal-only', 'is-carry-reveal');
     if (refs.coverGrid) {
         refs.coverGrid.setAttribute('aria-label', '答错回看：红色为你的选择，绿色为正确答案');
     }
@@ -578,12 +578,17 @@ function afterJudge(correct) {
 
     window.setTimeout(() => {
         if (correct) {
-            refs.playPanel.hidden = false;
-            refs.playPanel.classList.remove('is-review');
-            refs.playPanel.classList.add('is-reveal-only');
-            refs.revealPanel.hidden = false;
-            renderReveal(true);
-            setStatus('答案揭晓');
+            const prevSong = state.answer;
+            if (state.passCount >= PASS_NEED) {
+                showResult(true);
+                return;
+            }
+            if (state.roundIndex >= TOTAL_ROUNDS) {
+                showResult(state.passCount >= PASS_NEED);
+                return;
+            }
+            startRound(prevSong);
+            setStatus(`第 ${state.roundIndex + 1} 轮：根据歌名选出对应曲绘`, 'success');
             return;
         }
 
@@ -680,7 +685,7 @@ function scrollGridIntoView() {
     });
 }
 
-function startRound() {
+function startRound(prevSong) {
     const round = buildRound();
     if (!round) {
         setStatus(`曲库不足 ${GRID_SIZE} 首，请先同步更多封面`, 'error');
@@ -688,15 +693,23 @@ function startRound() {
         return;
     }
 
+    const carryPrev = Boolean(prevSong) && !IS_ENDLESS;
+
     state.answer = round.answer;
     state.options = round.options;
     state.locked = false;
     rememberRecent(round.options);
 
     refs.resultPanel.hidden = true;
-    refs.revealPanel.hidden = true;
     refs.playPanel.hidden = false;
-    refs.playPanel.classList.remove('is-review', 'is-reveal-only', 'is-result-only');
+    refs.playPanel.classList.remove('is-review', 'is-reveal-only', 'is-result-only', 'is-carry-reveal');
+    if (carryPrev) {
+        refs.playPanel.classList.add('is-carry-reveal');
+        refs.revealPanel.hidden = false;
+        renderReveal(true, prevSong);
+    } else {
+        refs.revealPanel.hidden = true;
+    }
     refs.scoreboard.hidden = false;
     fillPrompt(round.answer);
     updateScoreboard();
@@ -725,7 +738,7 @@ function restartGame() {
     refillAnswerDeck();
     refs.resultPanel.hidden = true;
     refs.revealPanel.hidden = true;
-    refs.playPanel.classList.remove('is-review', 'is-reveal-only', 'is-result-only');
+    refs.playPanel.classList.remove('is-review', 'is-reveal-only', 'is-result-only', 'is-carry-reveal');
     updateScoreboard();
     startRound();
 }

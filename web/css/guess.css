@@ -295,15 +295,18 @@
         max-width: none;
     }
 
-    .guess-play-panel.is-review .guess-side {
+    .guess-play-panel.is-review .guess-side,
+    .guess-play-panel.is-carry-reveal .guess-side {
         position: static;
     }
 
-    .guess-play-panel.is-review .guess-reveal-panel {
+    .guess-play-panel.is-review .guess-reveal-panel,
+    .guess-play-panel.is-carry-reveal .guess-reveal-panel {
         justify-items: stretch;
     }
 
-    .guess-play-panel.is-review .guess-reveal-hero {
+    .guess-play-panel.is-review .guess-reveal-hero,
+    .guess-play-panel.is-carry-reveal .guess-reveal-hero {
         width: 100%;
         grid-template-columns: 1fr;
         justify-items: center;
@@ -313,22 +316,30 @@
         padding: 16px;
     }
 
-    .guess-play-panel.is-review .guess-reveal-cover-wrap {
+    .guess-play-panel.is-review .guess-reveal-cover-wrap,
+    .guess-play-panel.is-carry-reveal .guess-reveal-cover-wrap {
         width: min(168px, 100%);
     }
 
-    .guess-play-panel.is-review .guess-reveal-info {
+    .guess-play-panel.is-review .guess-reveal-info,
+    .guess-play-panel.is-carry-reveal .guess-reveal-info {
         justify-items: center;
         width: 100%;
     }
 
     .guess-play-panel.is-review .guess-reveal-designer-row,
-    .guess-play-panel.is-review .guess-reveal-meta-row {
+    .guess-play-panel.is-review .guess-reveal-meta-row,
+    .guess-play-panel.is-carry-reveal .guess-reveal-designer-row,
+    .guess-play-panel.is-carry-reveal .guess-reveal-meta-row {
         justify-content: center;
     }
 
     .guess-play-panel.is-review .guess-actions {
         justify-content: stretch;
+    }
+
+    .guess-play-panel.is-carry-reveal .guess-actions {
+        display: none;
     }
 
     .guess-play-panel.is-review .guess-action-btn {
@@ -390,20 +401,24 @@
 }
 
 @media (max-width: 979px) {
-    .guess-play-panel.is-review .guess-side {
+    .guess-play-panel.is-review .guess-side,
+    .guess-play-panel.is-carry-reveal .guess-side {
         display: contents;
     }
 
-    .guess-play-panel.is-review .guess-prompt {
+    .guess-play-panel.is-review .guess-prompt,
+    .guess-play-panel.is-carry-reveal .guess-prompt {
         order: 1;
     }
 
-    .guess-play-panel.is-review .guess-cover-grid {
+    .guess-play-panel.is-review .guess-cover-grid,
+    .guess-play-panel.is-carry-reveal .guess-cover-grid {
         order: 2;
     }
 
     .guess-play-panel.is-review .guess-reveal-panel,
-    .guess-play-panel.is-review .guess-result-panel {
+    .guess-play-panel.is-review .guess-result-panel,
+    .guess-play-panel.is-carry-reveal .guess-reveal-panel {
         order: 3;
         width: 100%;
     }
