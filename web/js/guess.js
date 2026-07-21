@@ -75,6 +75,8 @@ function initRefs() {
     refs.songLevels = document.getElementById('guess-song-levels');
     refs.songMeta = document.getElementById('guess-song-meta');
     refs.coverGrid = document.getElementById('guess-cover-grid');
+    refs.prevPanel = document.getElementById('guess-prev-panel');
+    refs.prevCard = document.getElementById('guess-prev-card');
     refs.revealPanel = document.getElementById('guess-reveal-panel');
     refs.revealCard = document.getElementById('guess-reveal-card');
     refs.nextBtn = document.getElementById('guess-next-btn');
@@ -115,9 +117,8 @@ function setupModeUi() {
         refs.pillRound.innerHTML = '题数 <strong id="guess-round-label">0</strong>';
         refs.roundLabel = document.getElementById('guess-round-label');
     }
-    if (refs.nextBtn) {
-        refs.nextBtn.textContent = IS_ENDLESS ? '继续' : '下一轮';
-    }
+    // 「下一轮」仅经典答错回看使用；无尽答对自动进题，答错进死亡结算
+    if (refs.nextBtn) refs.nextBtn.textContent = '下一轮';
 }
 
 function updateScoreboard() {
@@ -424,8 +425,14 @@ function buildRound() {
     return { answer, options: shuffle([answer, ...distractors]) };
 }
 
+function hidePrevPanel() {
+    if (refs.prevPanel) refs.prevPanel.hidden = true;
+    if (refs.playPanel) refs.playPanel.classList.remove('has-prev');
+}
+
 function showResult(passed) {
     state.finished = true;
+    hidePrevPanel();
     refs.revealPanel.hidden = true;
     refs.resultPanel.hidden = false;
     refs.playPanel.hidden = false;
@@ -460,14 +467,15 @@ function showResult(passed) {
     }
 }
 
-function renderReveal(correct, songOverride) {
-    refs.revealCard.innerHTML = '';
-    const song = songOverride || state.answer || {};
-    const url = coverUrl(song);
+function fillSongCard(cardEl, song, badgeText, badgePass) {
+    if (!cardEl) return;
+    cardEl.innerHTML = '';
+    const data = song || {};
+    const url = coverUrl(data);
     if (url) {
-        refs.revealCard.style.setProperty('--topic-cover-bg', `url("${url.replace(/"/g, '%22')}")`);
+        cardEl.style.setProperty('--topic-cover-bg', `url("${url.replace(/"/g, '%22')}")`);
     } else {
-        refs.revealCard.style.removeProperty('--topic-cover-bg');
+        cardEl.style.removeProperty('--topic-cover-bg');
     }
 
     const wrap = createNode('div', 'guess-reveal-cover-wrap');
@@ -475,7 +483,7 @@ function renderReveal(correct, songOverride) {
         const img = document.createElement('img');
         img.className = 'guess-reveal-cover';
         img.src = url;
-        img.alt = `${song.title || '曲目'} Cover`;
+        img.alt = `${data.title || '曲目'} Cover`;
         img.onerror = () => {
             wrap.classList.add('cover-missing');
             wrap.textContent = 'NO COVER';
@@ -491,15 +499,15 @@ function renderReveal(correct, songOverride) {
     info.appendChild(
         createNode(
             'div',
-            `guess-reveal-badge ${correct ? 'is-pass' : 'is-fail'}`,
-            correct ? '答对了' : '答错了'
+            `guess-reveal-badge ${badgePass ? 'is-pass' : 'is-fail'}`,
+            badgeText
         )
     );
-    info.appendChild(createNode('div', 'guess-reveal-title', song.title || '未命名曲目'));
+    info.appendChild(createNode('div', 'guess-reveal-title', data.title || '未命名曲目'));
 
-    const designerCredit = formatDesignerCredit(song);
-    if (song.artist) {
-        info.appendChild(createNode('div', 'guess-reveal-artist', String(song.artist)));
+    const designerCredit = formatDesignerCredit(data);
+    if (data.artist) {
+        info.appendChild(createNode('div', 'guess-reveal-artist', String(data.artist)));
     }
     if (designerCredit) {
         const designerRow = createNode('div', 'guess-reveal-designer-row');
@@ -509,38 +517,59 @@ function renderReveal(correct, songOverride) {
     }
 
     const meta = createNode('div', 'guess-reveal-meta-row');
-    if (song.version) {
-        meta.appendChild(createNode('span', 'guess-version-badge', String(song.version)));
+    if (data.version) {
+        meta.appendChild(createNode('span', 'guess-version-badge', String(data.version)));
     }
-    if (song.type) {
+    if (data.type) {
         meta.appendChild(
-            createNode('span', `guess-type-badge is-${String(song.type).toLowerCase()}`, String(song.type))
+            createNode('span', `guess-type-badge is-${String(data.type).toLowerCase()}`, String(data.type))
         );
     }
-    const levels = Array.isArray(song.levels)
-        ? song.levels.map(item => String(item || '').trim()).filter(Boolean)
+    const levels = Array.isArray(data.levels)
+        ? data.levels.map(item => String(item || '').trim()).filter(Boolean)
         : [];
     if (levels.length) {
         meta.appendChild(createNode('span', 'guess-reveal-chip', `等级 ${levels.join(' / ')}`));
     }
     if (meta.childNodes.length) info.appendChild(meta);
 
-    const aliasText = formatAliases(song, GUESS_CONFIG.aliasMax);
+    const aliasText = formatAliases(data, GUESS_CONFIG.aliasMax);
     const footParts = [
         aliasText ? `别名 ${aliasText}` : '',
-        song.plays != null ? `游玩 ${formatCount(song.plays)}` : ''
+        data.plays != null ? `游玩 ${formatCount(data.plays)}` : ''
     ].filter(Boolean);
     if (footParts.length) {
         info.appendChild(createNode('div', 'guess-reveal-meta', footParts.join(' · ')));
     }
 
-    refs.revealCard.append(wrap, info);
+    cardEl.append(wrap, info);
+}
+
+/** 经典答错揭晓卡（带「下一轮」） */
+function renderReveal(correct) {
+    fillSongCard(refs.revealCard, state.answer, correct ? '答对了' : '答错了', correct);
+}
+
+/** 答对后下一题左列「上一题」信息卡（无按钮） */
+function renderPrevSong(song) {
+    fillSongCard(refs.prevCard, song, '上一题', true);
+}
+
+function showPrevPanel(song) {
+    if (!refs.prevPanel || !song) {
+        hidePrevPanel();
+        return;
+    }
+    refs.playPanel.classList.add('has-prev');
+    refs.prevPanel.hidden = false;
+    renderPrevSong(song);
 }
 
 function enterWrongReview() {
     refs.playPanel.hidden = false;
+    hidePrevPanel();
     refs.playPanel.classList.add('is-review');
-    refs.playPanel.classList.remove('is-reveal-only', 'is-carry-reveal');
+    refs.playPanel.classList.remove('is-reveal-only');
     if (refs.coverGrid) {
         refs.coverGrid.setAttribute('aria-label', '答错回看：红色为你的选择，绿色为正确答案');
     }
@@ -561,8 +590,8 @@ function afterJudge(correct) {
         updateScoreboard();
         window.setTimeout(() => {
             if (correct) {
-                // 答对：短暂反馈后直接下一题
-                startRound();
+                // 答对：短暂反馈后直接下一题，左列保留上一题曲目信息
+                startRound(state.answer);
                 setStatus(`连对 ${state.score} · 继续挑战`, 'success');
             } else {
                 // 答错：保留网格标记，进入死亡结算
@@ -601,10 +630,8 @@ function afterJudge(correct) {
 }
 
 function goNextAfterReveal() {
-    if (IS_ENDLESS) {
-        startRound();
-        return;
-    }
+    // 仅经典答错回看会点到这里；无尽不走此路径
+    if (IS_ENDLESS) return;
     if (state.passCount >= PASS_NEED) {
         showResult(true);
         return;
@@ -693,22 +720,19 @@ function startRound(prevSong) {
         return;
     }
 
-    const carryPrev = Boolean(prevSong) && !IS_ENDLESS;
-
     state.answer = round.answer;
     state.options = round.options;
     state.locked = false;
     rememberRecent(round.options);
 
     refs.resultPanel.hidden = true;
+    refs.revealPanel.hidden = true;
     refs.playPanel.hidden = false;
-    refs.playPanel.classList.remove('is-review', 'is-reveal-only', 'is-result-only', 'is-carry-reveal');
-    if (carryPrev) {
-        refs.playPanel.classList.add('is-carry-reveal');
-        refs.revealPanel.hidden = false;
-        renderReveal(true, prevSong);
+    refs.playPanel.classList.remove('is-review', 'is-reveal-only', 'is-result-only');
+    if (prevSong) {
+        showPrevPanel(prevSong);
     } else {
-        refs.revealPanel.hidden = true;
+        hidePrevPanel();
     }
     refs.scoreboard.hidden = false;
     fillPrompt(round.answer);
@@ -738,7 +762,8 @@ function restartGame() {
     refillAnswerDeck();
     refs.resultPanel.hidden = true;
     refs.revealPanel.hidden = true;
-    refs.playPanel.classList.remove('is-review', 'is-reveal-only', 'is-result-only', 'is-carry-reveal');
+    hidePrevPanel();
+    refs.playPanel.classList.remove('is-review', 'is-reveal-only', 'is-result-only');
     updateScoreboard();
     startRound();
 }

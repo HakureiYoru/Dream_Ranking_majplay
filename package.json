@@ -1,0 +1,8 @@
+{
+  "name": "dream-ranking-majplay",
+  "private": true,
+  "scripts": {
+    "dev": "npx --yes serve web -l 3000",
+    "start": "npm run dev"
+  }
+}
