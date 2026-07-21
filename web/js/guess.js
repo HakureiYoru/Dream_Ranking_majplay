@@ -10,7 +10,9 @@ const DEFAULT_GUESS_CONFIG = {
     gameMode: 'classic',
     /** 题目区展示：artist | designer | version | levels | aliases */
     promptFields: ['designer'],
-    aliasMax: 8
+    aliasMax: 8,
+    /** 官谱宴谱：通常只有第七难度（定数列表长度 < 4） */
+    excludeUtage: false
 };
 
 function resolveGameMode() {
@@ -148,6 +150,14 @@ function createNode(tagName, className, text) {
 function coverUrl(song) {
     if (!song || !song.cover) return '';
     return String(song.cover).replace(/^\.?\/?/, '');
+}
+
+/** 宴谱通常只有第七难度；双谱宴谱也只有 1～2 个定数，普通谱为 4/5 个 */
+function isUtageSong(song) {
+    const levels = Array.isArray(song && song.levels)
+        ? song.levels.map(item => String(item || '').trim()).filter(Boolean)
+        : [];
+    return levels.length > 0 && levels.length < 4;
 }
 
 function formatCount(value) {
@@ -416,21 +426,28 @@ function buildRound() {
 
 function showResult(passed) {
     state.finished = true;
-    refs.playPanel.hidden = true;
     refs.revealPanel.hidden = true;
     refs.resultPanel.hidden = false;
+    refs.playPanel.hidden = false;
     updateScoreboard();
 
-    if (IS_ENDLESS) {
+    // 无尽答错：保留网格，结算框落在左列下方
+    if (IS_ENDLESS && !passed) {
+        enterWrongReview();
+        refs.playPanel.classList.remove('is-result-only');
         const answerTitle = (state.answer && state.answer.title) || '未知曲目';
         refs.resultTitle.textContent = '死亡';
         refs.resultText.textContent =
             `本局得分 ${state.score}` +
             (state.bestScore > 0 ? ` · 最佳 ${state.bestScore}` : '') +
             `。答错曲目：${answerTitle}`;
-        setStatus('无尽模式结算', 'error');
+        setStatus('无尽模式结算 · 红=你的选择 · 绿=正确答案', 'error');
         return;
     }
+
+    // 经典结算：居中单独展示
+    refs.playPanel.classList.remove('is-review');
+    refs.playPanel.classList.add('is-result-only');
 
     if (passed) {
         refs.resultTitle.textContent = '通过';
@@ -445,56 +462,88 @@ function showResult(passed) {
 
 function renderReveal(correct) {
     refs.revealCard.innerHTML = '';
+    const song = state.answer || {};
+    const url = coverUrl(song);
+    if (url) {
+        refs.revealCard.style.setProperty('--topic-cover-bg', `url("${url.replace(/"/g, '%22')}")`);
+    } else {
+        refs.revealCard.style.removeProperty('--topic-cover-bg');
+    }
+
     const wrap = createNode('div', 'guess-reveal-cover-wrap');
-    const img = document.createElement('img');
-    img.className = 'guess-reveal-cover';
-    img.src = coverUrl(state.answer);
-    img.alt = `${state.answer.title || '曲目'} Cover`;
-    img.onerror = () => {
+    if (url) {
+        const img = document.createElement('img');
+        img.className = 'guess-reveal-cover';
+        img.src = url;
+        img.alt = `${song.title || '曲目'} Cover`;
+        img.onerror = () => {
+            wrap.classList.add('cover-missing');
+            wrap.textContent = 'NO COVER';
+            img.remove();
+        };
+        wrap.appendChild(img);
+    } else {
+        wrap.classList.add('cover-missing');
         wrap.textContent = 'NO COVER';
-        img.remove();
-    };
-    wrap.appendChild(img);
+    }
 
     const info = createNode('div', 'guess-reveal-info');
-    const badge = createNode(
-        'div',
-        `guess-reveal-badge ${correct ? 'is-pass' : 'is-fail'}`,
-        correct ? '答对了' : '答错了'
-    );
-    info.appendChild(badge);
-    info.appendChild(createNode('div', 'guess-reveal-title', state.answer.title || '未命名曲目'));
-    const designerCredit = formatDesignerCredit(state.answer);
     info.appendChild(
         createNode(
             'div',
-            'guess-reveal-artist',
-            designerCredit || state.answer.artist || '--'
+            `guess-reveal-badge ${correct ? 'is-pass' : 'is-fail'}`,
+            correct ? '答对了' : '答错了'
         )
     );
-    const aliasText = formatAliases(state.answer, GUESS_CONFIG.aliasMax);
-    const versionNode = state.answer.version
-        ? createNode('div', 'guess-reveal-version-wrap')
-        : null;
-    if (versionNode) {
-        versionNode.appendChild(createNode('span', 'guess-version-badge', String(state.answer.version)));
-        info.appendChild(versionNode);
+    info.appendChild(createNode('div', 'guess-reveal-title', song.title || '未命名曲目'));
+
+    const designerCredit = formatDesignerCredit(song);
+    if (song.artist) {
+        info.appendChild(createNode('div', 'guess-reveal-artist', String(song.artist)));
     }
-    info.appendChild(
-        createNode(
-            'div',
-            'guess-reveal-meta',
-            [
-                aliasText ? `别名 ${aliasText}` : '',
-                state.answer.plays != null ? `游玩 ${formatCount(state.answer.plays)}` : '',
-                state.answer.type ? String(state.answer.type) : ''
-            ]
-                .filter(Boolean)
-                .join(' · ') || ''
-        )
-    );
+    if (designerCredit) {
+        const designerRow = createNode('div', 'guess-reveal-designer-row');
+        designerRow.appendChild(createNode('div', 'guess-reveal-designer-label', '谱师'));
+        designerRow.appendChild(createNode('div', 'guess-reveal-designer-name', designerCredit));
+        info.appendChild(designerRow);
+    }
+
+    const meta = createNode('div', 'guess-reveal-meta-row');
+    if (song.version) {
+        meta.appendChild(createNode('span', 'guess-version-badge', String(song.version)));
+    }
+    if (song.type) {
+        meta.appendChild(
+            createNode('span', `guess-type-badge is-${String(song.type).toLowerCase()}`, String(song.type))
+        );
+    }
+    const levels = Array.isArray(song.levels)
+        ? song.levels.map(item => String(item || '').trim()).filter(Boolean)
+        : [];
+    if (levels.length) {
+        meta.appendChild(createNode('span', 'guess-reveal-chip', `等级 ${levels.join(' / ')}`));
+    }
+    if (meta.childNodes.length) info.appendChild(meta);
+
+    const aliasText = formatAliases(song, GUESS_CONFIG.aliasMax);
+    const footParts = [
+        aliasText ? `别名 ${aliasText}` : '',
+        song.plays != null ? `游玩 ${formatCount(song.plays)}` : ''
+    ].filter(Boolean);
+    if (footParts.length) {
+        info.appendChild(createNode('div', 'guess-reveal-meta', footParts.join(' · ')));
+    }
 
     refs.revealCard.append(wrap, info);
+}
+
+function enterWrongReview() {
+    refs.playPanel.hidden = false;
+    refs.playPanel.classList.add('is-review');
+    refs.playPanel.classList.remove('is-reveal-only');
+    if (refs.coverGrid) {
+        refs.coverGrid.setAttribute('aria-label', '答错回看：红色为你的选择，绿色为正确答案');
+    }
 }
 
 function afterJudge(correct) {
@@ -516,7 +565,8 @@ function afterJudge(correct) {
                 startRound();
                 setStatus(`连对 ${state.score} · 继续挑战`, 'success');
             } else {
-                // 答错：跳过揭晓，直接死亡结算
+                // 答错：保留网格标记，进入死亡结算
+                enterWrongReview();
                 showResult(false);
             }
         }, 900);
@@ -527,10 +577,21 @@ function afterJudge(correct) {
     updateScoreboard();
 
     window.setTimeout(() => {
-        refs.playPanel.hidden = true;
+        if (correct) {
+            refs.playPanel.hidden = false;
+            refs.playPanel.classList.remove('is-review');
+            refs.playPanel.classList.add('is-reveal-only');
+            refs.revealPanel.hidden = false;
+            renderReveal(true);
+            setStatus('答案揭晓');
+            return;
+        }
+
+        // 答错：左侧题目下方展示卡片，右侧保留红/绿网格
+        enterWrongReview();
         refs.revealPanel.hidden = false;
-        renderReveal(correct);
-        setStatus(correct ? '答案揭晓' : '正确答案如下');
+        renderReveal(false);
+        setStatus('红=你的选择 · 绿=正确答案');
     }, 900);
 }
 
@@ -560,8 +621,15 @@ function onPick(songId, tile) {
         btn.disabled = true;
         if (btn.dataset.songId === state.answer.id) {
             btn.classList.add(correct && btn === tile ? 'is-correct' : 'is-missed-correct');
+            if (!correct) {
+                const mark = createNode('span', 'guess-tile-mark is-answer', '正确答案');
+                btn.appendChild(mark);
+            }
         }
-        if (btn === tile && !correct) btn.classList.add('is-wrong');
+        if (btn === tile && !correct) {
+            btn.classList.add('is-wrong');
+            btn.appendChild(createNode('span', 'guess-tile-mark is-pick', '你的选择'));
+        }
     });
 
     setStatus(correct ? '选对了！' : '选错了', correct ? 'success' : 'error');
@@ -601,6 +669,17 @@ function renderGrid(options) {
     });
 }
 
+function scrollGridIntoView() {
+    const target = refs.coverGrid || refs.playPanel;
+    if (!target || target.hidden) return;
+    // 等布局落地后再滚，把网格底部对齐视口底部，避免新题还卡在标题区
+    window.requestAnimationFrame(() => {
+        window.requestAnimationFrame(() => {
+            target.scrollIntoView({ block: 'end', inline: 'nearest', behavior: 'smooth' });
+        });
+    });
+}
+
 function startRound() {
     const round = buildRound();
     if (!round) {
@@ -617,6 +696,7 @@ function startRound() {
     refs.resultPanel.hidden = true;
     refs.revealPanel.hidden = true;
     refs.playPanel.hidden = false;
+    refs.playPanel.classList.remove('is-review', 'is-reveal-only', 'is-result-only');
     refs.scoreboard.hidden = false;
     fillPrompt(round.answer);
     updateScoreboard();
@@ -626,6 +706,7 @@ function startRound() {
     } else {
         setStatus(`第 ${state.roundIndex + 1} 轮：根据歌名选出对应曲绘`);
     }
+    scrollGridIntoView();
 }
 
 function restartGame() {
@@ -644,6 +725,7 @@ function restartGame() {
     refillAnswerDeck();
     refs.resultPanel.hidden = true;
     refs.revealPanel.hidden = true;
+    refs.playPanel.classList.remove('is-review', 'is-reveal-only', 'is-result-only');
     updateScoreboard();
     startRound();
 }
@@ -653,7 +735,10 @@ async function loadCatalog() {
     const response = await fetch(CATALOG_URL, { headers: { Accept: 'application/json' }, cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const data = await response.json();
-    const songs = Array.isArray(data.songs) ? data.songs : [];
+    let songs = Array.isArray(data.songs) ? data.songs : [];
+    if (GUESS_CONFIG.excludeUtage) {
+        songs = songs.filter(song => !isUtageSong(song));
+    }
     // 入库即洗牌，后续任何按序遍历都不偏向热门前列
     state.songs = shuffle(songs.filter(song => song && song.id && coverUrl(song)));
     if (state.songs.length < GRID_SIZE) {

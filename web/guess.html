@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/background.css">
   <link rel="stylesheet" href="css/arena.css">
-  <link rel="stylesheet" href="css/guess.css?v=22">
+  <link rel="stylesheet" href="css/guess.css?v=27">
 </head>
 
 <body class="fantasy-bg arena-page guess-page">
@@ -37,29 +37,29 @@
       <p id="guess-status" class="arena-status guess-status" role="status"></p>
 
       <section id="guess-play-panel" class="guess-play-panel" hidden>
-        <div class="guess-prompt">
-          <div class="guess-prompt-label">这首歌的曲绘是？</div>
-          <h2 id="guess-song-title" class="guess-song-title"></h2>
-          <div id="guess-song-artist" class="guess-song-artist"></div>
-          <div id="guess-song-levels" class="guess-song-levels" hidden></div>
-          <div id="guess-song-meta" class="guess-song-meta" hidden></div>
+        <div class="guess-side">
+          <div class="guess-prompt">
+            <div class="guess-prompt-label">这首歌的曲绘是？</div>
+            <h2 id="guess-song-title" class="guess-song-title"></h2>
+            <div id="guess-song-artist" class="guess-song-artist"></div>
+            <div id="guess-song-levels" class="guess-song-levels" hidden></div>
+            <div id="guess-song-meta" class="guess-song-meta" hidden></div>
+          </div>
+          <section id="guess-reveal-panel" class="guess-reveal-panel" hidden>
+            <div id="guess-reveal-card" class="guess-reveal-hero"></div>
+            <div class="guess-actions">
+              <button id="guess-next-btn" type="button" class="fantasy-btn-submit guess-action-btn">下一轮</button>
+            </div>
+          </section>
+          <section id="guess-result-panel" class="guess-result-panel glass-panel" hidden>
+            <h2 id="guess-result-title" class="guess-result-title">本局结束</h2>
+            <p id="guess-result-text" class="guess-result-text"></p>
+            <div class="guess-actions">
+              <button id="guess-restart-btn" type="button" class="fantasy-btn-submit guess-action-btn">再来一局</button>
+            </div>
+          </section>
         </div>
         <div id="guess-cover-grid" class="guess-cover-grid" aria-label="十六宫格曲绘选项"></div>
-      </section>
-
-      <section id="guess-reveal-panel" class="guess-reveal-panel" hidden>
-        <div id="guess-reveal-card" class="guess-reveal-hero"></div>
-        <div class="guess-actions">
-          <button id="guess-next-btn" type="button" class="fantasy-btn-submit guess-action-btn">下一轮</button>
-        </div>
-      </section>
-
-      <section id="guess-result-panel" class="guess-result-panel glass-panel" hidden>
-        <h2 id="guess-result-title" class="guess-result-title">本局结束</h2>
-        <p id="guess-result-text" class="guess-result-text"></p>
-        <div class="guess-actions">
-          <button id="guess-restart-btn" type="button" class="fantasy-btn-submit guess-action-btn">再来一局</button>
-        </div>
       </section>
     </main>
   </div>
@@ -84,7 +84,7 @@
       document.title = endless ? '猜曲绘 · MajNet 无尽' : '猜曲绘 · MajNet';
     })();
   </script>
-  <script src="js/guess.js?v=22"></script>
+  <script src="js/guess.js?v=27"></script>
 </body>
 
 </html>
