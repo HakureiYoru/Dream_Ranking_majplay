@@ -705,10 +705,35 @@ function bindEvents() {
     });
 }
 
+const FOCUS_MODE_KEY = 'ui-focus-mode-v1';
+
+function applyFocusMode(enabled) {
+    document.body.classList.toggle('focus-mode', enabled);
+    const btn = document.getElementById('ui-focus-toggle');
+    if (!btn) return;
+    const label = enabled ? '显示界面组件' : '隐藏界面组件';
+    btn.setAttribute('aria-pressed', String(enabled));
+    btn.setAttribute('aria-label', label);
+    btn.title = label;
+}
+
+function initFocusModeToggle() {
+    const btn = document.getElementById('ui-focus-toggle');
+    if (!btn) return;
+    let enabled = localStorage.getItem(FOCUS_MODE_KEY) === '1';
+    applyFocusMode(enabled);
+    btn.addEventListener('click', () => {
+        enabled = !enabled;
+        localStorage.setItem(FOCUS_MODE_KEY, enabled ? '1' : '0');
+        applyFocusMode(enabled);
+    });
+}
+
 function initialize() {
     initRefs();
     state.currentTopic = getCurrentTopic();
     bindEvents();
+    initFocusModeToggle();
     renderCurrentTopic();
     refreshCurrentTopicDetails();
     renderSelectedSong();

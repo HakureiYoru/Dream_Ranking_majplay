@@ -179,6 +179,35 @@
     stroke-linejoin: round;
 }
 
+body.focus-mode .arena-header,
+body.focus-mode .arena-clear-topic-btn,
+body.focus-mode .arena-open-search-btn {
+    display: none !important;
+}
+
+.arena-floating-btn.ui-focus-toggle {
+    color: var(--text);
+    background: rgba(28, 29, 30, 0.9);
+}
+
+.arena-floating-btn.ui-focus-toggle:hover {
+    color: var(--text);
+    background: rgba(42, 43, 45, 0.96);
+}
+
+body.focus-mode.arena-page .main-content {
+    padding-top: 24px;
+}
+
+body.focus-mode .arena-layout {
+    min-height: calc(100vh - 64px);
+    align-items: center;
+}
+
+body.focus-mode .current-topic-panel {
+    min-height: clamp(520px, calc(100vh - 80px), 760px);
+}
+
 .arena-clear-topic-btn {
     color: #ffddd8;
     background: rgba(86, 38, 34, 0.9);

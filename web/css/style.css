@@ -736,11 +736,16 @@ button {
     background: rgba(216, 109, 99, 0.3);
 }
 
-.fantasy-floating-btn {
+.page-floating-actions {
     position: fixed;
     right: max(20px, 3vw);
     bottom: max(20px, 4vh);
     z-index: 1002;
+    display: grid;
+    gap: 12px;
+}
+
+.fantasy-floating-btn {
     width: 56px;
     height: 56px;
     display: grid;
@@ -760,6 +765,49 @@ button {
 .fantasy-floating-btn:hover {
     background: var(--accent-strong);
     transform: translateY(-2px);
+}
+
+.ui-focus-toggle {
+    color: var(--text);
+    background: rgba(28, 29, 30, 0.9);
+}
+
+.ui-focus-toggle:hover {
+    color: var(--text);
+    background: rgba(42, 43, 45, 0.96);
+}
+
+.ui-focus-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.ui-focus-toggle .icon-eye-off {
+    display: none;
+}
+
+body.focus-mode .ui-focus-toggle .icon-eye {
+    display: none;
+}
+
+body.focus-mode .ui-focus-toggle .icon-eye-off {
+    display: block;
+}
+
+body.focus-mode .fantasy-header .arena-title-row,
+body.focus-mode .fantasy-header .fantasy-timer,
+body.focus-mode #floating-form-btn,
+body.focus-mode #final-history-bar {
+    display: none !important;
+}
+
+body.focus-mode .fantasy-header {
+    margin-bottom: 12px;
 }
 
 .fantasy-modal-mask {
