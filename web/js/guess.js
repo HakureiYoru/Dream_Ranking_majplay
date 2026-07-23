@@ -34,7 +34,7 @@ GUESS_CONFIG.gameMode = resolveGameMode();
 const IS_ENDLESS = GUESS_CONFIG.gameMode === 'endless';
 const CATALOG_URL = GUESS_CONFIG.catalogUrl;
 const TOTAL_ROUNDS = 10;
-const PASS_NEED = 5;
+const PASS_NEED = 8;
 const GRID_SIZE = Number(GUESS_CONFIG.gridSize) || 16;
 
 const state = {
