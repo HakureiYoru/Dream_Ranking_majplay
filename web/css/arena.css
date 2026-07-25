@@ -55,11 +55,44 @@
 }
 
 .arena-layout {
+    position: relative;
     display: grid;
     gap: 16px;
     grid-template-columns: 1fr;
     align-items: stretch;
     min-height: calc(100vh - 172px);
+}
+
+.arena-rule-tip {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    z-index: 4;
+    width: min(920px, calc(100% - 24px));
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: clamp(0.98rem, 1.55vw, 1.14rem);
+    font-weight: 700;
+    line-height: 1.7;
+    letter-spacing: 0.01em;
+    text-align: center;
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.82),
+        0 6px 22px rgba(0, 0, 0, 0.5);
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.arena-rule-tip strong {
+    color: #fff;
+    font-weight: 850;
+    text-shadow:
+        0 0 12px rgba(255, 255, 255, 0.35),
+        0 1px 2px rgba(0, 0, 0, 0.82),
+        0 6px 22px rgba(0, 0, 0, 0.5);
 }
 
 .arena-panel {
